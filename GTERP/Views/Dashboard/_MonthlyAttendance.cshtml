@@ -1,0 +1,328 @@
+﻿@model GTERP.Controllers.HR.DashboardController.MonthlyAttendance
+<style>
+    .table thead th{
+        border: none;        
+    }
+    .table td, .table th {
+        border-top: none;
+        background: inherit;
+    }
+</style>
+
+    <div class="card mb-4 p-3">
+        <div class="box-header card card-header-style purple-gradient">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <h3 class="box-title">Monthly Attendance</h3>
+                </div>
+                <div class="col-md-6 col-12">
+                    <h5 class="text-left"></h5>
+                </div>
+            </div>
+        </div>
+        <div class="card-body pt-3">
+            <div class="row">
+                <div class="col-md-6 col-12 mb-2">
+                    <div class="bg-green card table-responsive">
+                        <h3 class="customeFont text-center">Total Overtime(Monthly)</h3>
+                        <hr class="MAhr" />
+                        <table class="table text-center text-white">
+                            <thead>
+                                <tr>
+                                    <th>
+                                       Total
+                                    </th>
+                                    <th>
+                                        Extra
+                                    </th>
+                                    <th>
+                                        Reg
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        @Model.MonthlyTotalOtHour Hr
+                                    </td>
+                                    <td>
+                                        @Model.MonthlyExtraOtHour Hr
+                                    </td>
+                                    <td>
+                                        @Model.MonthlyReghour Hr
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        @Model.Prosstype
+                                    </td>
+                                </tr>
+                            </tbody>                     
+                        </table>
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="bg-blue-active card table-responsive">
+                        <h3 class="customeFont text-center">Total Attendance(Monthly)</h3>
+                        <hr class="MAhr" />
+                        <table class="table text-center text-white">
+                            <thead class="border-bottom-0">
+                                <tr>
+                                    <th>
+                                       P
+                                    </th>
+                                    <th>
+                                       A
+                                    </th>
+                                    <th>
+                                      CL
+                                    </th>
+                                    <th>
+                                        SL
+                                    </th>
+                                    <th>
+                                       L
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                       @Model.MonthlyPresent
+                                    </td>
+                                    <td>
+                                        @Model.MonthlyAbsent
+                                    </td>
+                                    <td>
+                                       @Model.MonthlyCl
+                                    </td>
+                                    <td>
+                                        @Model.MonthlySl
+                                    </td>
+                                    <td>
+                                       @Model.MonthlyLate Hr
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        @Model.Prosstype
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@*<div class="row">
+    <div class="col-md-12 col-12">
+        <div class="box box-solid card">
+            <div class="box-header with-border card card-header-style pal-kyoo-gradient">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <h3 class="box-title">Monthly Attendance</h3>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <h5 class="text-left">&nbsp;</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="box-body">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <div class="bg-green card table-responsive">
+                        <h3 class="customeFont text-center">Total Overtime(Monthly)</h3>
+                        <hr class="MAhr" />
+                        <table class="table">
+                            <tr class="customeFont ">
+                                <th>
+                                    <h4 class="text-center">Total</h4>
+                                </th>
+                                <th>
+                                    <h4 class="text-center">Extra</h4>
+                                </th>
+                                <th>
+                                    <h4 class="text-center">Reg</h4>
+                                </th>
+                            </tr>
+                            <tr class="customeFont">
+                                <td>
+                                    <h4 class="text-center"> @Model.MonthlyTotalOtHour Hr</h4>
+                                </td>
+                                <td>
+                                    <h4 class="text-center">@Model.MonthlyExtraOtHour Hr</h4>
+                                </td>
+                                <td>
+                                    <h4 class="text-center">@Model.MonthlyReghour Hr</h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <h4 class="text-center">@Model.Prosstype</h4>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="bg-blue-active card table-responsive">
+                        <h3 class="customeFont text-center">Total Attendance(Monthly)</h3>
+                        <hr class="MAhr" />
+                        <table class="table">
+                            <tr class="customeFont">
+                                <th>
+                                    <h4 class="text-center">P</h4>
+                                </th>
+                                <th>
+                                    <h4 class="text-center">A</h4>
+                                </th>
+                                <th>
+                                    <h4 class="text-center">CL</h4>
+                                </th>
+                                <th>
+                                    <h4 class="text-center">SL</h4>
+                                </th>
+                                <th>
+                                    <h4 class="text-center">L</h4>
+                                </th>
+                            </tr>
+                            <tr class="customeFont">
+                                <td>
+                                    <h4 class="text-center">@Model.MonthlyPresent</h4>
+                                </td>
+                                <td>
+                                    <h4 class="text-center">@Model.MonthlyAbsent</h4>
+                                </td>
+                                <td>
+                                    <h4 class="text-center">@Model.MonthlyCl</h4>
+                                </td>
+                                <td>
+                                    <h4 class="text-center">@Model.MonthlySl</h4>
+                                </td>
+                                <td>
+                                    <h4 class="text-center">@Model.MonthlyLate Hr</h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5">
+                                    <h4 class="text-center">@Model.Prosstype</h4>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
+    @model GTRHRIS.Models.Dashboard.MonthlyAttendance
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Monthly Attendence</h3>
+        </div>
+        <div class="col-md-6 ">
+            <div class="MALeftBg">
+                <h2 class="customeFont text-center ">Total Overtime(Monthly)</h2>
+                <hr class="MAhr" />
+                <table style="width:100%">
+                    <tr class="customeFont ">
+                        <th>
+                            <h2 class="text-center">Total :</h2>
+                        </th>
+                        <th>
+                            <h2 class="text-center">Extra :</h2>
+                        </th>
+                        <th>
+                            <h2 class="text-center">Reg :</h2>
+                        </th>
+                    </tr>
+                    <tr class="customeFont">
+                        <td>
+                            <h3 class="text-center"> @Model.MonthlyTotalOtHour Hr</h3>
+                        </td>
+                        <td>
+                            <h3 class="text-center">@Model.MonthlyExtraOtHour Hr</h3>
+                        </td>
+                        <td>
+                            <h3 class="text-center">@Model.MonthlyReghour Hr</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <h3 class="text-center">@Model.Prosstype</h3>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-md-6 ">
+            <div class="MARightBg">
+                <h2 class=" customeFont text-center">Total Attendance(Monthly)</h2>
+                <hr class="MAhr" />
+                <table style="width:100%">
+                    <tr class="customeFont ">
+                        <th>
+                            <h2 class="text-center">P</h2>
+                        </th>
+                        <th>
+                            <h2 class="text-center">A</h2>
+                        </th>
+                        <th>
+                            <h2 class="text-center">CL</h2>
+                        </th>
+                        <th>
+                            <h2 class="text-center">SL</h2>
+                        </th>
+                        <th>
+                            <h2 class="text-center">L</h2>
+                        </th>
+                    </tr>
+                    <tr class="customeFont">
+                        <td>
+                            <h3 class="text-center">@Model.MonthlyPresent</h3>
+                        </td>
+                        <td>
+                            <h3 class="text-center">@Model.MonthlyAbsent</h3>
+                        </td>
+                       <td>
+                            <h3 class="text-center">@Model.MonthlyCl</h3>
+                        </td>
+                        <td>
+                            <h3 class="text-center">@Model.MonthlySl</h3>
+                        </td>
+                        <td>
+                            <h3 class="text-center">@Model.MonthlyLate Hr</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <h3 class="text-center">@Model.Prosstype</h3>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+*@

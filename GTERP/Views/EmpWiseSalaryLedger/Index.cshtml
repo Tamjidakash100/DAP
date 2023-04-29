@@ -1,0 +1,968 @@
+﻿@model IEnumerable<GTERP.Controllers.Payroll.EmpWiseSalaryLedgerController.EmpWiseSalaryLedger>
+
+
+    <style>
+
+        .tbllist th:nth-child(7), .tbllist tbody td:nth-child(7) {
+            position: sticky !important;
+            left: 0px;
+            background-color: #f2f2f2e6;
+            z-index: 1;
+        }
+
+        .tbllist tfoot td:nth-child(7) {
+            position: sticky !important;
+            left: 0px;
+            background-color: #f2f2f2e6;
+            z-index: 1;
+        }
+
+
+        .tbllist th:last-child, .tbllist tbody td:last-child {
+            position: sticky !important;
+            right: 0px;
+            background-color: #f2f2f2e6;
+            z-index: 1;
+        }
+
+        .tbllist tfoot td:last-child {
+            position: sticky !important;
+            right: 0px;
+            background-color: #f2f2f2e6;
+            z-index: 1;
+        }
+    </style>
+
+    <div class="container-fluid">
+
+        <div class="text-center">
+            <div class="row">
+                <div class="col-md-3 col-12">
+                    <div class="input-group mb-2">
+                        <select asp-items="ViewBag.EmpId" class="form-control" id="EmpId">
+                            <option value=""> Select Employee </option>
+                        </select>
+                    </div>
+             
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                From Month
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" id="dtFrom" />
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                To Month
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" id="dtTo" />
+                    </div>
+                </div>
+                <div class="col-md-1 col-12">
+                    <input type="button" id="btnLaod" value="Load" class="btn btn-warning btn-block rounded-0" />
+                </div>
+            </div>
+
+        </div>
+
+        <form class="card p-2">
+            <div class="table-responsive text-nowrap">
+                <table id="tbllist" class="table table-hover table-bordered table-sm tbllist  table-hover" style="overflow:scroll" cellspacing="0" width="100%">
+                    <thead class="text-nowrap">
+
+                        <tr>
+                            @*<th style="display:none">
+            @Html.DisplayNameFor(model => model.EmpId)
+        </th>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.EmpCode)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.EmpName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DesigName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DeptName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.SectName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EmpType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ProssType)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.BS)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PersonalPay)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ArrearBasic)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DearnessAllow)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.HR)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ArrearBonus)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.WashingAllow)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.GasAllow)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ConvAllow)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MA)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TiffinAllow)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.SiftAllow)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ChargeAllow)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MiscHonorAllow)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CanteenAllow)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ComPFCount)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EduAllow)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MobileAllow)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.RiskAllow)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.NightAllow)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.OthersAddition)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TotalPayable)
+                            </th>
+
+                            @*-------------Deduction------------------*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.PF)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PfAdd)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.HrExp)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ElectricCharge)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Gascharge)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Watercharge)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IncomeTax)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.McloanDed)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.McloanDedOther)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.HbloanDed)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.HbloanDedOther)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PfloannDed)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PfloannDedOther)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.WfloanLocal)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.WfloanOther)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.WpfloanDed)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AdvAgainstExp)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AdvFacility)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FesBonusDed)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Transportcharge)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.SalaryAdv)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.WagesaAdv)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PurchaseAdv)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DedIncBns)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DedIncBonusOf)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AdvInTaxDed)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Donation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.HazScheme)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Dishantenna)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.RevenueStamp)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OwaSub)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Moktab)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ChemicalForum)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DiplomaassoDed)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EnggassoDed)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ChemicalAsso)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Wfsub)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.UnionSubDed)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EmpClubDed)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AdvWagesDed)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OthersDeduction)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TotalDeduct)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OTHour)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OT)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TtlFC)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FC)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.NetSalaryPayable)
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            var EmpCode = "";
+                            var EmpName = "";
+                            var DesigName = "";
+                            var DeptName = "";
+                            var SectName = "";
+                            var EmpType = "";
+                            float totalBSAmt = 0;
+                            float totalPayableAmt = 0;
+                            float totalITAmt = 0;
+                            float totalDedAmt = 0;
+                            float totalOTHour = 0;
+                            float totalOTAmt = 0;
+                            float totalFC = 0;
+                            float totalFCAmt = 0;
+                            float totalNetAmt = 0;
+                            foreach (var item in Model)
+                            {
+                                EmpCode = item.EmpCode;
+                                EmpName = item.EmpName;
+                                DesigName = item.DesigName;
+                                DeptName = item.DeptName;
+                                SectName = item.SectName;
+                                EmpType = item.EmpType;
+
+                                totalBSAmt += item.BS;
+                                totalPayableAmt += item.TotalPayable;
+                                totalITAmt += item.IncomeTax;
+                                totalDedAmt += item.TotalDeduct;
+                                totalOTHour += item.OTHour;
+                                totalOTAmt += item.OT;
+                                totalFC += item.TtlFC;
+                                totalFCAmt += item.FC;
+                                totalNetAmt += item.NetSalaryPayable;
+
+                        <tr>
+                            <td>
+                                @*@Html.DisplayFor(modelItem => item.EmpCode)*@
+                            </td>
+
+                            <td>
+                                @*@Html.DisplayFor(modelItem => item.EmpName)*@
+                            </td>
+                            <td>
+                                @*@Html.DisplayFor(modelItem => item.DesigName)*@
+                            </td>
+                            <td>
+                                @*@Html.DisplayFor(modelItem => item.DeptName)*@
+                            </td>
+                            <td>
+                                @* @Html.DisplayFor(modelItem => item.SectName)*@
+                            </td>
+                            <td>
+                                @*@Html.DisplayFor(modelItem => item.EmpType)*@
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProssType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BS)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PersonalPay)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ArrearBasic)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DearnessAllow)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HR)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ArrearBonus)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.WashingAllow)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GasAllow)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ConvAllow)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TiffinAllow)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SiftAllow)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ChargeAllow)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MiscHonorAllow)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CanteenAllow)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ComPFCount)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EduAllow)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MobileAllow)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RiskAllow)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NightAllow)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OthersAddition)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TotalPayable)
+                            </td>
+
+
+                            @*-----------------Dedcution Part--------------------*@
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PF)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PfAdd)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HrExp)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ElectricCharge)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Gascharge)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Watercharge)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IncomeTax)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.McloanDed)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.McloanDedOther)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HbloanDed)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HbloanDedOther)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PfloannDed)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PfloannDedOther)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.WfloanLocal)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.WfloanOther)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.WpfloanDed)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AdvAgainstExp)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AdvFacility)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FesBonusDed)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Transportcharge)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SalaryAdv)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.WagesaAdv)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PurchaseAdv)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DedIncBns)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DedIncBonusOf)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AdvInTaxDed)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Donation)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HazScheme)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dishantenna)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RevenueStamp)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OwaSub)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Moktab)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ChemicalForum)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DiplomaassoDed)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EnggassoDed)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ChemicalAsso)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Wfsub)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UnionSubDed)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmpClubDed)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AdvWagesDed)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OthersDeduction)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TotalDeduct)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OTHour)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OT)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TtlFC)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FC)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NetSalaryPayable)
+                            </td>
+                        </tr>
+                            }
+                    <tr>
+                        <td>
+                            @EmpCode
+                        </td>
+
+                        <td>
+                            @EmpName
+                        </td>
+                        <td>
+                            @DesigName
+                        </td>
+                        <td>
+                            @DeptName
+                        </td>
+                        <td>
+                            @SectName
+                        </td>
+                        <td>
+                            @EmpType
+                        </td>
+                        <td>
+                            Grand Total
+                        </td>
+                        <td>
+                            Total BS : @totalBSAmt
+                        </td>
+                        <td>
+                            PersonalPay
+                        </td>
+                        <td>
+                            ArrearBasic
+                        </td>
+                        <td>
+                            DearnessAllow
+                        </td>
+                        <td>
+                            HR
+                        </td>
+                        <td>
+                            ArrearBonus
+                        </td>
+                        <td>
+                            WashingAllow
+                        </td>
+                        <td>
+                            GasAllow
+                        </td>
+                        <td>
+                            ConvAllow
+                        </td>
+                        <td>
+                            MA
+                        </td>
+                        <td>
+                            TiffinAllow
+                        </td>
+                        <td>
+                            SiftAllow
+                        </td>
+                        <td>
+                            ChargeAllow
+                        </td>
+                        <td>
+                            MiscHonorAllow
+                        </td>
+                        <td>
+                            CanteenAllow
+                        </td>
+                        <td>
+                            ComPFCount
+                        </td>
+                        <td>
+                            EduAllow
+                        </td>
+                        <td>
+                            MobileAllow
+                        </td>
+                        <td>
+                            RiskAllow
+                        </td>
+                        <td>
+                            NightAllow
+                        </td>
+
+                        <td>
+                            OthersAddition
+                        </td>
+                        <td>
+                            Total Payable : @totalPayableAmt
+                        </td>
+
+
+                        @*-----------------Dedcution Part--------------------*@
+
+                        <td>
+                            PF
+                        </td>
+                        <td>
+                            PfAdd
+                        </td>
+                        <td>
+                            HrExp
+                        </td>
+                        <td>
+                            ElectricCharge
+                        </td>
+                        <td>
+                            Gascharge
+                        </td>
+                        <td>
+                            Watercharge
+                        </td>
+                        <td>
+                            Total IncomeTax : @totalITAmt
+                        </td>
+                        <td>
+                            McloanDed
+                        </td>
+                        <td>
+                            McloanDedOther
+                        </td>
+                        <td>
+                            HbloanDed
+                        </td>
+                        <td>
+                            HbloanDedOther
+                        </td>
+                        <td>
+                            PfloannDed
+                        </td>
+                        <td>
+                            PfloannDedOther
+                        </td>
+                        <td>
+                            WfloanLocal
+                        </td>
+                        <td>
+                            WfloanOther
+                        </td>
+                        <td>
+                            WpfloanDed
+                        </td>
+                        <td>
+                            AdvAgainstExp
+                        </td>
+                        <td>
+                            AdvFacility
+                        </td>
+                        <td>
+                            FesBonusDed
+                        </td>
+                        <td>
+                            Transportcharge
+                        </td>
+                        <td>
+                            SalaryAdv
+                        </td>
+                        <td>
+                            WagesaAdv
+                        </td>
+                        <td>
+                            PurchaseAdv
+                        </td>
+                        <td>
+                            DedIncBns
+                        </td>
+                        <td>
+                            DedIncBonusOf
+                        </td>
+                        <td>
+                            AdvInTaxDed
+                        </td>
+                        <td>
+                            Donation
+                        </td>
+                        <td>
+                            HazScheme
+                        </td>
+                        <td>
+                            Dishantenna
+                        </td>
+                        <td>
+                            RevenueStamp
+                        </td>
+                        <td>
+                            OwaSub
+                        </td>
+                        <td>
+                            Moktab
+                        </td>
+                        <td>
+                            ChemicalForum
+                        </td>
+                        <td>
+                            DiplomaassoDed
+                        </td>
+                        <td>
+                            EnggassoDed
+                        </td>
+                        <td>
+                            ChemicalAsso
+                        </td>
+                        <td>
+                            Wfsub
+                        </td>
+                        <td>
+                            UnionSubDed
+                        </td>
+                        <td>
+                            EmpClubDed
+                        </td>
+                        <td>
+                            AdvWagesDed
+                        </td>
+                        <td>
+                            OthersDeduction
+                        </td>
+                        <td>
+                            TotalDeduct : @totalDedAmt
+                        </td>
+                        <td>
+                            Total OT Hour : @totalOTHour
+                        </td>
+                        <td>
+                            Total OT Amount : @totalOTAmt
+                        </td>
+                        <td>
+                            Total FC : @totalFC
+                        </td>
+                        <td>
+                            Total FC Amount: @totalFCAmt
+                        </td>
+                        <td>
+                            Total Net Salary : @totalNetAmt
+                        </td>
+                    </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <br />
+        </form>
+    </div>
+
+
+
+
+    @section Scripts{
+        <script>
+
+        $(document).ready(function () {
+
+            $("#dtFrom, #dtTo").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                autoclose: true,
+                format: "dd-MMM-yyyy"
+            }).datepicker("setDate", new Date());
+
+            $("#EmpId").select2();
+
+            $("#btnLaod").click(function () {
+                let dtFrom = $("#dtFrom").val();
+                let dtTo = $("#dtTo").val();
+
+                if (dtFrom == "" || dtTo == "") {
+                    toastr.warning("Select date");
+                    return false;
+                }
+                window.location.href = '@Url.Action("Index", "EmpWiseSalaryLedger")?EmpId=' + $("#EmpId").val() + '&dtFrom=' + dtFrom + '&dtTo=' + dtTo;
+            });
+            var da =@Html.Raw(Json.Serialize(ViewBag.EmpId));
+            if (da != null) {
+                $("#EmpId").val(da);
+            }
+
+
+
+            $('#tbllist thead tr').clone(true).appendTo('#tbllist thead');
+            $('#tbllist thead:last tr:eq(1) th').each(function (i) {
+                var title = $(this).text().trim();
+                $(this).html('<input type="text" class="form-control"   placeholder="' + title + '" />');
+
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table
+                            .column(i)
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
+
+
+            var table = $('#tbllist').DataTable({
+                dom: '<"dom_wrapper fh-fixedHeader"flB>tip',
+                //"sDom": "<'row'<'col-sm-12'<'form-group'<f>>>>tr<'row'<'col-sm-12'<'pull-left'i><'pull-right'p><'clearfix'>>>",
+                //buttons: [
+                //    'copy', 'csv', 'excel', 'pdf'
+                //],
+                buttons: {
+                    dom: {
+                        button: {
+                            className: 'btn rounded-0'
+                        }
+                    },
+                    buttons: [
+                        //'copy', 'csv', 'excel', 'pdf'
+                        //$(this).addClass("btn-group dt-buttons justify-content-center mb-3")
+                        {
+                            extend: 'colvis',
+                            "columns": ':not(:last-child)',
+                            text: '<i class="mdi mdi-view-column"></i>',
+                            className: 'btn-info',
+                            titleAttr: 'Show / hide columns',
+                            //collectionLayout: 'fixed two-column'
+
+                        },
+                        //{
+                        //    extend: 'csv',
+                        //    text: '<i class="mdi mdi-note-outline"></i>',
+                        //    className: 'btn-secondary',
+                        //    titleAttr: 'Export to csv'
+
+                        //},
+                        {
+                            extend: 'excel',
+                            text: '<i class="mdi mdi-file-excel"></i>',
+                            className: 'btn-success',
+                            titleAttr: 'Export to excel'
+                        },
+
+
+                    ]
+                },
+                "searching": true,
+                "paging": false,
+                "ordering": true,
+                "info": true,
+                "iDisplayLength": 25,
+                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+                "scrollX": true,
+                "scrollY": "60vh",
+                "scrollCollapse": true,
+                //responsive: true,
+                // fixedColumns: {
+                //    leftColumns: 2,
+                //    rightColumns: 1
+                //},
+                language: {
+                    sLengthMenu: "_MENU_",
+                    search: "",
+                    searchPlaceholder: "Search..."
+                },
+                orderCellsTop: true,
+                fixedHeader: true
+                ////"fixedColumns": {
+                ////    "leftColumns": 2,
+
+                ////},
+                //"sScrollXInner": "100%",
+                //dom: 'Blfrtip',
+                ////,"fixedHeader": true
+            });
+
+
+
+        });
+
+                    //$(".search_input").addClass('form-control input-lg col-xs-12');
+
+        </script>
+    }
+
+

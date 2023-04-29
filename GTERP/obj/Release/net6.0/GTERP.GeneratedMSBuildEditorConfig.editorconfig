@@ -1,0 +1,2540 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.RootNamespace = GTERP
+build_property.RootNamespace = GTERP
+build_property.ProjectDir = F:\office project\office dap\DAP_Project_Final\GTERP\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = F:\office project\office dap\DAP_Project_Final\GTERP
+build_property._RazorSourceGeneratorDebug = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/App_Code/GlyphIcon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXBwX0NvZGVcR2x5cGhJY29uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/CheckEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDaGVja0VtYWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/CheckEmailReset.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDaGVja0VtYWlsUmVzZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Confirmed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWxDaGFuZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/ConfirmPasswordChange.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtUGFzc3dvcmRDaGFuZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxFeHRlcm5hbExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Lockout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2Nrb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGgyZmEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGhSZWNvdmVyeUNvZGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGVsZXRlUGVyc29uYWxEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGlzYWJsZTJmYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRG93bmxvYWRQZXJzb25hbERhdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW5hYmxlQXV0aGVudGljYXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRXh0ZXJuYWxMb2dpbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcR2VuZXJhdGVSZWNvdmVyeUNvZGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/register_pv.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VccmVnaXN0ZXJfcHYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUmVzZXRBdXRoZW50aWNhdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2hvd1JlY292ZXJ5Q29kZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcVHdvRmFjdG9yQXV0aGVudGljYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1N0YXR1c01lc3NhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/PasswordChanged.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxQYXNzd29yZENoYW5nZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/SetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxTZXRQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfU3RhdHVzTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/AccountDashboard/MainDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudERhc2hib2FyZFxNYWluRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_AccountProcess/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0FjY291bnRQcm9jZXNzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_AdvanceIncomeTax_Schedule/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0FkdmFuY2VJbmNvbWVUYXhfU2NoZWR1bGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_AdvanceIncomeTax_Schedule/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0FkdmFuY2VJbmNvbWVUYXhfU2NoZWR1bGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_BankClearing/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0JhbmtDbGVhcmluZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_BankStatementBalance/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0JhbmtTdGF0ZW1lbnRCYWxhbmNlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_BankStatementBalance/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0JhbmtTdGF0ZW1lbnRCYWxhbmNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_ChartOfAccounts/COATree.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0NoYXJ0T2ZBY2NvdW50c1xDT0FUcmVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_ChartOfAccounts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0NoYXJ0T2ZBY2NvdW50c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_ChartOfAccounts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0NoYXJ0T2ZBY2NvdW50c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_ChartOfAccounts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0NoYXJ0T2ZBY2NvdW50c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_ChartOfAccounts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0NoYXJ0T2ZBY2NvdW50c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_ChartOfAccounts/Simple.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0NoYXJ0T2ZBY2NvdW50c1xTaW1wbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_Contingent_Liability/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0NvbnRpbmdlbnRfTGlhYmlsaXR5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_Contingent_Liability/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0NvbnRpbmdlbnRfTGlhYmlsaXR5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_FiscalYear/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0Zpc2NhbFllYXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_GeneralReport/DemoReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0dlbmVyYWxSZXBvcnRcRGVtb1JlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_GeneralReport/Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0dlbmVyYWxSZXBvcnRcUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_GeneralReport/VoucherReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0dlbmVyYWxSZXBvcnRcVm91Y2hlclJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_GovtSchedule_Equity/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0dvdnRTY2hlZHVsZV9FcXVpdHlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_GovtSchedule_Equity/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0dvdnRTY2hlZHVsZV9FcXVpdHlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_GovtSchedule_ForeignLoan/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0dvdnRTY2hlZHVsZV9Gb3JlaWduTG9hblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_GovtSchedule_ForeignLoan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0dvdnRTY2hlZHVsZV9Gb3JlaWduTG9hblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_GovtSchedule_JapanLoan/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0dvdnRTY2hlZHVsZV9KYXBhbkxvYW5cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_GovtSchedule_JapanLoan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0dvdnRTY2hlZHVsZV9KYXBhbkxvYW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_GovtSchedule_Loan/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0dvdnRTY2hlZHVsZV9Mb2FuXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_GovtSchedule_Loan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0dvdnRTY2hlZHVsZV9Mb2FuXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_GovtSchedule_StoreIntransit/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0dvdnRTY2hlZHVsZV9TdG9yZUludHJhbnNpdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_GovtSchedule_StoreIntransit/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0dvdnRTY2hlZHVsZV9TdG9yZUludHJhbnNpdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_GovtSchedule_Subsidy/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0dvdnRTY2hlZHVsZV9TdWJzaWR5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_GovtSchedule_Subsidy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX0dvdnRTY2hlZHVsZV9TdWJzaWR5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_PostVoucher/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX1Bvc3RWb3VjaGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_ShowVoucher/Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX1Nob3dWb3VjaGVyXFJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_SummaryReport/Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX1N1bW1hcnlSZXBvcnRcUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_SummaryReport/trailReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX1N1bW1hcnlSZXBvcnRcdHJhaWxSZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_VoucherNoPrefix/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX1ZvdWNoZXJOb1ByZWZpeFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_VoucherNoPrefix/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX1ZvdWNoZXJOb1ByZWZpeFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_VoucherTypes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX1ZvdWNoZXJUeXBlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_VoucherTypes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX1ZvdWNoZXJUeXBlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_Voucher/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX1ZvdWNoZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_Voucher/CreateCopy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX1ZvdWNoZXJcQ3JlYXRlQ29weS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_Voucher/Create_Back_up.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX1ZvdWNoZXJcQ3JlYXRlX0JhY2tfdXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Acc_Voucher/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjX1ZvdWNoZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/AddToCart/Myorder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkVG9DYXJ0XE15b3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/AdvSalaryReport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWR2U2FsYXJ5UmVwb3J0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/AdvSalaryReport/_EmployeeGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWR2U2FsYXJ5UmVwb3J0XF9FbXBsb3llZUdyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/AdvSalaryReport/_LineGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWR2U2FsYXJ5UmVwb3J0XF9MaW5lR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/AdvSalaryReport/_SectionGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWR2U2FsYXJ5UmVwb3J0XF9TZWN0aW9uR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Assets/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzZXRzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Assets/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzZXRzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Assets/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzZXRzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Assets/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzZXRzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Assets/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzZXRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/AttendanceProcess/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZVByb2Nlc3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BankAccountNoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0FjY291bnROb2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BankAccountNoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0FjY291bnROb2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BankBranch/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0JyYW5jaFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BankBranch/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0JyYW5jaFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BankReconcileInfo/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua1JlY29uY2lsZUluZm9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BankReconcileInfo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua1JlY29uY2lsZUluZm9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Banks/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Banks/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Banks/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Banks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Bank/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Bank/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BillManagement/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbE1hbmFnZW1lbnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BillManagement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbE1hbmFnZW1lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BillManagement/IndexServerSide.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbE1hbmFnZW1lbnRcSW5kZXhTZXJ2ZXJTaWRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BloodGroup/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvb2RHcm91cFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BloodGroup/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvb2RHcm91cFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BoardPaper/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9hcmRQYXBlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BOM/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQk9NXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BOM/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQk9NXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BOM/IndexServerSide.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQk9NXEluZGV4U2VydmVyU2lkZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Booking/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Booking/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Booking/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Booking/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Booking/_BookingList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xfQm9va2luZ0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BudgetRelease/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVkZ2V0UmVsZWFzZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BudgetRelease/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVkZ2V0UmVsZWFzZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Budget/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVkZ2V0XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Budget/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVkZ2V0XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Budget/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVkZ2V0XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Budget/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVkZ2V0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Budget/_BookingList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVkZ2V0XF9Cb29raW5nTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Budget_ProductionTarget/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVkZ2V0X1Byb2R1Y3Rpb25UYXJnZXRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Budget_ProductionTarget/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVkZ2V0X1Byb2R1Y3Rpb25UYXJnZXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferFactory/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyRmFjdG9yeVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferFactory/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyRmFjdG9yeVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferFactory/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyRmFjdG9yeVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferFactory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyRmFjdG9yeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferList/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyTGlzdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferList/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyTGlzdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferReport/DistrictWiseDailySalesReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyUmVwb3J0XERpc3RyaWN0V2lzZURhaWx5U2FsZXNSZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferReport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyUmVwb3J0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferReport/Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyUmVwb3J0XFJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferRepresentativeWiseAllotement/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyUmVwcmVzZW50YXRpdmVXaXNlQWxsb3RlbWVudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferRepresentativeWiseAllotement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyUmVwcmVzZW50YXRpdmVXaXNlQWxsb3RlbWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferRepresentativeWiseBooking/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyUmVwcmVzZW50YXRpdmVXaXNlQm9va2luZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferRepresentativeWiseBooking/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyUmVwcmVzZW50YXRpdmVXaXNlQm9va2luZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferRepresentativeWiseBooking/RepCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyUmVwcmVzZW50YXRpdmVXaXNlQm9va2luZ1xSZXBDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferRepresentative/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyUmVwcmVzZW50YXRpdmVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferRepresentative/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyUmVwcmVzZW50YXRpdmVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferReprestativeMember/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyUmVwcmVzdGF0aXZlTWVtYmVyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferReprestativeMember/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyUmVwcmVzdGF0aXZlTWVtYmVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferSalesReportInput/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyU2FsZXNSZXBvcnRJbnB1dFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferSalesReportInput/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyU2FsZXNSZXBvcnRJbnB1dFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferSalesReportInput/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyU2FsZXNSZXBvcnRJbnB1dFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferSalesReportInput/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyU2FsZXNSZXBvcnRJbnB1dFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferWishBooking/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyV2lzaEJvb2tpbmdcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferWishBooking/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyV2lzaEJvb2tpbmdcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferWishBooking/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyV2lzaEJvb2tpbmdcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BufferWishBooking/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyV2lzaEJvb2tpbmdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Buffer_Del_Cha/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyX0RlbF9DaGFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Buffer_Del_Cha/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVmZmVyX0RlbF9DaGFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BuildingType/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRpbmdUeXBlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BuildingType/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRpbmdUeXBlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BusinessAllowance/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzaW5lc3NBbGxvd2FuY2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BusStop/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzU3RvcFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BusStop/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzU3RvcFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BuyerGroups/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJHcm91cHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BuyerGroups/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJHcm91cHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BuyerInformations/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJJbmZvcm1hdGlvbnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/BuyerInformations/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJJbmZvcm1hdGlvbnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Categories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/CatVariable/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0VmFyaWFibGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/CatVariable/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0VmFyaWFibGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Cat_Emp_Type/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0X0VtcF9UeXBlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Cat_Emp_Type/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0X0VtcF9UeXBlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Cat_ITInvestment/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0X0lUSW52ZXN0bWVudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Cat_ITInvestment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0X0lUSW52ZXN0bWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Cat_Unit/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0X1VuaXRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Cat_Unit/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0X1VuaXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Companies/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFuaWVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Companies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFuaWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/CompanyPermissions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVBlcm1pc3Npb25zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/CompanyPermissions/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVBlcm1pc3Npb25zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/CompanyPermissions/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVBlcm1pc3Npb25zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/CompanyPermissions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVBlcm1pc3Npb25zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/CompanyPermissions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVBlcm1pc3Npb25zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/COM_MasterLC/Create - Backup5nov19.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ09NX01hc3RlckxDXENyZWF0ZSAtIEJhY2t1cDVub3YxOS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/COM_MasterLC/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ09NX01hc3RlckxDXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/COM_MasterLC/Index - Backup5nov19.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ09NX01hc3RlckxDXEluZGV4IC0gQmFja3VwNW5vdjE5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/COM_MasterLC/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ09NX01hc3RlckxDXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/COM_MasterLC/LCMarginWithAvailableBalance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ09NX01hc3RlckxDXExDTWFyZ2luV2l0aEF2YWlsYWJsZUJhbGFuY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/COM_MasterLC/SalesContactMasterLC.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ09NX01hc3RlckxDXFNhbGVzQ29udGFjdE1hc3RlckxDLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/COM_MasterLC/ShipmentScheduleIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ09NX01hc3RlckxDXFNoaXBtZW50U2NoZWR1bGVJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/COM_ProformaInvoice/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ09NX1Byb2Zvcm1hSW52b2ljZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/COM_ProformaInvoice/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ09NX1Byb2Zvcm1hSW52b2ljZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/COM_ProformaInvoice/Index - orginal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ09NX1Byb2Zvcm1hSW52b2ljZVxJbmRleCAtIG9yZ2luYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/COM_ProformaInvoice/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ09NX1Byb2Zvcm1hSW52b2ljZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/COM_ProformaInvoice/PIDailyReceiving.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ09NX1Byb2Zvcm1hSW52b2ljZVxQSURhaWx5UmVjZWl2aW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/CostAllocation/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29zdEFsbG9jYXRpb25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/CostAllocation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29zdEFsbG9jYXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/CostAllocation/IndexServerSide.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29zdEFsbG9jYXRpb25cSW5kZXhTZXJ2ZXJTaWRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Currencies/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VycmVuY2llc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Currencies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VycmVuY2llc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Customers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Customers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Customers/ReportCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXFJlcG9ydEN1c3RvbWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DailyAttendanceReport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlBdHRlbmRhbmNlUmVwb3J0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DailyAttendanceReport/_EmployeeGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlBdHRlbmRhbmNlUmVwb3J0XF9FbXBsb3llZUdyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DailyAttendanceReport/_LineGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlBdHRlbmRhbmNlUmVwb3J0XF9MaW5lR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DailyAttendanceReport/_SectionGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlBdHRlbmRhbmNlUmVwb3J0XF9TZWN0aW9uR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DailyAttendanceReport/_ShiftGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlBdHRlbmRhbmNlUmVwb3J0XF9TaGlmdEdyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Dashboard/_DailyAttendance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXF9EYWlseUF0dGVuZGFuY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Dashboard/_DailyAttendanceSum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXF9EYWlseUF0dGVuZGFuY2VTdW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Dashboard/_EmployeeDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXF9FbXBsb3llZURldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Dashboard/_MonthlyAttendance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXF9Nb250aGx5QXR0ZW5kYW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Dashboard/_SalaryDeatils.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXF9TYWxhcnlEZWF0aWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DeliveryChallan/Create - Copy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlDaGFsbGFuXENyZWF0ZSAtIENvcHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DeliveryChallan/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlDaGFsbGFuXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DeliveryChallan/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlDaGFsbGFuXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DeliveryChallan/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlDaGFsbGFuXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DeliveryChallan/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlDaGFsbGFuXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DeliveryChallan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlDaGFsbGFuXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DeliveryOrders/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlPcmRlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DeliveryOrders/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlPcmRlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DeliveryOrders/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlPcmRlcnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DeliveryOrders/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlPcmRlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DeliveryOrders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlPcmRlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Department/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Department/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Designation/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzaWduYXRpb25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Designation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzaWduYXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Destinations/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGluYXRpb25zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Destinations/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGluYXRpb25zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Diagnosis/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlhZ25vc2lzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Diagnosis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlhZ25vc2lzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DistrictWiseBookings/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpY3RXaXNlQm9va2luZ3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DistrictWiseBookings/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpY3RXaXNlQm9va2luZ3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DistrictWiseBookings/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpY3RXaXNlQm9va2luZ3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DistrictWiseBookings/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpY3RXaXNlQm9va2luZ3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DistrictWiseBookings/Index_old.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpY3RXaXNlQm9va2luZ3NcSW5kZXhfb2xkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/District/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpY3RcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/District/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpY3RcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Document/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdW1lbnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Document/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdW1lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DownTimeReason/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG93blRpbWVSZWFzb25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DownTimeReason/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG93blRpbWVSZWFzb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DownTime/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG93blRpbWVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/DownTime/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG93blRpbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EarnLeaveSheet/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWFybkxlYXZlU2hlZXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Ecommerce/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWNvbW1lcmNlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Ecommerce/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWNvbW1lcmNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ElectricChargeSetting/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxlY3RyaWNDaGFyZ2VTZXR0aW5nXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ElectricChargeSetting/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxlY3RyaWNDaGFyZ2VTZXR0aW5nXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeArrearBill/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVBcnJlYXJCaWxsXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeArrearBill/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVBcnJlYXJCaWxsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeInfo/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVJbmZvXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeInfo/custom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVJbmZvXGN1c3RvbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeInfo/EmployeeList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVJbmZvXEVtcGxveWVlTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeInfo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVJbmZvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeList/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVMaXN0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeList/TestIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVMaXN0XFRlc3RJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeReport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVSZXBvcnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeReport/_DepartmentGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVSZXBvcnRcX0RlcGFydG1lbnRHcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeReport/_EmployeeGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVSZXBvcnRcX0VtcGxveWVlR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeReport/_EmpTypeGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVSZXBvcnRcX0VtcFR5cGVHcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeReport/_LocationGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVSZXBvcnRcX0xvY2F0aW9uR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeReport/_ReportGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVSZXBvcnRcX1JlcG9ydEdyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeReport/_SectionGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVSZXBvcnRcX1NlY3Rpb25HcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeSalary/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVTYWxhcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmployeeSalary/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVTYWxhcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmpReleaseds/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wUmVsZWFzZWRzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmpReleaseds/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wUmVsZWFzZWRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmpShiftInput/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wU2hpZnRJbnB1dFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmpWiseSalaryLedger/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wV2lzZVNhbGFyeUxlZGdlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/EmpWiseSalaryLedger/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wV2lzZVNhbGFyeUxlZGdlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ExcelUpload/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhjZWxVcGxvYWRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ExchangeRate/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhjaGFuZ2VSYXRlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ExchangeRate/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhjaGFuZ2VSYXRlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ExportInvoiceMasters/backup perfect.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwb3J0SW52b2ljZU1hc3RlcnNcYmFja3VwIHBlcmZlY3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ExportInvoiceMasters/Create - Before Integration text box in grid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwb3J0SW52b2ljZU1hc3RlcnNcQ3JlYXRlIC0gQmVmb3JlIEludGVncmF0aW9uIHRleHQgYm94IGluIGdyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ExportInvoiceMasters/Create - PerfectBackup Before Adding PackingList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwb3J0SW52b2ljZU1hc3RlcnNcQ3JlYXRlIC0gUGVyZmVjdEJhY2t1cCBCZWZvcmUgQWRkaW5nIFBhY2tpbmdMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ExportInvoiceMasters/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwb3J0SW52b2ljZU1hc3RlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ExportInvoiceMasters/ExportShippingReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwb3J0SW52b2ljZU1hc3RlcnNcRXhwb3J0U2hpcHBpbmdSZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ExportInvoiceMasters/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwb3J0SW52b2ljZU1hc3RlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FactoryInfo/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdG9yeUluZm9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FactoryInfo/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdG9yeUluZm9cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FactoryInfo/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdG9yeUluZm9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FactoryInfo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdG9yeUluZm9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/eee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXGVlZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/FADetailCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXEZBRGV0YWlsQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/FADetailList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXEZBRGV0YWlsTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/FAMasterCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXEZBTWFzdGVyQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/FAMasterList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXEZBTWFzdGVyTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/FASalesCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXEZBU2FsZXNDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/FASalesList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXEZBU2FsZXNMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/SaleList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXFNhbGVMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/Sales.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXFNhbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/SeeDepreciation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXFNlZURlcHJlY2lhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/See_Already_Dep.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXFNlZV9BbHJlYWR5X0RlcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FA_Master/SubAssets.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFfTWFzdGVyXFN1YkFzc2V0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FestBonusReport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVzdEJvbnVzUmVwb3J0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FixedAtt/Approval.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRml4ZWRBdHRcQXBwcm92YWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FixedAtt/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRml4ZWRBdHRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FixedAtt/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRml4ZWRBdHRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FixedAtt/Index2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRml4ZWRBdHRcSW5kZXgyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FixedAtt/MyView - OTHourTime.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRml4ZWRBdHRcTXlWaWV3IC0gT1RIb3VyVGltZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FixedAtt/MyView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRml4ZWRBdHRcTXlWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/FixedAtt/_FixAttendancGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRml4ZWRBdHRcX0ZpeEF0dGVuZGFuY0dyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Floor/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxvb3JcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Floor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxvb3JcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GasChargeSetting/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FzQ2hhcmdlU2V0dGluZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GasChargeSetting/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FzQ2hhcmdlU2V0dGluZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GatePasses/Create - 8mton.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2F0ZVBhc3Nlc1xDcmVhdGUgLSA4bXRvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GatePasses/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2F0ZVBhc3Nlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GatePasses/Create_PrevFinalOne.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2F0ZVBhc3Nlc1xDcmVhdGVfUHJldkZpbmFsT25lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GatePasses/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2F0ZVBhc3Nlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GatePasses/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2F0ZVBhc3Nlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GatePasses/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2F0ZVBhc3Nlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GatePasses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2F0ZVBhc3Nlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GatePasses/Index_old.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2F0ZVBhc3Nlc1xJbmRleF9vbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GatePassForBuffer/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2F0ZVBhc3NGb3JCdWZmZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GatePassForBuffer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2F0ZVBhc3NGb3JCdWZmZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GoodsReceive/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29vZHNSZWNlaXZlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GoodsReceive/DirectGrr - Backup 10-mar-21.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29vZHNSZWNlaXZlXERpcmVjdEdyciAtIEJhY2t1cCAxMC1tYXItMjEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GoodsReceive/DirectGrr - Himu Work Backup 10-mar-21.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29vZHNSZWNlaXZlXERpcmVjdEdyciAtIEhpbXUgV29yayBCYWNrdXAgMTAtbWFyLTIxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GoodsReceive/DirectGrr.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29vZHNSZWNlaXZlXERpcmVjdEdyci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GoodsReceive/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29vZHNSZWNlaXZlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GoodsReceive/POSDirectGrr.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29vZHNSZWNlaXZlXFBPU0RpcmVjdEdyci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GoodsReceive/ViewCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29vZHNSZWNlaXZlXFZpZXdDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GoodsReceive/ViewDirectGrr.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29vZHNSZWNlaXZlXFZpZXdEaXJlY3RHcnIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Grade/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JhZGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Grade/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JhZGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Gratuity_Ledger/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JhdHVpdHlfTGVkZ2VyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Gratuity_Ledger/HRExpSetting/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JhdHVpdHlfTGVkZ2VyXEhSRXhwU2V0dGluZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Gratuity_Ledger/HRExpSetting/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JhdHVpdHlfTGVkZ2VyXEhSRXhwU2V0dGluZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Gratuity_Ledger/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JhdHVpdHlfTGVkZ2VyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GTF_GeneralReport/DemoReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1RGX0dlbmVyYWxSZXBvcnRcRGVtb1JlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GTF_GeneralReport/VoucherReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1RGX0dlbmVyYWxSZXBvcnRcVm91Y2hlclJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GTF_PostVoucher/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1RGX1Bvc3RWb3VjaGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GTF_Voucher/CreateCopy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1RGX1ZvdWNoZXJcQ3JlYXRlQ29weS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/GTF_Voucher/Create_Back_up.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1RGX1ZvdWNoZXJcQ3JlYXRlX0JhY2tfdXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/HolidaySetup/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9saWRheVNldHVwXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Home/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Home/ModuleDefault.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNb2R1bGVEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Home/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/HRExpSetting/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFeHBTZXR0aW5nXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/HRExpSetting/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFeHBTZXR0aW5nXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/HRReport/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJSZXBvcnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/HRReport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJSZXBvcnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/HRSetting/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJTZXR0aW5nXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/HRSetting/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJTZXR0aW5nXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/IDCard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSURDYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/IncenBand/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jZW5CYW5kXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/IncenBand/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jZW5CYW5kXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/IncomeTax/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jb21lVGF4XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/IncomeTax/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jb21lVGF4XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/IncrementReport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jcmVtZW50UmVwb3J0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/IncrementReport/_DepartmentGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jcmVtZW50UmVwb3J0XF9EZXBhcnRtZW50R3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/IncrementReport/_EmployeeGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jcmVtZW50UmVwb3J0XF9FbXBsb3llZUdyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/IncrementReport/_EmpTypeGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jcmVtZW50UmVwb3J0XF9FbXBUeXBlR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/IncrementReport/_LocationGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jcmVtZW50UmVwb3J0XF9Mb2NhdGlvbkdyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/IncrementReport/_ReportGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jcmVtZW50UmVwb3J0XF9SZXBvcnRHcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/IncrementReport/_SectionGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jcmVtZW50UmVwb3J0XF9TZWN0aW9uR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Increment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jcmVtZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Increment/_IncrementGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jcmVtZW50XF9JbmNyZW1lbnRHcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/InsurGrade/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdXJHcmFkZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/InsurGrade/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdXJHcmFkZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/IntegrationSetting/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZWdyYXRpb25TZXR0aW5nXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/IntegrationSetting/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZWdyYXRpb25TZXR0aW5nXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/IntegrationSetting/IndexServerSide.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZWdyYXRpb25TZXR0aW5nXEluZGV4U2VydmVyU2lkZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Issues/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Issues/DirectIssue.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVzXERpcmVjdElzc3VlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Issues/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Issues/SubStoreCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVzXFN1YlN0b3JlQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Issues/ViewCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVzXFZpZXdDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Issues/ViewDirectIssue.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVzXFZpZXdEaXJlY3RJc3N1ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ITaxBank/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSVRheEJhbmtcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ITaxBank/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSVRheEJhbmtcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ITComputationSetting/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSVRDb21wdXRhdGlvblNldHRpbmdcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ITComputationSetting/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSVRDb21wdXRhdGlvblNldHRpbmdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/JobCard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iQ2FyZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/JobCard/_EmployeeGridview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iQ2FyZFxfRW1wbG95ZWVHcmlkdmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/JobCard/_SectionGridview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iQ2FyZFxfU2VjdGlvbkdyaWR2aWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LeaveBalance/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVCYWxhbmNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LeaveEncashment/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVFbmNhc2htZW50XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LeaveEncashment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVFbmNhc2htZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LeaveEntry/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVFbnRyeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LeaveReport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVSZXBvcnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LeaveReport/_EmployeeGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVSZXBvcnRcX0VtcGxveWVlR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LeaveReport/_EmpTypeGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVSZXBvcnRcX0VtcFR5cGVHcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LeaveReport/_LeaveTypeGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVSZXBvcnRcX0xlYXZlVHlwZUdyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LeaveReport/_LineGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVSZXBvcnRcX0xpbmVHcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LeaveReport/_ReportGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVSZXBvcnRcX1JlcG9ydEdyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LeaveReport/_SectionGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVSZXBvcnRcX1NlY3Rpb25HcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LienBanks/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGllbkJhbmtzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LienBanks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGllbkJhbmtzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Line/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGluZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Line/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGluZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanHalt/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hbkhhbHRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanHouseBuilding/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hbkhvdXNlQnVpbGRpbmdcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanHouseBuilding/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hbkhvdXNlQnVpbGRpbmdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanHouseBuilding/_LoanHouseBuildingGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hbkhvdXNlQnVpbGRpbmdcX0xvYW5Ib3VzZUJ1aWxkaW5nR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanMotorCycle/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hbk1vdG9yQ3ljbGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanMotorCycle/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hbk1vdG9yQ3ljbGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanMotorCycle/_LoanMotorCycleGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hbk1vdG9yQ3ljbGVcX0xvYW5Nb3RvckN5Y2xlR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanOther/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hbk90aGVyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanOther/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hbk90aGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanOther/_LoanOtherGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hbk90aGVyXF9Mb2FuT3RoZXJHcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanPF/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblBGXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanPF/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblBGXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanPF/_LoanPFGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblBGXF9Mb2FuUEZHcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanReports/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblJlcG9ydHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanReport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblJlcG9ydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanReport/_EmployeeGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblJlcG9ydFxfRW1wbG95ZWVHcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanReport/_EmpTypeGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblJlcG9ydFxfRW1wVHlwZUdyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanReport/_LocationGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblJlcG9ydFxfTG9jYXRpb25HcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanReport/_ReportGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblJlcG9ydFxfUmVwb3J0R3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanReport/_SectionGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblJlcG9ydFxfU2VjdGlvbkdyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanReturn/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblJldHVyblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanReturn/_SalaryDeductionGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblJldHVyblxfU2FsYXJ5RGVkdWN0aW9uR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanWelfare/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hbldlbGZhcmVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanWelfare/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hbldlbGZhcmVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/LoanWelfare/_LoanWelfareGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hbldlbGZhcmVcX0xvYW5XZWxmYXJlR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Location/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Location/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Medical/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Medical/Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbFxSZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Meeting/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVldGluZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Meeting/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVldGluZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/MenuPermission/Approval.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVBlcm1pc3Npb25cQXBwcm92YWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/MenuPermission/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVBlcm1pc3Npb25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/MenuPermission/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVBlcm1pc3Npb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ModuleGroups/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kdWxlR3JvdXBzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ModuleGroups/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kdWxlR3JvdXBzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ModuleMenus/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kdWxlTWVudXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ModuleMenus/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kdWxlTWVudXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Modules/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kdWxlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Modules/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kdWxlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/MonthlyAttendanceReport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9udGhseUF0dGVuZGFuY2VSZXBvcnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/MonthlyAttendanceReport/_EmployeeGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9udGhseUF0dGVuZGFuY2VSZXBvcnRcX0VtcGxveWVlR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/MonthlyAttendanceReport/_EmpTypeGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9udGhseUF0dGVuZGFuY2VSZXBvcnRcX0VtcFR5cGVHcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/MonthlyAttendanceReport/_LineGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9udGhseUF0dGVuZGFuY2VSZXBvcnRcX0xpbmVHcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/MonthlyAttendanceReport/_LocationGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9udGhseUF0dGVuZGFuY2VSZXBvcnRcX0xvY2F0aW9uR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/MonthlyAttendanceReport/_ReportGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9udGhseUF0dGVuZGFuY2VSZXBvcnRcX1JlcG9ydEdyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/MonthlyAttendanceReport/_SectionGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9udGhseUF0dGVuZGFuY2VSZXBvcnRcX1NlY3Rpb25HcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/MonthlySalesProduction/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9udGhseVNhbGVzUHJvZHVjdGlvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/MonthlySalesProduction/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9udGhseVNhbGVzUHJvZHVjdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/MultiStepFrom/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVsdGlTdGVwRnJvbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/OpeningBanks/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlbmluZ0JhbmtzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/OpeningBanks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlbmluZ0JhbmtzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/OTAndNightShift/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT1RBbmROaWdodFNoaWZ0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/OtherDeductionAssociation/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3RoZXJEZWR1Y3Rpb25Bc3NvY2lhdGlvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/OtherDeductionAssociation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3RoZXJEZWR1Y3Rpb25Bc3NvY2lhdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PFContribution/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUEZDb250cmlidXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PFContribution/_SalaryDeductionGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUEZDb250cmlidXRpb25cX1NhbGFyeURlZHVjdGlvbkdyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PFEmpOpBal/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUEZFbXBPcEJhbFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PFEmpOpBal/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUEZFbXBPcEJhbFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PF_GeneralReport/DemoReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUEZfR2VuZXJhbFJlcG9ydFxEZW1vUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PF_GeneralReport/VoucherReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUEZfR2VuZXJhbFJlcG9ydFxWb3VjaGVyUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PF_Ledger/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUEZfTGVkZ2VyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PF_Ledger/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUEZfTGVkZ2VyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PF_PostVoucher/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUEZfUG9zdFZvdWNoZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PF_Voucher/CreateCopy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUEZfVm91Y2hlclxDcmVhdGVDb3B5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PF_Voucher/Create_Back_up.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUEZfVm91Y2hlclxDcmVhdGVfQmFja191cC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PoliceStation/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWNlU3RhdGlvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PoliceStation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWNlU3RhdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PortOfDischarges/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9ydE9mRGlzY2hhcmdlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PortOfDischarges/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9ydE9mRGlzY2hhcmdlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PortOfLoadings/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9ydE9mTG9hZGluZ3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PortOfLoadings/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9ydE9mTG9hZGluZ3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PostDocument/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdERvY3VtZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PostOffice/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdE9mZmljZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PostOffice/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdE9mZmljZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PrdUnit/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJkVW5pdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PrdUnit/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJkVW5pdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ProcessLock/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2Vzc0xvY2tcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ProcessLock/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2Vzc0xvY2tcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Productions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdGlvbnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Productions/CreatMulti.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdGlvbnNcQ3JlYXRNdWx0aS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Productions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdGlvbnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Productions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdGlvbnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Productions/Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdGlvbnNcUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ProductionTarget/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdGlvblRhcmdldFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ProductionTarget/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdGlvblRhcmdldFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ProductMainGroup/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdE1haW5Hcm91cFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ProductMainGroup/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdE1haW5Hcm91cFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Products/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PurchaseOrderValid/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VPcmRlclZhbGlkXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PurchaseOrderValid/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VPcmRlclZhbGlkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PurchaseOrder/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VPcmRlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PurchaseOrder/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VPcmRlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PurchaseRequisition/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VSZXF1aXNpdGlvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PurchaseRequisition/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VSZXF1aXNpdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PurchaseReturn/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VSZXR1cm5cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/PurchaseReturn/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VSZXR1cm5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Purchase/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Purchase/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/RawMaterialTransfer/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF3TWF0ZXJpYWxUcmFuc2ZlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/RawMaterialTransfer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF3TWF0ZXJpYWxUcmFuc2ZlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReceivedFromBufferBankAmount/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWl2ZWRGcm9tQnVmZmVyQmFua0Ftb3VudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReceivedFromBufferBankAmount/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWl2ZWRGcm9tQnVmZmVyQmFua0Ftb3VudFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReceivedFromBufferBankAmount/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWl2ZWRGcm9tQnVmZmVyQmFua0Ftb3VudFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReceivedFromBufferBankAmount/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWl2ZWRGcm9tQnVmZmVyQmFua0Ftb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Recreation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjcmVhdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Religion/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVsaWdpb25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Religion/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVsaWdpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReorderLevel/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVvcmRlckxldmVsXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReorderLevel/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVvcmRlckxldmVsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReportPermissions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0UGVybWlzc2lvbnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReportPermissions/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0UGVybWlzc2lvbnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReportPermissions/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0UGVybWlzc2lvbnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReportPermissions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0UGVybWlzc2lvbnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReportPermissions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0UGVybWlzc2lvbnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReportTypes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0VHlwZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReportTypes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0VHlwZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReportTypes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0VHlwZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReportTypes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0VHlwZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/ReportTypes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0VHlwZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/RepresentativeBooking/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwcmVzZW50YXRpdmVCb29raW5nXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/RepresentativeBooking/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwcmVzZW50YXRpdmVCb29raW5nXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/RepresentativeBooking/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwcmVzZW50YXRpdmVCb29raW5nXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/RepresentativeBooking/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwcmVzZW50YXRpdmVCb29raW5nXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Representative/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwcmVzZW50YXRpdmVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Representative/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwcmVzZW50YXRpdmVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalaryAddition/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5QWRkaXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalaryAddition/_SalaryAdditionGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5QWRkaXRpb25cX1NhbGFyeUFkZGl0aW9uR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalaryCheck/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5Q2hlY2tcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalaryCheck/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5Q2hlY2tcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalaryDeduction/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5RGVkdWN0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalaryDeduction/_SalaryDeductionGrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5RGVkdWN0aW9uXF9TYWxhcnlEZWR1Y3Rpb25HcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalaryProcesses/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5UHJvY2Vzc2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalaryProcesses/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5UHJvY2Vzc2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalaryProcesses/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5UHJvY2Vzc2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalaryProcesses/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5UHJvY2Vzc2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalaryProcesses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5UHJvY2Vzc2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalaryProcess/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5UHJvY2Vzc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalarySheets/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5U2hlZXRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SaleOpeningBalance/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZU9wZW5pbmdCYWxhbmNlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SaleOpeningBalance/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZU9wZW5pbmdCYWxhbmNlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SaleOpeningBalance/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZU9wZW5pbmdCYWxhbmNlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SaleOpeningBalance/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZU9wZW5pbmdCYWxhbmNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalesDashboard/MainDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNEYXNoYm9hcmRcTWFpbkRhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalesReport/DistrictWiseDailySalesReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNSZXBvcnRcRGlzdHJpY3RXaXNlRGFpbHlTYWxlc1JlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalesReport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNSZXBvcnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalesReport/Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNSZXBvcnRcUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalesReturn/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNSZXR1cm5cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalesReturn/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNSZXR1cm5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalesTarget/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNUYXJnZXRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SalesTarget/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNUYXJnZXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Sales/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Sales/Index - Copy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcSW5kZXggLSBDb3B5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Sales/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Sales/POSCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcUE9TQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Sales/POSPrint.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcUE9TUHJpbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Sales/POSReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcUE9TUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Section/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VjdGlvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Section/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VjdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Shared/DisplayTemplate/DisplayDateFormat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERpc3BsYXlUZW1wbGF0ZVxEaXNwbGF5RGF0ZUZvcm1hdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Shared/_mobMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9tb2JNZW51LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Shared/_navigation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9uYXZpZ2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Shared/_verticalMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF92ZXJ0aWNhbE1lbnUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Shared/_verticalMenuSearch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF92ZXJ0aWNhbE1lbnVTZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Shift/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpZnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Shift/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpZnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Signatory/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2lnbmF0b3J5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Signatory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2lnbmF0b3J5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SisterConcernCompany/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2lzdGVyQ29uY2VybkNvbXBhbnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SisterConcernCompany/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2lzdGVyQ29uY2VybkNvbXBhbnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Skill/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpbGxcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Skill/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpbGxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/StoreRequisition/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVSZXF1aXNpdGlvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/StoreRequisition/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVSZXF1aXNpdGlvblxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/StoreRequisition/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVSZXF1aXNpdGlvblxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/StoreRequisition/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVSZXF1aXNpdGlvblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/StoreRequisition/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVSZXF1aXNpdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/StoreRequisition/SubStoreCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVSZXF1aXNpdGlvblxTdWJTdG9yZUNyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SubCategories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SubCategories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SummerWinterAllowance/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VtbWVyV2ludGVyQWxsb3dhbmNlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SummerWinterAllowance/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VtbWVyV2ludGVyQWxsb3dhbmNlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SummerWinterAllowance/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VtbWVyV2ludGVyQWxsb3dhbmNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SummerWinterAllow/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VtbWVyV2ludGVyQWxsb3dcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Suppliers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Suppliers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Suppliment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpbWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Survey/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VydmV5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Survey/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VydmV5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/SystemAdmin/UserLogingList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtQWRtaW5cVXNlckxvZ2luZ0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Technical/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY2FsXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Technical/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY2FsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Technical/Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY2FsXFJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/TotalFC/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG90YWxGQ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/TotalNight/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG90YWxOaWdodFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Unit/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Unit/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/UserPermission/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclBlcm1pc3Npb25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/UserPermission/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclBlcm1pc3Npb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/UseUtilities/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlVXRpbGl0aWVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/UseUtilities/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlVXRpbGl0aWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/VoucherTranGroup/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm91Y2hlclRyYW5Hcm91cFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/VoucherTranGroup/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm91Y2hlclRyYW5Hcm91cFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Warehouse/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/Warehouse/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/WFF_GeneralReport/DemoReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV0ZGX0dlbmVyYWxSZXBvcnRcRGVtb1JlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/WFF_GeneralReport/VoucherReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV0ZGX0dlbmVyYWxSZXBvcnRcVm91Y2hlclJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/WFF_PostVoucher/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV0ZGX1Bvc3RWb3VjaGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/WFF_Voucher/CreateCopy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV0ZGX1ZvdWNoZXJcQ3JlYXRlQ29weS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/WFF_Voucher/Create_Back_up.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV0ZGX1ZvdWNoZXJcQ3JlYXRlX0JhY2tfdXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/WF_Ledger/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV0ZfTGVkZ2VyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/WF_Ledger/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV0ZfTGVkZ2VyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/office project/office dap/DAP_Project_Final/GTERP/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

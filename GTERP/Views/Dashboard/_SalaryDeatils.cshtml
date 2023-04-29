@@ -1,0 +1,135 @@
+﻿@model GTERP.Controllers.HR.DashboardController.SalaryDetails
+    <div class="card mb-2 p-3">
+        <div class="box-header card card-header-style purple-gradient">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <h3 class="box-title">Salary Details</h3>
+                </div>
+                <div class="col-md-6 col-12">
+                    <h5 class="text-right box-title">Last Salary Process  : @Model.ProssType</h5>
+                </div>
+            </div>
+        </div>
+        <div class="card-body pt-3">
+            <div class="row">
+                <div class="col-md-3 col-12 mb-2">
+                    <div class="card metroblockDA cardPresent bg-green">
+                        <!-- <span class="icon fontawesome-briefcase left"></span> -->
+                        <h4 class="text-right">Per Employee</h4>
+                        <hr class="DAhr">
+                        <h3 class="text-center">
+                            @Model.AvgSalary
+                        </h3>
+                        <div class="clear"></div>
+                        <h4 class="text-center">Avg Salary</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12 mb-2">
+                    <div class="card metroblockDA cardPresent bg-yellow-active">
+                        <!-- <span class="icon fontawesome-briefcase left"></span> -->
+                        <h4 class="text-right">Per Day</h4>
+                        <hr class="DAhr">
+                        <h3 class="text-center">
+                            @Model.PerDaySalary
+                        </h3>
+                        <div class="clear"></div>
+                        <h4 class="text-center">Salary</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12 mb-2">
+                    <div class="card metroblockDA cardPresent bg-red">
+                        <!-- <span class="icon fontawesome-briefcase left"></span> -->
+                        <h4 class="text-right">@Model.ProssType</h4>
+                        <hr class="DAhr">
+                        <h3 class="text-center">
+                            @Model.NetPayableSalary
+
+                        </h3>
+                        <div class="clear"></div>
+                        <h4 class="text-center">Net Payable</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12 mb-2">
+                    <div class=" card metroblockDA cardPresent small-card bg-blue-active">
+                        <!-- <span class="icon fontawesome-briefcase left"></span> -->
+                        <h4 class="text-right">@Model.LastProssType</h4>
+                        <hr class="DAhr">
+                        <h3 class="text-center">
+                            @Model.TotalOtCost
+
+                        </h3>
+                        <div class="clear"></div>
+                        <h4 class="text-center">Total OT Cost</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        @*<div class="box box-solid card">
+            <div class="box-header with-border card-header card-header-success">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <h3 class="box-title">Salary Details</h3>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <h5 class="text-right">Last Salary Process  : @Model.ProssType</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="box-body ">
+                <div class="row">
+                <div class="col-md-3 col-12">
+                    <div class="card metroblockDA cardPresent bg-green">
+                         <span class="icon fontawesome-briefcase left"></span> 
+                        <h4 class="text-right">Per Employee</h4>
+                        <hr class="DAhr">
+                        <h3 class="text-center">
+                            @Model.AvgSalary
+                        </h3>
+                        <div class="clear"></div>
+                        <h4 class="text-center">Avg Salary</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12">
+                    <div class="card metroblockDA cardPresent bg-yellow-active">
+                         <span class="icon fontawesome-briefcase left"></span> 
+                        <h4 class="text-right">Per Day</h4>
+                        <hr class="DAhr">
+                        <h3 class="text-center">
+                            @Model.PerDaySalary
+                        </h3>
+                        <div class="clear"></div>
+                        <h4 class="text-center">Salary</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12">
+                    <div class="card metroblockDA cardPresent bg-red">
+                         <span class="icon fontawesome-briefcase left"></span> 
+                        <h4 class="text-right">@Model.ProssType</h4>
+                        <hr class="DAhr">
+                        <h3 class="text-center">
+                            @Model.NetPayableSalary
+
+                        </h3>
+                        <div class="clear"></div>
+                        <h4 class="text-center">Net Payable</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12">
+                    <div class=" card metroblockDA cardPresent small-card bg-blue-active">
+                         <span class="icon fontawesome-briefcase left"></span> 
+                        <h4 class="text-right">@Model.LastProssType</h4>
+                        <hr class="DAhr">
+                        <h3 class="text-center">
+                            @Model.TotalOtCost
+
+                        </h3>
+                        <div class="clear"></div>
+                        <h4 class="text-center">Total OT Cost</h4>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>*@

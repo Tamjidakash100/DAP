@@ -1,0 +1,719 @@
+﻿@model GTERP.Models.Technical
+
+
+
+<style>
+
+
+    #styletext {
+        color: transparent;
+        background: #666666;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+        font-weight: 100;
+        font-size: 40px;
+    }
+</style>
+
+@using (Html.BeginForm("Create", "Technical", FormMethod.Post))
+{
+    @*@Html.AntiForgeryToken()*@
+
+    <div class="container">
+        <div class="py-7 text-center">
+
+            <h1 id="styletext">Technical Info Entry</h1>
+            <p class="lead"></p>
+        </div>
+
+        @if (Model != null)
+        {
+            <input type="hidden" id="TechnicalId" name="TechnicalId" value="@Model.TechnicalId" />
+        }
+        else
+        {
+            <input type="hidden" asp-for="TechnicalId" value="0" />
+        }
+        <div id="modalbodyfahad" class="row ">
+            <div class="col-md-8 offset-md-2 col-12 order-md-1">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">Technical Info @ViewBag.Title</h4>
+                </div>
+                <div class="card-body p-3">
+                <form class="needs-validation" novalidate>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            Main Title
+                                        </span>
+                                    </div>
+                                    <select asp-for="MeetingType" asp-items="ViewBag.MeetingType" class="form-control"></select>
+                                    @Html.ValidationMessageFor(model => model.MeetingType, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            Type
+                                        </span>
+                                    </div>
+                                    <select asp-for="MeetingId" asp-items="ViewBag.MeetingId" class="form-control"></select>
+                                    @Html.ValidationMessageFor(model => model.MeetingId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row Meeting">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.MeetingName)
+                                        </span>
+                                    </div>
+                                    <input asp-for="MeetingName" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.MeetingName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.MeetingNo)
+                                        </span>
+                                    </div>
+                                    <input asp-for="MeetingNo" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.MeetingNo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row Meeting">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.MeetingDate)
+                                        </span>
+                                    </div>
+                                    <input type="date" asp-for="MeetingDate" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.MeetingDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.MeetingTotalQty)
+                                        </span>
+                                    </div>
+                                    <input asp-for="MeetingTotalQty" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.MeetingTotalQty, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row Training">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.TrainingName)
+                                        </span>
+                                    </div>
+                                    <input asp-for="TrainingName" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.TrainingName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.TrainingSub)
+                                        </span>
+                                    </div>
+                                    <input asp-for="TrainingSub" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.TrainingSub, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row Training">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.TrainingPresentQty)
+                                        </span>
+                                    </div>
+                                    <input asp-for="TrainingPresentQty" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.TrainingPresentQty, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.TrainingDay)
+                                        </span>
+                                    </div>
+                                    <input asp-for="TrainingDay" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.TrainingDay, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row Training">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.TrainingHour)
+                                        </span>
+                                    </div>
+                                    <input asp-for="TrainingHour" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.TrainingHour, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row Training">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            Training Duration
+                                        </span>
+                                    </div>
+                                    <input asp-for="FSName" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.FSName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row Visit">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.VisitName)
+                                        </span>
+                                    </div>
+                                    <input asp-for="VisitName" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.VisitName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.VisitOrg)
+                                        </span>
+                                    </div>
+                                    <input asp-for="VisitOrg" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.VisitOrg, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row Visit">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.VisitTrainerQty)
+                                        </span>
+                                    </div>
+                                    <input asp-for="VisitTrainerQty" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.VisitTrainerQty, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.VisitWorkhour)
+                                        </span>
+                                    </div>
+                                    <input asp-for="VisitWorkhour" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.VisitWorkhour, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row Visit">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.VisitTraineeQty)
+                                        </span>
+                                    </div>
+                                    <input asp-for="VisitTraineeQty" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.VisitTraineeQty, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.VisitOther)
+                                        </span>
+                                    </div>
+                                    <input asp-for="VisitOther" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.VisitOther, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row Visit">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.VisitTotalQty)
+                                        </span>
+                                    </div>
+                                    <input asp-for="VisitTotalQty" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.VisitTotalQty, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row Quality">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ImportPhosphoric)
+                                        </span>
+                                    </div>
+                                    <input asp-for="ImportPhosphoric" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.ImportPhosphoric, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ImportChalanNo)
+                                        </span>
+                                    </div>
+                                    <input asp-for="ImportChalanNo" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.ImportChalanNo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row Quality">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ImportQty)
+                                        </span>
+                                    </div>
+                                    <input asp-for="ImportQty" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.ImportQty, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ImportDate)
+                                        </span>
+                                    </div>
+                                    <input type="date" asp-for="ImportDate" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.ImportDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row Quality">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ImportDensity)
+                                        </span>
+                                    </div>
+                                    <input asp-for="ImportDensity" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.ImportDensity, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ImportPhosphorusPentoxide)
+                                        </span>
+                                    </div>
+                                    <input asp-for="ImportPhosphorusPentoxide" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.ImportPhosphorusPentoxide, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row Waste">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.WasteSampleCollectDate)
+                                        </span>
+                                    </div>
+                                    <input type="date" asp-for="WasteSampleCollectDate" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.WasteSampleCollectDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.WasteTestNum)
+                                        </span>
+                                    </div>
+                                    <input asp-for="WasteTestNum" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.WasteTestNum, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row Waste">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.WasteReportSendNum)
+                                        </span>
+                                    </div>
+                                    <input asp-for="WasteReportSendNum" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.WasteReportSendNum, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.WasteTestDate)
+                                        </span>
+                                    </div>
+                                    <input type="date" asp-for="WasteTestDate" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.WasteTestDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row Waste">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.WasteReportSendDate)
+                                        </span>
+                                    </div>
+                                    <input type="date" asp-for="WasteReportSendDate" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.WasteReportSendDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row License">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.LicenseApplicationDate)
+                                        </span>
+                                    </div>
+                                    <input type="date" asp-for="LicenseApplicationDate" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.LicenseApplicationDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.LicenseCertificateRcvDate)
+                                        </span>
+                                    </div>
+                                    <input type="date" asp-for="LicenseCertificateRcvDate" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.LicenseCertificateRcvDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row License">
+
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.LicenseExpireDate)
+                                        </span>
+                                    </div>
+                                    <input type="date" asp-for="LicenseExpireDate" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.LicenseExpireDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.LicenseRenewingAuth)
+                                        </span>
+                                    </div>
+                                    <input asp-for="LicenseRenewingAuth" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.LicenseRenewingAuth, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row Fire">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.FSName)
+                                        </span>
+                                    </div>
+                                    <input asp-for="FSName" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.FSName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.FSDate)
+                                        </span>
+                                    </div>
+                                    <input type="date" asp-for="FSDate" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.FSDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row Fire">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.FSNum)
+                                        </span>
+                                    </div>
+                                    <input asp-for="FSNum" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.FSNum, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.FSLocaiton)
+                                        </span>
+                                    </div>
+                                    <input asp-for="FSLocaiton" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.FSLocaiton, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row Extinguisher">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.EGType)
+                                        </span>
+                                    </div>
+                                    <input asp-for="EGType" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.EGType, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.EGNum)
+                                        </span>
+                                    </div>
+                                    <input asp-for="EGNum" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.EGNum, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row Extinguisher">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.EGRefillDate)
+                                        </span>
+                                    </div>
+                                    <input type="date" asp-for="EGRefillDate" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.EGRefillDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.EGExpireDate)
+                                        </span>
+                                    </div>
+                                    <input type="date" asp-for="EGExpireDate" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.EGExpireDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row Extinguisher">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.EGHydroTest)
+                                        </span>
+                                    </div>
+                                    <input asp-for="EGHydroTest" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.EGHydroTest, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.dtInput)
+                                        </span>
+                                    </div>
+                                    <input type="date" asp-for="dtInput" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.dtInput, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+                        <div class="row text-center my-2">
+                           
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4 col-12">
+
+                                @if (ViewBag.Title == "Create")
+                                {
+                                    <input type="submit" value="Save" class="btn btn-primary btn-block rounded-0" />
+
+                                    @*<button class="btn btn-primary btn-lg btn-block" type="button" onclick="Products_save()">Save</button>*@
+                                }
+                                else if (ViewBag.Title == "Edit")
+                                {
+                                    <input type="submit" value="Update" class="btn btn-warning btn-block rounded-0" />
+
+                                    @*<button class="btn btn-warning btn-lg btn-block" type="button" onclick="Products_save()">Update</button>*@
+                                }
+                                else if (ViewBag.Title == "Delete")
+                                {
+                                    <button class="btn btn-danger btn-block rounded-0" type="button" onclick="Section_delete()">Delete</button>
+                                }
+
+
+                            </div>
+                            <div class="col-md-4 col-12">
+                                @Html.ActionLink("Back", "Index", "Meeting", null, new { @class = "btn btn-info btn-block rounded-0", @id = "btnBack" })
+
+                            </div>
+                            <div class="col-md-2"></div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+@section Scripts{
+    <script>
+
+   // $("#Sectid").select2();
+
+        function ShowHide() {
+            $(".Meeting,.Training,.Visit,.Quality,.Waste,.License,.Fire,.Extinguisher").addClass("d-none");
+
+            var select = $("#MeetingType").val();
+            select = select.replace(/ .*/, '');
+            if ($("." + select).hasClass("d-none")) {
+                $("." + select).removeClass("d-none");
+            }
+        }
+
+        $(document).ready(function () {
+            
+            $("#MeetingType").change(function () {
+                ShowHide();
+                $("#MeetingId").empty();
+                $.ajax({
+                    url: '@Url.Action("GetMeeting", "Technical")',
+                    data: { meeting: $("#MeetingType").val() }, //use id here
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (result) {
+                        console.log(result);
+                        for (var i = 0; i < result.length; i++) {
+                            $("#MeetingId").append(`<option value="${result[i].MeetingId}">${result[i].Meeting}</option>`);
+                        }
+
+
+                    }
+                });
+            });
+            ShowHide();
+        });
+
+    function Section_delete() {
+
+        var MeetingId = $("#MeetingId").val();
+         //   alert(Sectid);
+            $.ajax({
+
+                url: '@Url.Action("Delete", "Meeting")',
+                //url: '@Url.Action("Delete")',
+                data: JSON.stringify({ id: MeetingId }), //use id here
+                //data: JSON.stringify(salesmain),
+                type: 'POST',
+                contentType: 'application/json;',
+                dataType: 'json',
+                success: function (result) {
+                    debugger;
+                if (result.Success == "1") {
+                    customFile('3', result.ex);
+                    window.setTimeout(function () {
+                        // Move to a new location or you can do something else
+                        window.location.href = '@Url.Action("Index", "Meeting")';
+                    }, 500);
+                }
+                else {
+                    toastr.error(result.ex);
+                }
+            }
+            });
+    }
+    </script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

@@ -1,0 +1,726 @@
+﻿@model GTERP.Models.Buffers.RepresentativeBooking
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <!-- datepicker styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
+    var Total = "";
+}
+@using (Html.BeginForm("Create", "BufferRepresentativeWiseAllotement", FormMethod.Post))
+{
+    <div id="divProformaInvoice" class="row" style="max-width:100%">
+
+
+        <div class="col-md-12 ">
+            <div class="text-center">
+                <H2>Carrier Allotement <span id="view_title">@ViewBag.Title</span></H2>
+            </div>
+            @if (ViewBag.Title == "Edit")
+            {
+                <div class="card p-2">
+                    <input type="hidden" asp-for="BufferListId" id="BufferListIdset"   />
+                    <input type="hidden" asp-for="BufferBookingId" id="Bufferbookingid"   />
+
+
+                    <div class="row mt-3">
+
+
+                        <div class="col-md-6">
+                            <input name="RepresentativeBookingId" id="RepresentativeBookingId" value="@Model.RepresentativeBookingId" hidden />
+
+                            <div id="divDistAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label>Order No</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("OrderNo", @Model.OrderNo, new { id = "OrderNo", @class = "form-control form-control-sm",disabled = "disabled" })
+                                </span>
+                            </div>
+
+                            <div id="divstyle" class="col-12">
+                                <span class="text-right">
+                                    <label>Year</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.DropDownList("FiscalYearId", ViewBag.FiscalYearId as List<SelectListItem>, new { id = "FiscalYearId", @class = "form-control form-control-sm", name="FiscalYearId", disabled = "disabled" })
+                                    <input type="hidden" id="distqty" />
+                                </span>
+                            </div>
+                            @*<div id="divstyle" class="col-12">
+                    <span class="text-right">
+                    <label>Month</label>
+                    </span>
+                    <span class="input-group">
+                    @Html.DropDownList("FiscalMonthId", ViewBag.FiscalMonthId as List<SelectListItem>,  new { id = "FiscalMonthId", @class = "form-control form-control-sm",name="FiscalMonthId", disabled = "disabled" } )
+                    </span>
+                    </div>
+
+                    <div id="divstyle" class="col-12">
+                    <span class="text-right">
+                    <label>Buffer</label>
+                    </span>
+                    <span class="input-group">
+                    @Html.DropDownList("BufferListId", ViewBag.BufferListId as List<SelectListItem>,new { id = "BufferListId", @class = "form-control form-control-sm",name="BufferListId",disabled = "disabled",style = "display:none" })
+                    </span>
+                    </div>*@
+                            <div id="divstyle" class="col-12">
+                                <span class="text-right">
+                                    <label>Buffer Carrier</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.DropDownList("BufferRepresentativeId", ViewBag.BufferRepresentativeId as List<SelectListItem>, new { id = "BufferRepresentativeId", @class = "form-control form-control-sm",name="BufferRepresentativeId",disabled = "disabled" })
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="divDistAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label>Buffer Wise Total Allotment Qty</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("BufferQty", @Model.TotalAllowed, new { id = "BufferQty", @class = "form-control form-control-sm",disabled = "disabled" })
+                                </span>
+                            </div>
+                            <div id="divDistAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label>Total Alocated</label>
+                                </span>
+                                <span class="input-group">
+
+                                    @Html.TextBox("AlocatedQty",@Model.Allocated, new { id = "AlocatedQty", @class = "form-control form-control-sm",disabled = "disabled" })
+                                </span>
+                            </div>
+
+                            <div id="divDistAllotment" class=" col-12">
+                                <span class="text-right">
+                                    <label>Balance</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("Available", @Model.RemainQty, new { id = "Available", @class = "form-control form-control-sm",disabled = "disabled" })
+                                </span>
+                            </div>
+
+                            <div id="divAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label>Allotment Qty</label>
+                                </span>
+                                <span class="input-group">
+                                    <input type="text" id="previousQty" value="@Model.AllotmentQty" hidden />
+                                    @Html.TextBox("AllotmentQty", @Model.AllotmentQty, new { id = "AllotmentQty", @class = "form-control form-control-sm",name="AllotmentQty" })
+                                </span>
+                            </div>
+
+                            <div id="divAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label>Remainig Qty</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("RemainQty", "", new { id = "RemainQty", @class = "form-control form-control-sm",name="RemainQty",@Readonly=true })
+                                </span>
+                            </div>
+
+                            
+                                <div id="divAllotment" class="col-12">
+                                    <span class="text-right">
+                                        <label>Date</label>
+                                    </span>
+                                    <span class="input-group">
+
+                                     @Html.TextBoxFor(model => model.DateAdded, new { id = "DateAdded", @class = "form-control form-control-sm",name="DateAdded"})
+                                    </span>
+                                </div>
+                            
+                            <div class="text-center col-12">
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-success btn-block mt-4">Update</button>
+                                    </div>
+                                    <div class="col">
+                                        <a asp-action="Index" class="btn btn-info btn-block mt-4 mb-4">Back to List</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="card p-2">
+                    <input type="hidden"  asp-for="BufferListId" id="BufferListIdset"   />
+                    <input type="hidden" asp-for="BufferBookingId" id="Bufferbookingid"   />
+                    <div class="row mt-3">
+
+
+                        <div class="col-md-6">
+                            <input name="BufferBookingId" id="BufferBookingId" hidden />
+
+                            <div id="divDistAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label>Order No</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("OrderNo","", new { id = "OrderNo", @class = "form-control form-control-sm" })
+                                </span>
+                            </div>
+
+                            <div id="divstyle" class="col-12">
+                                <span class="text-right">
+                                    <label>Year</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.DropDownList("FiscalYearId", ViewBag.FiscalYearId as List<SelectListItem>, "--Select Year--", new { id = "FiscalYearId", @class = "form-control form-control-sm", name="FiscalYearId" })
+                                    <input type="hidden" id="distqty" />
+                                </span>
+                            </div>
+                            @*<div id="divstyle" class="col-12">
+                    <span class="text-right">
+                    <label>Month</label>
+                    </span>
+                    <span class="input-group">
+                    @Html.DropDownList("FiscalMonthId", ViewBag.FiscalMonthId as List<SelectListItem>, "--Select Month--", new { id = "FiscalMonthId", @class = "form-control form-control-sm",name="FiscalMonthId" })
+                    </span>
+                    </div>
+
+                    <div id="divstyle" class="col-12">
+                    <span class="text-right">
+                    <label>Buffer</label>
+                    </span>
+                    <span class="input-group">
+                    @Html.DropDownList("BufferListId", ViewBag.BufferListId as List<SelectListItem>, "--Select buffer--",new { id = "BufferListId", @class = "form-control form-control-sm",name="BufferListId",style = "display:none" })
+                    </span>
+                    </div>*@
+
+                            <div id="divstyle" class="col-12">
+                                <span class="text-right">
+                                    <label>Buffer Carrier</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.DropDownList("BufferRepresentativeId", ViewBag.BufferRepresentativeId as List<SelectListItem>,"--Select Carrier--", new { id = "BufferRepresentativeId", @class = "form-control form-control-sm",name="BufferRepresentativeId" })
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <div id="divDistAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label>Buffer Wise Total Allotment Qty</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("BufferQty", "", new { id = "BufferQty", @class = "form-control form-control-sm", @Readonly=true })
+                                </span>
+                            </div>
+                            <div id="divDistAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label>Total Alocated</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("AlocatedQty", "", new { id = "AlocatedQty", @class = "form-control form-control-sm",@Readonly=true })
+                                </span>
+                            </div>
+
+                            <div id="divDistAllotment" class=" col-12">
+                                <span class="text-right">
+                                    <label>Balance</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("Available", "", new { id = "Available", @class = "form-control form-control-sm",@Readonly=true })
+                                </span>
+                            </div>
+
+                            <div id="divAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label>Allotment Qty</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("AllotmentQty", "", new { id = "AllotmentQty", @class = "form-control form-control-sm",name="AllotmentQty" })
+                                </span>
+                            </div>
+
+                            <div id="divAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label>Remainig Qty</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("RemainQty", "", new { id = "RemainQty", @class = "form-control form-control-sm",name="RemainQty",@Readonly=true  })
+                                </span>
+                            </div>
+                            <div id="divAllotment" class="col-12">
+
+                                <span class="text-right">
+                                    <label>Date</label>
+                                </span>
+                                <span class="input-group">
+
+                                    @Html.TextBoxFor(model => model.DateAdded, new { id = "DateAdded", @class = "form-control form-control-sm",name="DateAdded"})
+                                </span>
+
+                            </div>
+
+                            <div class="text-center col-12">
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-success btn-block mt-4 mb-4">Save</button>
+                                    </div>
+                                    <div class="col">
+                                        <a asp-action="Index" class="btn btn-info btn-block mt-4 mb-4">Back to List</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div id="finalpanel" tabindex="0" class="card p-2">
+
+                    <div class="table-responsive text-nowrap">
+                        <table id="tblbufferlist" class="table tbllist table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+
+
+                                    <th>BufferName</th>
+                                    <th>Year</th>
+                                    <th>Month</th>
+
+                                    <th>BufferWiseAllotment</th>
+
+
+                                    <th>TotalAllocated</th>
+
+                                    <th>Balance</th>
+                                    <th>BufferListId</th>
+                                    <th>BufferWBookingid</th>
+                                   
+
+                                </tr>
+                            </thead>
+                            <tbody id="TabBody"></tbody>
+                            <tfoot>
+                                <tr></tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+                </div>
+            }
+
+
+
+
+        </div>
+    </div>
+}
+
+
+@section Scripts
+    {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script>
+
+
+        $(document).ready(() => {
+           // $('#AllotmentQty').prop("disabled", true);
+            var today = new Date();
+            var date = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
+            $('#DateAdded').datepicker({ dateFormat: 'mm/dd/yy' });
+            $('#DateAdded').val(date);
+            
+        })
+           
+                $(function () {
+                    $('.datepicker').datepicker({
+                        language: "es",
+                        autoclose: true,
+                        format: "yyyy/mm/dd"
+                    });
+                });
+        //BufferListId
+        var prevdistqty = 0.00;
+        $('#Date').datepicker();
+
+        //$(".txtAllotmentQty").attr('autocomplete', 'off');
+       // $('#BufferQty').attr('disabled', true);
+        //$('.PrevAllotmentQty').attr('disabled', true);
+
+        $('#Available').prop('disabled', true);
+
+        $('#RemainQty').attr('disabled', true);
+        $('#BufferRepresentativeId').attr('disabled', true);
+
+
+
+
+
+
+        //$('#from').select2();
+        //$('#to').select2();
+
+        var bookingno = 0;
+        //$('#BookingNo').focus();
+        //$("#BookingNo").blur(function () {
+        //    var name = $('#BookingNo').val();
+        //    if (name.length == 0) {
+        //        toastr.error("Booking No is Required")
+        //        $("#BookingNo").focus();
+        //        return false;
+        //    }
+        //    else {
+        //        $('#BookingNo').next(".red").remove(); // *** this line have been added ***
+        //        return true;
+        //    }
+        //});
+        var Booking = [];
+        var tblBookindata;
+        $('#tblbufferlist').DataTable({
+            dom: '<"dom_wrapper "fl>tip',
+            //select: true,
+            //select:'multi',
+            "aoColumns": [
+
+                { "sClass": "BufferName", "visible": true },
+                { "sClass": "Year", "visible": true },
+                { "sClass": "Month", "visible": true },
+                { "sClass": "BufferWiseAllotment", "visible": true },
+                { "sClass": "TotalAllocated", "visible": true },
+                { "sClass": "Balance", "visible": true },
+                { "sClass": "BufferListId", "visible": true },
+                { "sClass": "BufferWBookingid", "visible": true },
+                
+
+            ],
+
+            language: {
+                sLengthMenu: "_MENU_",
+                search: "",
+                searchPlaceholder: "Search..."
+            }
+
+            //, columnDefs: [
+
+            //    {
+            //        'targets': 10,
+            //        'render': function(data, type, row) {
+            //            return '<input class="form-control form-control-sm txtAllotmentQty" id="AllotmentQty" name="AllotmentQty" type="text" onClick="this.select();" autocomplete="off" data-val="true" value=' + data + '>'
+
+            //        }
+            //    }
+
+
+            //],
+
+            //"scrollY": "400px",
+            //"scrollCollapse": true,
+            //"paging": false,
+            //select: true,
+            //select: 'multi'
+
+        });
+
+        //$('#FiscalMonthId').change(function () {
+        //    // alert('ok');
+
+        //    if ($('#BufferListId').val() > 0) {
+        //        AllotmentInfo();
+        //        $('#finalpanel').focus();
+        //    }
+
+        //});
+
+
+        //$('#BufferListId').change(function () {
+        //    // alert('ok');
+        //    var month = $('#FiscalYearId option:selected').text();
+        //    if (month == '--Select Year--') {
+        //        alert('Please Select Year First');
+        //        $('#BufferListId').val('--Select buffer--')
+        //    }
+
+        //});
+        //var month = $('#FiscalMonthId option:selected').val();
+        ////alert(month);
+
+        //$('#BufferListId').select2({})
+        //    .on('select2:select', function (e) {
+        //        if ($('#BufferListId').val() > 0 && $("#FiscalYearId").val() > 0) {
+        //            AllotmentInfo();
+        //            $('#finalpanel').focus();
+
+
+        //            //GetPoliceStation();
+        //            //DistWiseBookingQtyCheck($('#BufferListId').val())
+
+        //        }
+        //        else {
+        //            Swal.fire({
+        //                html: '<div class="text-danger">Please Select Fiscal Year First</ div > ',
+
+        //            });
+
+
+        //            $("#FiscalYearId").focus();
+
+
+        //        }
+        //    })
+
+
+        $('#AllotmentQty').keyup(function () {
+            // alert('ok');
+            var buffer = $('#BufferRepresentativeId option:selected').text();
+            var title = $('#view_title').html()
+
+            if (buffer == '--Select Carrier--') {
+                alert('Please Select Carrier First');
+                $('#AllotmentQty').val('0')
+            }
+
+            var totalAlot = $('#BufferQty').val();
+            var AvailavleQty = $('#Available').val();
+            var qty = $('#AllotmentQty').val();
+            var Alocated = $('#AlocatedQty').val();
+            var previousQty = $('#previousQty').val();
+
+
+            if (title == "Edit") {
+
+                if (parseInt(qty) > (parseInt(AvailavleQty) + parseInt(previousQty))) {
+                    Swal.fire({
+                        html: '<div class="text-danger">Out of limit</div> ',
+
+                    });
+                    $('#AllotmentQty').val('0')
+                }
+                else {
+                    var remain = parseInt(totalAlot) - ((parseInt(Alocated) - parseInt(previousQty)) + parseInt(qty))
+                    $('#RemainQty').val(remain)
+                }
+            }
+            else {
+
+
+                if (parseInt(qty) > parseInt(AvailavleQty)) {
+                    Swal.fire({
+                        html: '<div class="text-danger">Out of limit</div> ',
+
+                    });
+                    $('#AllotmentQty').val('0')
+
+                }
+                else {
+                    if (qty > 0) {
+                        var remain = parseInt(AvailavleQty) - parseInt(qty)
+                        $('#RemainQty').val(remain)
+                    }
+                    else {
+                        $('#RemainQty').val(AvailavleQty)
+                    }
+                }
+            }
+
+        });
+
+        //$('#BufferRepresentativeId').change(function () {
+        //    // alert('ok');
+        //    var buffer = $('#BufferListId option:selected').text();
+        //    //if (buffer == '--Select buffer--') {
+        //    //    alert('Please Select Buffer First');
+        //    //    $('#BufferRepresentativeId').val('--Select Carrier--')
+        //    //}
+
+        //});
+        $('#FiscalYearId').change(function (e) {
+            if ( $("#FiscalYearId").val() > 0) {
+                $('#BufferRepresentativeId').attr('disabled', false);
+                $('#BufferRepresentativeId').focus();
+
+
+                //GetPoliceStation();
+                //DistWiseBookingQtyCheck($('#BufferListId').val())
+
+            }
+           
+        })
+
+        $('#save').click(function () {
+            $('input[type=search]').val('').change();
+            //if (Booking > 0) {
+            alert("hit");
+            Booking_Save();
+            //} else {
+            //    alert('Select Record');
+            //}
+
+        })
+
+
+
+        //++++++++++++++++++++++++++++++++++++++++++++++ALLOTMENT++++++++++++++++++++++
+
+        // carrier wise allotment
+        //
+
+        $('#BufferRepresentativeId').on('select2:select', function (e) {
+            $(this).select2('destroy');
+            //e.preventDefault();
+            if ($('#BufferRepresentativeId').val() > 0 && $("#FiscalYearId").val() > 0) {
+                
+                AllotmentInfo();
+                document.getElementById("finalpanel").scrollIntoView();
+                
+                //$('#finalpanel').focus();
+                
+
+                //GetPoliceStation();
+                //DistWiseBookingQtyCheck($('#BufferListId').val())
+                $(this).select2();
+            }
+            else {
+                
+                Swal.fire({
+                    html: '<div class="text-danger">Please Select Fiscal Year First</div> ',
+
+                });
+
+
+              //  $("#FiscalYearId").focus();
+                
+                
+
+                //$('#BufferRepresentativeId').change();
+               
+
+            }
+        })
+
+        let table = $('#tblbufferlist').dataTable();
+
+        function AllotmentInfo() {
+            var MyAppUrlSettings = {
+                MyUsefulUrl: '@Url.Action("AllotmentInfo", "BufferRepresentativeWiseAllotement")'
+            }
+
+
+            var yearid = $('#FiscalYearId option:selected').val();
+            var carrierid = $('#BufferRepresentativeId option:selected').val();
+
+
+            table.fnClearTable()
+
+            $.ajax({
+                type: 'POST',
+                url: MyAppUrlSettings.MyUsefulUrl,
+                dataType: 'json',
+                async: false,
+                data: { id: carrierid, yearid: yearid, },
+
+                success: function (data) {
+                    console.log(data);
+
+                    console.log(data);
+                    if (data != 0) {
+                        //let html = `<tr>`;
+                        for (var i = 0; i < data.length; i++) {
+
+
+                            // html += `<td>${}</td>`;
+
+
+                            table.fnAddData([
+
+
+
+                                data[i].BufferName,
+                                data[i].Year,
+                                data[i].Month,
+                                data[i].BufferWiseAllotment,
+                                data[i].TotalAllocated,
+                                data[i].Balance,
+                                data[i].BufferListId,
+                                data[i].BufferWBookingid
+
+
+                            ])
+                        }
+
+                       
+
+                        //$('#save').prop('disabled', false);
+                        //$('#selectall').prop('disabled', false);
+                        //bookingDataCalculation();
+                    }
+                    else {
+                        toastr.error(data.ex);
+                    }
+
+                },
+                error: function (ex) {
+                    alert('Failed.' + ex);
+                }
+            });
+            return false;
+        };
+
+        $('#tblbufferlist tbody').on('click', 'tr', function () {
+            // get the data for the clicked row
+            var td = $(this).find('td');
+
+            $("#BufferQty").val(td[3].innerHTML);
+            $("#AlocatedQty").val(td[4].innerHTML);
+            $("#Available").val(td[5].innerHTML);
+            $("#BufferListIdset").val(td[6].innerHTML);
+            $("#Bufferbookingid").val(td[7].innerHTML);
+            $('#AllotmentQty').prop("disabled", false);
+            $('#AllotmentQty').focus();
+            $('#AllotmentQty').val(0);
+
+
+            // do something with the data
+
+        });
+        
+        //$('#FiscalYearId').change(function () {
+        //    let did = $("#FiscalYearId option:selected").val();
+        //    $.ajax({
+        //        url: '/ReceivedFromBufferBankAmount/getFiscalMonthName',
+        //        cache: false,
+        //        type: 'GET',
+        //        dataType: 'JSON',
+        //        data: { id: did },
+        //        success: function (mdata) {
+        //            console.log(mdata);
+        //            if (mdata.flag == "1") {
+        //                $('#FiscalMonthId').empty();
+        //                $('#FiscalMonthId').empty();
+        //                $.each(mdata.data, function (i, obj) {
+        //                    let s = '<option value="' + obj.MonthId + '">' + obj.MonthName + '</option>';
+        //                    $('#FiscalMonthId').append(s);
+        //                });
+        //            }
+        //        },
+        //        error: function (err) {
+        //            console.log(err);
+        //        }
+        //    });
+        //});
+
+                    //if ($('#FiscalMonthId').val() > 0) {
+                    //    $('#DistId').attr('disabled', false);
+                    //    $('#FiscalMonthId').attr('disabled', false);
+
+                    //};
+
+                    //if ($('#FiscalMonthId').val() > 0) {
+                    //    $('#DistAllotmentQty').attr('disabled', true);
+                    //    $('#AllotmentQty').attr('disabled', false);
+                    //};
+
+
+    </script>
+    }

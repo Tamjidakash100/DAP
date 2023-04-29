@@ -1,0 +1,324 @@
+﻿@model GTERP.Controllers.HR.HrReport.JobCardController.JobCard
+@{
+    ViewBag.Title = "Job Card";
+}
+<link href="~/Content/ProjectLibFile/css/customCssFile/customFormStyle.css" rel="stylesheet" />
+<style>
+
+    .disabled {
+        pointer-events: none;
+    }
+
+    .mCustomScrollbar {
+        height: 275px;
+        overflow: hidden;
+    }
+</style>
+
+@using (Html.BeginForm("Index", "JobCard", FormMethod.Post))
+{
+    <div class="card">
+        <div class="" style="margin-bottom: 0px">
+            <h4 class="form-header btn-info">
+                <i class="far fa-file-pdf"></i>&nbsp; Job Card
+                <div id="loading" style="display: inline;">
+                    <div id="loadingGif" style="display: inline;">
+                        <img src="~/Files/loading.gif" style="height: 16px; display: inline;" />
+                    </div>
+                </div>
+            </h4>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div id="criteriaDiv" class="col-md-4 col-12">
+                    <fieldset>
+                        <div class="form-check form-check-inline custom-radio pl-4">
+                            <input id="radioAll" name="Criteria" type="radio" class="custom-control-input" value="All" checked required>
+                            <label class="custom-control-label" for="radioAll">All</label>
+                        </div>
+                        <div class="form-check form-check-inline custom-radio pl-4">
+                            <input id="radioSect" name="Criteria" type="radio" class="custom-control-input" value="Section Wise" required>
+                            <label class="custom-control-label" for="radioSect">Section Wise</label>
+                        </div>
+                        <div class="form-check form-check-inline custom-radio pl-4">
+                            <input id="radioEmp" name="Criteria" type="radio" class="custom-control-input" value="Employee Wise" required>
+                            <label class="custom-control-label" for="radioEmp">Employee Wise</label>
+                        </div>
+                   
+                        @*<table>
+            <tr>
+                <td><input type="radio" name="criteria" id="radioAll" value="All"> <label for="radioAll" style="margin-right: 20px">ALL</label></td>
+                <td><input type="radio" name="criteria" id="radioSect" value="Section Wise"> <label for="radioSect" style="margin-right: 20px">Section Wise</label></td>
+                <td><input type="radio" name="criteria" id="radioEmp" value="Employee Wise"> <label for="radioEmp" style="margin-right: 20px">Employee Wise</label></td>
+            </tr>
+
+        </table>*@
+                    </fieldset>
+                </div>
+
+                <div id="dateDiv" class="col-md-8 col-12">
+                    <fieldset id="fieldset">
+                        <div id="dateTable" class="row">
+                            <div class="form-group col-md-6 col-12 mb-0">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            @Html.LabelFor(m => m.DtFrom)
+                                        </span>
+                                    </div>
+                                    <input id="DtFrom" name="DtFrom" class="datepicker form-control formInput" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6 col-12 mb-0">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            @Html.LabelFor(m => m.DtTo)
+                                        </span>
+                                    </div>
+                                    <input id="DtTo" name="DtTo" class="datepicker form-control formInput" />
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div id="contentDiv" class="col-12 col-md-12">
+                    <div class="row">
+                        <div id="sectionDiv" class="col-md-5 col-12">
+
+                            <fieldset id="fieldset" class="card p-3">
+                                <input type="text" id="sectSearchBox" placeholder="Search . . . " class="mb-2 col-12">
+                                <table class="table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th style="display: none">Section id</th>
+                                            <th>Section</th>
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <div id="sectionGrid" class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                                    <partial name="_SectionGridview" />
+                                </div>
+
+                            </fieldset>
+
+                        </div>
+
+                        <div id="employeeDiv" class="col-md-7 col-12">
+                            <fieldset id="fieldset" class="card p-3">
+                                <input type="text" id="empSearchBox" placeholder="Search . . . " class="mb-2 col-12">
+                                <table class="table  mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="d-none">Emp Id</th>
+                                            <th class="w-25">Emp Code</th>
+                                            <th>Employee Name</th>
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <div id="employeeGrid" class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                                    <partial name="_EmployeeGridview" />
+                                </div>
+
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <div id="buttonDiv" class="col-md-12 col-12 mt-3">
+
+                    <button id="reportButton" type="submit" formtarget="_blank" class="btn btn-primary btn-block rounded-0">
+                        <i class="fa fa-eye"></i> Report
+                    </button>
+
+                </div>
+            </div>
+
+        </div>            
+     </div>
+
+    @Html.HiddenFor(x => x.EmpId)
+    @Html.HiddenFor(x => x.SectId)
+}
+
+
+
+@section Scripts{
+
+    <script>
+
+        
+        $(document).ready(function () {
+
+            var empIsChanged, sectIsChanged;
+
+            //table search function
+            $.fn.extend({
+                filters: function (element) {
+                    $(this).keyup(function () {
+                        var searchText = $(this).val().toString().toLowerCase();
+
+                        $(element + " tbody tr").each(function () {
+                            var flag = false;
+                            $(this).children("td").each(function () {
+                                if ($(this).text().toLowerCase().indexOf(searchText) !== -1) {
+                                    flag = true;
+                                }
+                            });
+                            $(this).css("display", flag ? "" : "none");
+                        });
+                    });
+                    return $(this);
+                }
+            });
+
+            $("#sectSearchBox").filters("#sectTable");
+            $("#empSearchBox").filters(".employeeTable");
+
+    //table search function end
+
+
+        
+
+            var criteria, type, sect, emp = 0;
+            $(document).ready(function () {
+                empIsChanged = 0;
+                sectIsChanged = 0;
+                fadeTables();
+                resetTables();
+                disableTables();
+
+                $("#DtTo").datepicker({ format: "dd-M-yyyy" }).datepicker("setDate", new Date());
+                $("#DtFrom").datepicker({ format: "dd-M-yyyy" }).datepicker("setDate", new Date());
+
+
+
+
+                $("input[type='radio']").click(function () {
+                    var radioValue = $("input[name='Criteria']:checked").val();
+
+                    criteria = $.trim($(this).val());
+
+                    if (criteria == "All") {
+                        resetTables();
+                        fadeTables();
+                        disableTables();
+                    } else if (criteria == "Section Wise") {
+                        resetTables();
+                        fadeTables();
+                        disableTables();
+                        $('#sectionDiv').fadeTo('slow', 1);
+                        $('#sectionDiv').removeClass('disabled');
+                        sectIsChanged = 1;
+                    } else if (criteria == "Employee Wise") {
+                        resetTables();
+                        fadeTables();
+                        disableTables();
+                        $('#employeeDiv').fadeTo('slow', 1);
+                        $('#employeeDiv').removeClass('disabled');
+                        empIsChanged = 1;
+                    }
+                });
+
+
+              
+
+                //$(".isChecked").on("ifChecked", function () {
+                //    $(".isChecked").not(this).iCheck('uncheck');
+                //});
+
+                //report button click function
+                $('#reportButton').click(function () {
+                    emp = 0;
+                    sect = 0;
+
+                    if (empIsChanged === 0 && sectIsChanged === 0) {
+                        $("#EmpId").val(emp);
+                        $("#SectId").val(sect);
+                    }
+                    else {
+
+                        emp = $("#employeeTable tr.clicked td:eq(0)").text();
+                        if (empIsChanged === 0) {
+                            emp = 0;
+                            sect = $("#sectTable tr.clicked td:eq(0)").text();
+                        }
+                        $("#EmpId").val(emp);
+                        $("#SectId").val(sect);
+
+                        empIsChanged = 0;
+                        sectIsChanged = 0;
+                    }
+                });
+
+                $("#loading").css("display", "none");
+            });
+
+            //report button click function end
+
+            $("input:radio[id=radioAll]").attr('checked', true);
+
+            //Datepicker initialization
+            $(function () {
+                //$(".datepicker").datepicker();
+                $(".datepicker").datepicker({
+                    autoclose: true,
+                    format: "dd-M-yyyy"
+                });
+                $('#DtFrom').datepicker()
+                    .on('changeDate', function (ev) {
+                        $('#DtFrom').datepicker('hide');
+                    });
+                $('#DtTo').datepicker()
+                    .on('changeDate', function (ev) {
+                        $('#DtTo').datepicker('hide');
+                    });
+            });
+            //datepicker init end
+
+            // Add click effect to a table
+            $(document).on("click", ".table tbody tr", function () {
+                $(this).addClass("clicked").siblings().removeClass("clicked");
+            });
+
+            $(document).on("click", ".employeeTable tbody tr", function () {
+                empIsChanged = 1;
+                sectIsChanged = 0;
+            });
+
+            $(document).on("click", "#sectTable tbody tr", function () {
+                sectIsChanged = 1;
+                empIsChanged = 0;
+            });
+
+            //function to fade tables
+            function fadeTables() {
+
+                $('#employeeDiv').fadeTo('slow', .5);
+                $('#sectionDiv').fadeTo('slow', .5);
+
+            }
+
+            //function to disable tables
+            function disableTables() {
+                $('#employeeDiv').addClass('disabled');
+                $('#sectionDiv').addClass('disabled');
+            }
+
+
+            //function to reset tables
+
+            function resetTables() {
+                $(".table tbody tr:first-child").addClass("clicked").siblings().removeClass('clicked');
+            }
+        });
+
+        
+
+    </script>
+}

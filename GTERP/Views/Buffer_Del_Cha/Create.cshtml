@@ -1,0 +1,499 @@
+﻿@model GTERP.Models.Buffers.BufferDelChallan
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var Total = "";
+    var Title = ViewBag.Title;
+}
+@using (Html.BeginForm("Create", "Buffer_Del_Cha", FormMethod.Post))
+{
+    <div id="divProformaInvoice" class="row" style="max-width:100%">
+
+
+        <div class="col-md-12 ">
+            <div class="text-center">
+                <H2>Delivey Chalan <span id="titleName">@Title</span></H2>
+            </div>
+            @if (ViewBag.Title == "Edit")
+            {
+                <div class="card p-2">
+
+
+                    <div class="row mt-3">
+
+
+                        <div class="col-md-6">
+                            <input name="RepresentativeBookingId" id="RepresentativeBookingId" value=@Model.RepresentativeBookingId hidden />
+                            <input name="BufferDelChallanId" id="BufferDelChallanId" value=@Model.BufferDelChallanId  hidden/>
+
+
+                            <div id="ChallanNo" class="col-12">
+                                <span class="text-right">
+                                    <label>Challan No</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("ChallanNo", Model.ChallanNo, new { id = "ChallanNo", @class = "form-control form-control-sm", ReadOnly = true })
+                                </span>
+                            </div>
+                            <div class="col-12">
+                                <span class="text-right">
+                                    <label>Buffer Representative</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.DropDownList("BufferRepresentativeId", ViewBag.BufferRepresentativeId as List<SelectListItem>,new { id = "BufferRepresentativeId", @class = "form-control form-control-sm",name="BufferRepresentativeId",disabled = "disabled" })
+                                </span>
+                            </div>
+                            <div id="divDistAllotment" class=" col-12">
+                                <span class="text-right">
+                                    <label>Total Alocated</label>
+                                </span>
+                                <input type="text" id="AlocatedQty" value=@Model.alreadyAlocated hidden/>
+                                <span class="input-group">
+                                    @Html.TextBox("TotalAllocated", Model.TotalAllocated, new { id = "TotalAllocated", @class = "form-control form-control-sm",@readonly = "readonly"  })
+                                </span>
+                            </div>
+                            <div id="divDistAllotment" class=" col-12">
+                                <span class="text-right">
+                                    <label>Avilable Qty</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("Available", Model.Available, new { id = "Available", @class = "form-control form-control-sm",@readonly = "readonly"  })
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+
+
+                            <div id="divstyle" class="col-12">
+                                <span class="text-right">
+                                    <label>Buffer Carrier</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.DropDownList("RepresentativeMemberId", ViewBag.RepresentativeMemberList as List<SelectListItem>, new { id = "RepresentativeMember", @class = "form-control form-control-sm",name="RepresentativeMemberId",disabled="disabled" })
+                                </span>
+                            </div>
+
+
+                            <div id="divAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label>Chalan Qty</label>
+                                </span>
+                                <input type="number" id="previousQty" value="@Model.DeliveryQty" hidden   />
+                                <span class="input-group">
+                                    @Html.TextBox("DeliveryQty", Model.DeliveryQty, new { id = "DeliveryQty", @class = "form-control form-control-sm",name="DeliveryQty" })
+                                </span>
+                            </div>
+
+                            <div id="divAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label>Remainig Qty</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("RemainQty", "", new { id = "RemainQty", @class = "form-control form-control-sm", @readonly = "readonly" })
+                                </span>
+                            </div>
+                            <div id="divAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label> Date</label>
+                                </span>
+                                <span class="input-group">
+
+                                    @Html.TextBoxFor(model => model.DeliveryDate, new { id = "DeliveryDate", @class = "form-control form-control-sm",name="DeliveryDate"})
+                                </span>
+                            </div>
+                            <div class="text-center col-12">
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-success btn-block mt-4">Update</button>
+                                    </div>
+                                    <div class="col">
+                                        <a asp-action="Index" class="btn btn-info btn-block mt-4 mb-4">Back to List</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="card p-2">
+
+
+                    <div class="row mt-3">
+
+
+                        <div class="col-md-6">
+                            <input name="RepresentativeBookingId" id="RepresentativeBookingId" value="" hidden/>
+
+                            <div id="ChallanNo" class="col-12">
+                                <span class="text-right">
+                                    <label>Challan No</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("ChallanNo", ViewBag.lastChalanNo,"", new { id = "ChallanNo", @class = "form-control form-control-sm",@readonly = "readonly" })
+                                </span>
+                            </div>
+                            <div class="col-12">
+                                <span class="text-right">
+                                    <label>Carrier Org</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.DropDownList("BufferRepresentativeId", ViewBag.BufferRepresentativeId as List<SelectListItem>, "--Select Representative--",new { id = "BufferRepresentativeId", @class = "form-control form-control-sm",name="BufferRepresentativeId" })
+                                </span>
+                            </div>
+                              <div id="divDistAllotment" class=" col-12">
+                                <span class="text-right">
+                                    <label>Buffer Name</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("Buffer", "", new { id = "Buffer", @class = "form-control form-control-sm",@readonly = "readonly"  })
+                                </span>
+                            </div> 
+                            <div id="divDistAllotment" class=" col-12">
+                                <span class="text-right">
+                                    <label>Order No</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("OrderNo", "", new { id = "OrderNo", @class = "form-control form-control-sm",@readonly = "readonly"  })
+                                </span>
+                            </div>
+                             <div id="divDistAllotment" class=" col-12">
+                                <span class="text-right">
+                                    <label>Total Alocated</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("TotalAllocated", "", new { id = "TotalAllocated", @class = "form-control form-control-sm",@readonly = "readonly"  })
+                                </span>
+                            </div>
+                            <div id="divDistAllotment" class=" col-12">
+                                <span class="text-right">
+                                    <label>Avilable Qty</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("Available", "", new { id = "Available", @class = "form-control form-control-sm",@readonly = "readonly"  })
+                                </span>
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+
+
+                            <div id="divstyle" class="col-12">
+                                <span class="text-right">
+                                    <label> Carrier Person </label>
+                                </span>
+                                <span class="input-group">
+                                    <select asp-for="RepresentativeMemberId" id="RepesentativeMember" class="form-control">
+                                        <option>Select Carrier </option>
+                                    </select>
+                                    <span asp-validation-for="RepresentativeMemberId" class="text-danger"></span>
+
+                                   
+                                </span>
+                            </div>
+                           
+
+                            <div id="divAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label>Chalan Qty</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("DeliveryQty", "", new { id = "DeliveryQty", @class = "form-control form-control-sm",name="DeliveryQty" })
+                                </span>
+                            </div>
+
+                            <div id="divAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label>Remainig Qty</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("RemainQty", "", new { id = "RemainQty", @class = "form-control form-control-sm", @readonly = "readonly" })
+                                </span>
+                            </div>
+                            <div id="divAllotment" class="col-12">
+                                <span class="text-right">
+                                    <label>Chalan Date (mm/dd/yy)</label>
+                                </span>
+                                <span class="input-group">
+                                   
+                                    @Html.TextBoxFor(model => model.DeliveryDate, new { id = "DeliveryDate", @class = "form-control form-control-sm",name="DeliveryDate"})
+                                    
+                                </span>
+                            </div>
+
+                        <div class="text-center col-12">
+                              <div class="row">
+                                <div class="col">
+                                 <button type="submit" class="btn btn-success btn-block mt-4">Save</button>
+                                </div>
+                                <div class="col">
+                                  <a asp-action="Index" class="btn btn-info btn-block mt-4 mb-4">Back to List</a>
+                                </div>
+                              </div>
+                        </div> 
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="finalpanel"  class="card p-2">
+
+                    <div class="table-responsive text-nowrap">
+                        <table id="tblbufferlist" tabindex="0" class="table tbllist table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                   <th>Booking Id</th>
+                                    <th>Order No</th>
+
+
+                                    <th>Buffer Name</th>
+                                    <th>Year</th>
+                                    <th>Month</th>
+
+                                    <th>Representative Code</th>
+                                    <th>Representative Name</th>
+                                    <th>Allotment Qty</th>
+                                    <th>Remain Qty</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody id="TabBody"></tbody>
+                            <tfoot>
+                                <tr></tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+                </div>
+            }
+
+
+
+
+        </div>
+    </div>
+}
+
+
+@section Scripts
+    {
+    <script>
+        //BufferListId
+        $(document).ready(() => {
+            //const myInput = document.getElementById("DeliveryQty");
+           // myInput.disabled = true;
+            var today = new Date();
+            var date = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
+            $('#DeliveryDate').datepicker({ dateFormat: 'mm/dd/yy' });
+            $('#DeliveryDate').val(date);
+
+            $('#BufferRepresentativeId').select2();
+            $('#BufferRepresentativeId').on('select2:select', function (e) {
+                $(this).select2('destroy');
+                if ($('#BufferRepresentativeId').val() > 0) {
+
+                    AllotmentInfo();
+                    const myTable = document.getElementById("tblbufferlist")
+
+                    myTable.focus();
+                    $(this).select2();
+                }
+                else {
+                    alert('Please Select Buffer Information First');
+                }
+            })
+
+
+            $('#DeliveryQty').keyup(function () {
+                // alert('ok');
+                var buffer = $('#RepresentativeMember option:selected').text();
+                var title = $('#titleName').html()
+
+                if (buffer == '--Select Carrier--') {
+                    alert('Please Select Carrier First');
+                    $('#AllotmentQty').val('0')
+                }
+
+                var totalAlot = $('#TotalAllocated').val();
+                var AvailavleQty = $('#Available').val();
+                var qty = $('#DeliveryQty').val();
+                var Alocated = $('#AlocatedQty').val();
+                var previousQty = $('#previousQty').val();
+
+
+                if (title == "Edit") {
+
+                    if (parseInt(qty) + (parseInt(Alocated) - parseInt(previousQty)) > parseInt(totalAlot)) {
+                        alert('Out of Limit');
+                        $('#DeliveryQty').val('0')
+                        $('#RemainQty').val('0')
+                    }
+                    else {
+                        var remain = parseInt(totalAlot) - ( (parseInt(Alocated) - parseInt(previousQty)) + parseInt(qty))
+                        $('#RemainQty').val(remain)
+                    }
+                }
+                else {
+
+
+                    if (parseInt(qty) > parseInt(AvailavleQty)) {
+                        //alert('Out of Limit');
+                        Swal.fire({
+                            html: '<div class="text-danger">"Out of limit</div>',
+
+                        });
+                        $('#DeliveryQty').val('0')
+
+                    }
+                    else {
+                        if (qty > 0) {
+                            var remain = parseInt(AvailavleQty) - parseInt(qty)
+                            $('#RemainQty').val(remain)
+                        }
+                        else {
+                            $('#RemainQty').val(AvailavleQty)
+                        }
+                    }
+                }
+
+            });
+
+
+
+            let table = $('#tblbufferlist').dataTable({
+                dom: '<"dom_wrapper "fl>tip',
+                select: {
+                    style: 'single'
+                },
+
+                language: {
+                    sLengthMenu: "_MENU_",
+                    search: "",
+                    searchPlaceholder: "Search..."
+                }
+            });;
+           
+
+            function AllotmentInfo() {
+                var BufferRepresentativeId = $('#BufferRepresentativeId').val();
+                $("#TabBody").html('')
+
+
+
+                table.fnClearTable()
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("AllotmentInfo", "Buffer_Del_Cha")',
+                    dataType: 'json',
+                    data: { id: BufferRepresentativeId },
+                    async: false,
+                    success: function (data) {
+
+                        if (data != 0) {
+                            //let html = `<tr>`;
+                            for (var i = 0; i < data.length; i++) {
+
+                                // html += `<td>${}</td>`;
+
+                                
+                                table.fnAddData([
+
+                                    data[i].RepresentativeBookingId,
+                                    data[i].OrderNo,
+
+                                    data[i].Buffer,
+                                    data[i].Year,
+                                    data[i].Month,
+
+                                    data[i].RepresentativeCode,
+                                    data[i].RepresentativeName,
+                                    data[i].AllotmentQty,
+                                    data[i].RemainingQty
+
+
+                                ])
+                            }
+
+                            document.getElementById("tblbufferlist").focus();
+                            
+                            //$('#save').prop('disabled', false);
+                            //$('#selectall').prop('disabled', false);
+                            //bookingDataCalculation();
+                        }
+                        else {
+                            toastr.error(data.ex);
+                        }
+                    },
+                    error: function (ex) {
+                        alert('Failed.' + ex);
+                    }
+                })
+
+
+            }
+
+            $('#tblbufferlist tbody').on('click', 'tr', function () {
+                // get the data for the clicked row
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected');
+                } else {
+                    table.$('tr.selected').removeClass('selected');
+                    $(this).addClass('selected');
+                }
+
+                var td = $(this).find('td');
+
+                $("#RepresentativeBookingId").val(td[0].innerHTML);
+                $("#TotalAllocated").val(td[7].innerHTML);
+                $("#Available").val(td[8].innerHTML);
+                $("#Buffer").val(td[2].innerHTML);
+                $("#OrderNo").val(td[1].innerHTML);
+
+                myInput.disabled = false;
+                
+                myInput.focus();
+                myInput.value=0;
+            
+
+                // do something with the data
+                
+            });
+        })
+
+        //Get member
+        $('#BufferRepresentativeId').change(function () {
+            let did = $("#BufferRepresentativeId option:selected").val();
+            $.ajax({
+                url: '@Url.Action("getRepesentativeMember", "Buffer_Del_Cha")',
+                cache: false,
+                type: 'GET',
+                dataType: 'JSON',
+                data: { id: did },
+                success: function (mdata) {
+                    //console.log(mdata);
+                    if (mdata.flag == "1") {
+                        //$('#BankName').empty();
+                        $('#RepesentativeMember').empty();
+                        $.each(mdata.data, function (i, obj) {
+                            let s = '<option value="' + obj.Id + '">' + obj.Name + '</option>';
+                            $('#RepesentativeMember').append(s);
+                        });
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+});
+
+    </script>
+  }
+

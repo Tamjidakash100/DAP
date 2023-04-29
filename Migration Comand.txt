@@ -1,0 +1,5 @@
+Add-Migration 1stInitialfromfahad -Context GTERP.Model.GTRDBContext
+
+Update-Database -Context GTERP.Models.GTRDBContext -verbose
+
+Remove-Migration -Context GTERP.Models.GTRDBContext

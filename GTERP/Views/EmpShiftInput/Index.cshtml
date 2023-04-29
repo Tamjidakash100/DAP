@@ -1,0 +1,325 @@
+﻿@using GTERP.Controllers.HR
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@model GTERP.Models.HR_Emp_ShiftInput
+
+@{
+    var employees = ViewBag.EmployeeInfo;
+    List<Cat_Shift> shifts = ViewBag.Shift;
+}
+<link href="~/Content/ProjectLibFile/css/customCssFile/customFormStyle.css" rel="stylesheet" />
+<style type="">
+</style>
+<div class="container-fluid">
+    <div class="card">
+        <h4 class="form-header btn-info">
+            <i class="far fa-file-alt"></i>  Employee Shift Entry
+        </h4>
+
+        <div class="card-body p-2">
+            <div id="modalbodyfahad" class="row p-4">
+                <div class="col-md-12 col-12">
+                    <div class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-4 col-12 border-right">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                From Date
+                                            </span>
+                                        </div>
+                                        @Html.TextBoxFor(m => m.FromDate, new { @class = "form-control", required = "required" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                To Date
+                                            </span>
+                                        </div>
+                                        @Html.TextBoxFor(m => m.ToDate, new { @class = "form-control", required = "required" })
+                                    </div>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-md-6 col-12 d-block pt-3">
+                                        @Html.LabelFor(m => m.IsMain)
+                                        @Html.CheckBoxFor(m => m.IsMain)
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <input type="button" value="Save" id="btnSave" class="rounded-0 btn btn-primary btn-block" />
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 col-12">
+                                <table id="tblShift" class="table table-sm table-hover table-striped" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ShiftId</th>
+                                            <th>Shift Name</th>
+                                            <th>Shift In</th>
+                                            <th>Shift Out</th>
+                                            <th>Reg Hour</th>
+                                            <th>Shift Type</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (shifts.Count > 0)
+                                        {
+                                            foreach (var item in shifts)
+                                            {
+                                                <tr>
+                                                    <td>@item.ShiftId</td>
+                                                    <td>@item.ShiftName</td>
+                                                    <td>@item.ShiftIn</td>
+                                                    <td>@item.ShiftOut</td>
+                                                    <td>@item.RegHour</td>
+                                                    <td>@item.ShiftType</td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="mCustomScrollbar" data-mcs-theme="minimal-dark" style="height: 420px;">
+                        <input type="button" class="btn btn-warning float-right rounded-0" value="Select All" id="btn" />
+                        <table id="tblEmp" class="table table-hover table-striped" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>EmpId</th>
+                                    <th>Emp Name</th>
+                                    <th>Emp Code</th>
+                                    <th>Shift</th>
+                                    <th>Department</th>
+                                    <th>Section</th>
+                                    <th>Designation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @*@if (employees.Conut>0)
+                                    {*@
+                                @foreach (var item in employees)
+                                {
+                                    <tr>
+                                        <td>@item.EmpId</td>
+                                        <td>@item.EmpName</td>
+                                        <td>@item.EmpCode</td>
+                                        <td>@item.Shift</td>
+                                        <td>@item.Department</td>
+                                        <td>@item.Section</td>
+                                        <td>@item.Designation</td>
+                                    </tr>
+                                }
+                                @* } *@
+                            </tbody>
+
+                        </table>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+
+            $("#btn").click(function () {
+                if ($("#btn").val() == "Select All") {
+                    $('#tblEmp tbody tr').each(function () {
+                        if ($(this).hasClass("selected")) {
+                            $(this).removeClass("selected");
+                        }
+                        $(this).addClass("selected");
+                    });
+                    $("#btn").val("DeSelect All");
+                }
+                else {
+                    $('#tblEmp tbody tr').each(function () {
+                        if ($(this).hasClass("selected")) {
+                            $(this).removeClass("selected");
+                        }
+                    });
+                    $("#btn").val("Select All");
+                }
+            });
+
+            $("#FromDate").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                onSelect: function (date) {
+                    // Your CSS changes, just in case you still need them
+                    $('a.ui-state-default').removeClass('ui-state-highlight');
+                    $(this).addClass('ui-state-highlight');
+                    var dateFormat = $("#FromDate").datepicker("option", "dateFormat");
+                    //setter
+                    $("#FromDate").datepicker("option", "dateFormat", 'dd-M-yy');
+                }
+            });
+            $("#ToDate").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                onSelect: function (date) {
+                    // Your CSS changes, just in case you still need them
+                    $('a.ui-state-default').removeClass('ui-state-highlight');
+                    $(this).addClass('ui-state-highlight');
+                    var dateFormat = $("#ToDate").datepicker("option", "dateFormat");
+                    //setter
+                    $("#ToDate").datepicker("option", "dateFormat", 'dd-M-yy');
+                }
+            });
+
+
+            var tblEmp = $('#tblEmp').DataTable({
+                'columnDefs': [
+                    {
+                        'targets': 0,
+                        'visible': false,
+                        'className': 'chkAllPost'
+
+                    }
+                ],
+                'paging': false,
+                language: { search: '', searchPlaceholder: "Search..." },
+                //'searching': false,
+               dom: 'frtip',
+                //buttons: [
+                //    //'selected',
+                //    //'selectedSingle',
+                //    'selectAll',
+                //    'selectNone'
+                //    //{
+                //    //    text: 'Process',
+                //    //    className: "btn-success",
+                //    //    action: function (e, dt, node, config) {
+                //    //        //alert('Button activated');
+                //    //        fncSubmit();
+                //    //    }
+                //    //}
+                //    //'selectRows',
+                //    //'selectColumns',
+                //    //'selectCells'
+                //],
+                'info': false
+
+            }
+            );
+           var tblShift = $('#tblShift').DataTable({
+            select: true,
+            select: 'single',
+            'columnDefs': [
+                {
+                    'targets': 0,
+                    'visible': false,
+                    'className': 'chkAllPostFY'
+
+                }
+            ],
+                'paging': false,
+                'info': false,
+            'searching': false
+
+        });
+
+            $('#tblEmp tbody').on('click', 'tr', function () {
+                $(this).toggleClass('selected');
+            });
+
+             $("#btnSave").click(function () {
+
+                var emprows = tblEmp.rows('.selected').data();
+                 var shiftrows = tblShift.rows('.selected').data();
+
+                 if ($('#FromDate').val()=='') {
+                     $('#FromDate').focus();
+                     return;
+                 }
+                 if ($('#ToDate').val()=='') {
+                     $('#FromDate').focus();
+                     return;
+                 }
+
+                 if (shiftrows.length<1) {
+                     alert("Select Any Shift.");
+                     return;
+                 }
+                 if (emprows.length < 1) {
+                     alert("Select Any Employee.");
+                     return;
+                 }
+
+
+                 //console.log(emprows);
+
+
+                 //var singleshipt = shiftrows[0];
+                 //console.log(singleshipt[0])
+
+                var empShifts = [];
+
+                 for (var i = 0; i < emprows.length; i++) {
+                     var rowData = emprows[i];
+                        //alert(rowData[0]);
+                        console.log(rowData);
+                     var empShift = {
+                         ShiftInputId: 0,
+                         ComId: '@HttpContextAccessor.HttpContext.Session.GetString("comid")',
+                         DtDate: new Date(),
+                         FromDate: $('#FromDate').val(),
+                         ToDate: $('#ToDate').val(),
+                         EmpId: rowData[0],
+                         ShiftId: shiftrows[0][0],
+                         IsMain:$('#IsMain').val(),
+                         PcName: '',
+                         UserId: '@HttpContextAccessor.HttpContext.Session.GetString("userid")',
+                         DtTran:new Date()
+                     }
+                     empShifts.push(empShift);
+
+                    }
+                //console.log(monthid);
+                //alert(monthid);
+
+                     //var Currency =  $('CountryId').val();
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("EmpShiftPost", "EmpShiftInput")',
+                        dataType: 'json',
+                        async: true,
+                        data: { empShifts: empShifts },
+                        success: function (result) {
+                             if (result.Success == "1") {
+                                 customFile('1', result.ex);
+                                  window.setTimeout(function () {
+                                 // Move to a new location or you can do something else
+                                 window.location.href = '@Url.Action("Index", "EmpShiftInput")';
+                                }, 500);
+                             }
+                             else {
+                                    toastr.error(result.ex);
+                             }
+                        },
+                        error: function (ex) {
+                            alert('Failed.' + ex);
+                        }
+
+                    });
+                });
+
+        });
+
+
+
+    </script>
+}

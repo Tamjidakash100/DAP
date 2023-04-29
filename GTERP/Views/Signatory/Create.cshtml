@@ -1,0 +1,321 @@
+﻿@model GTERP.Models.Cat_ReportSignatory
+
+<style>
+
+    #styletext {
+        color: transparent;
+        background: #666666;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+        font-weight: 100;
+        font-size: 40px;
+    }
+</style>
+
+@using (Html.BeginForm("Create", "Signatory", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @*@Html.AntiForgeryToken()*@
+
+    <div class="container">
+        <div class="text-center">
+
+            <h1 id="styletext">Signatory</h1>
+            <p class="lead"></p>
+        </div>
+
+        @if (Model != null)
+        {
+            <input type="hidden"  asp-for="SignatoryId" value="@Model.SignatoryId" />
+        }
+        else
+        {
+            <input type="hidden" asp-for="SignatoryId" value="0" />
+        }
+        <div id="modalbodyfahad" class="row">
+            <div class="col-md-12 order-md-1">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="text-center">@ViewBag.Title Signatory</h6>
+                </div>
+                <div class="card-body p-2">
+                <form class="needs-validation" novalidate>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.Module)
+                                        </span>
+                                    </div>
+                                    <select asp-for="Module" class="form-control">
+                                        <option value="Production">Production</option>
+                                    </select>
+                                    @Html.ValidationMessageFor(model => model.Module, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ReportName)
+                                        </span>
+                                    </div>
+                                    <select asp-items="ViewBag.ReportName" asp-for="ReportName"></select>
+                                    @Html.ValidationMessageFor(model => model.ReportName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.FromDate)
+                                        </span>
+                                    </div>
+                                    <input type="date" asp-for="FromDate" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.FromDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ToDate)
+                                        </span>
+                                    </div>
+                                    <input type="date" asp-for="ToDate" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.ToDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.Signatory1)
+                                        </span>
+                                    </div>
+                                    <input asp-for="Signatory1" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.Signatory1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.Signatory1B)
+                                        </span>
+                                    </div>
+                                    <input asp-for="Signatory1B" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.Signatory1B, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.Signatory2)
+                                        </span>
+                                    </div>
+                                    <input asp-for="Signatory2" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.Signatory2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.Signatory2B)
+                                        </span>
+                                    </div>
+                                    <input asp-for="Signatory2B" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.Signatory2B, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.Signatory3)
+                                        </span>
+                                    </div>
+                                    <input asp-for="Signatory3" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.Signatory3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.Signatory3B)
+                                        </span>
+                                    </div>
+                                    <input asp-for="Signatory3B" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.Signatory3B, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.Signatory4)
+                                        </span>
+                                    </div>
+                                    <input asp-for="Signatory4" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.Signatory4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.Signatory4B)
+                                        </span>
+                                    </div>
+                                    <input asp-for="Signatory4B" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.Signatory4B, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.Signatory5)
+                                        </span>
+                                    </div>
+                                    <input asp-for="Signatory5" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.Signatory5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.Signatory5B)
+                                        </span>
+                                    </div>
+                                    <input asp-for="Signatory5B" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.Signatory5B, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.Signatory6)
+                                        </span>
+                                    </div>
+                                    <input asp-for="Signatory6" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.Signatory6, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.Signatory6B)
+                                        </span>
+                                    </div>
+                                    <input asp-for="Signatory6B" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.Signatory6B, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row m-2">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4 col-12">
+
+                                @if (ViewBag.Title == "Create")
+                                {
+                                    <input type="submit" value="Save" class="btn btn-primary rounded-0 btn-block" />
+
+                                    @*<button class="btn btn-primary btn-lg btn-block" type="button" onclick="Products_save()">Save</button>*@
+                                }
+                                else if (ViewBag.Title == "Edit")
+                                {
+                                    <input type="submit" value="Update" class="btn btn-warning btn-block rounded-0" />
+
+                                    @*<button class="btn btn-warning btn-lg btn-block" type="button" onclick="Products_save()">Update</button>*@
+                                }
+                                else if (ViewBag.Title == "Delete")
+                                {
+                                    <button class="btn btn-danger rounded-0 btn-block" type="button" onclick="Signatory_delete()">Delete</button>
+                                }
+
+
+                            </div>
+                            <div class="col-md-4 col-12">
+                                @Html.ActionLink("Back", "Index", "Signatory", null, new { @class = "btn btn-info btn-block rounded-0", @id = "btnBack" })
+
+                            </div>
+                            <div class="col-md-2"></div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+@section Scripts{
+    <script>
+
+    $("#ReportName").select2();
+
+    function Signatory_delete() {
+
+        var SignatoryId = $("#SignatoryId").val();
+            //alert(SalesId);
+            $.ajax({
+
+                url: '@Url.Action("Delete", "Signatory")',
+                //url: '@Url.Action("Delete")',
+                data: JSON.stringify({ id: SignatoryId }), //use id here
+                //data: JSON.stringify(salesmain),
+                type: 'POST',
+                contentType: 'application/json;',
+                dataType: 'json',
+                success: function (result) {
+                if (result.Success == "1") {
+                    customFile('3', result.ex);
+                    window.setTimeout(function () {
+                        // Move to a new location or you can do something else
+                        window.location.href = '@Url.Action("Index", "Signatory")';
+                    }, 500);
+                }
+                else {
+                    toastr.error(result.ex);
+                }
+            }
+            });
+    }
+    </script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

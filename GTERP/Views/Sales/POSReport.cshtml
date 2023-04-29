@@ -1,0 +1,274 @@
+﻿
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@Html.AntiForgeryToken()
+@model GTERP.Models.SalesMain
+
+@{
+
+    string CompanyName = @HttpContextAccessor.HttpContext.Session.GetString("CompanyName").ToString();
+    string PrimaryAddress = @HttpContextAccessor.HttpContext.Session.GetString("PrimaryAddress").ToString();
+    string SecoundaryAddress = @HttpContextAccessor.HttpContext.Session.GetString("SecoundaryAddress").ToString();
+    string comPhone = @HttpContextAccessor.HttpContext.Session.GetString("comPhone").ToString();
+    string comWeb = @HttpContextAccessor.HttpContext.Session.GetString("comWeb").ToString();
+    string comEmail = @HttpContextAccessor.HttpContext.Session.GetString("comEmail").ToString();
+    string CompanyAddressBangla = @HttpContextAccessor.HttpContext.Session.GetString("CompanyAddressBangla").ToString();
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>
+    </title>
+
+    <script type="text/javascript">
+        function ClosePrint() {
+            var print = document.getElementById("print");
+            print.style.visibility = "hidden";
+            //            print.display = false;
+
+            window.print();
+        }
+    </script>
+
+    <style media="print">
+
+        .showHeader thead {
+            display: table-header-group;
+            border: 1px solid #000;
+        }
+
+        .style8 {
+            text-align: left;
+            font-family: Calibri;
+            font-size: 16px;
+            width: 44mm;
+        }
+
+        .style9 {
+            font-size: 14px;
+            text-align: left;
+            width: 60%;
+        }
+
+        .style13 {
+            width: 2px;
+            font-weight: 700;
+        }
+
+        .style16 {
+            width: 815px;
+            font-weight: bold;
+            font-family: Calibri;
+            font-size: 16px;
+        }
+
+        .style18 {
+            width: 151px;
+            font-weight: bold;
+        }
+
+        .style19 {
+            font-size: 10px;
+            width: 148px;
+        }
+
+        .style1 {
+            font-family: Calibri;
+            font-size: 20px;
+            width: 849px;
+        }
+
+        .style22 {
+            font-family: Calibri;
+            font-size: 16px;
+        }
+
+        .style23 {
+            width: 182px;
+        }
+
+        .style24 {
+            width: 189px;
+        }
+
+        .style25 {
+            width: 6px;
+        }
+
+        .style26 {
+            width: 4px;
+        }
+
+        .style27 {
+            width: 425px;
+        }
+
+        .style28 {
+            font-family: Calibri;
+            font-size: 10px;
+            width: 425px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" id="form1">
+        <h3>
+            @{
+                System.Globalization.CultureInfo BDFormat = new System.Globalization.CultureInfo("hi-IN");
+            }
+
+        </h3>
+        <div id="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-10">
+                        <h3 class="text-center">@CompanyName</h3>
+                    </div>
+                    <div class="col-md-12 col-12 text-center">
+                        <span>
+                            @PrimaryAddress
+                            @SecoundaryAddress
+                            @comPhone
+                            @comEmail
+                            @comWeb
+                        </span>
+                        <span class="float-right">
+                            <input id="print" tabindex="1" type="button" value="Print" onclick="ClosePrint()" />
+                        </span>
+                    </div>
+                    <div class="col-md-12 col-12 text-center">
+                        <h5>Thank you !!!</h5>
+
+                        <h5>------Sales Invoice------</h5>
+                    </div>
+                </div>
+                <div class="col-md-12 col-12">
+                    <div class="row">
+                        <div class="col-md-4 col-12 border border-dark">
+                            No : @Model.SalesNo
+                        </div>
+                        <div class="col-md-4 col-12 border border-dark">
+                            For : @Model.vCustomertName.CustomerName
+                        </div>
+                        <div class="col-md-4 col-12 border border-dark">
+                            @Model.PrimaryAddress
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    <thead class="text-center" style="font-family:Tahoma;font-size:11px;">
+                        <tr class="text-nowrap">
+                            <th>SL.</th>
+                            <th>Qty.</th>
+                            <th>Description</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            decimal amount = 0;
+                            decimal unitprice = 0;
+
+                            int slno = 0;
+                            decimal sumqty = 0;
+                            decimal countqty = 0;
+                            decimal sumamount = 0;
+
+
+
+                            foreach (var item in Model.SalesSubs)
+                            {
+
+                                amount =  Convert.ToDecimal(item.Amount);
+                                unitprice = Convert.ToDecimal(item.UnitPrice);
+
+                                slno++;
+                                sumqty = sumqty + item.Qty;
+                                countqty = countqty++;
+                                sumamount = sumamount + item.Amount;
+
+
+                                                <tr style="font-family: Tahoma;font-size: 9px;">
+                                                    <td class="text-center font-weight-bold"> @slno.ToString() </td>
+                                                    <td class="text-center">@Html.DisplayFor(modelItem => item.Qty)</td>
+                                                    <td>@Html.DisplayFor(modelItem => item.vProductName.ProductName)</td>
+                                                    @*<td class="text-right">@Html.DisplayFor(modelItem => item.UnitPrice) </td>*@
+                                                    <td class="text-right">@(String.Format(BDFormat, "{0:N}", Convert.ToDecimal(unitprice)) ) </td>
+                                                    <td class="text-right">@(String.Format(BDFormat, "{0:N}", Convert.ToDecimal(amount)) ) </td>
+                                                    @*<td>@(String.Format(BDFormat, "{0:N}", Convert.ToDecimal(abcd)) )</td>*@
+                                                </tr>
+
+                            }
+                        }
+                    </tbody>
+                    <tfoot style="font-family: Tahoma;font-size: 11px;">
+                        @{
+
+                            <tr class="text-right">
+
+                                <td></td>
+                                <td class="text-center" style="font-weight:bold">@slno ( @sumqty )</td>
+                                <td class="text-left" style="font-weight:bold">pcs/pk</td>
+                                <td style="font-weight:bold">Sub Total :</td>
+                                <td style="font-weight:bold" class="text-right">@(String.Format(BDFormat, "{0:N}", Convert.ToDecimal(sumamount))) </td>
+
+                            </tr>
+                            @if (@Model.DisAmt > 0)
+                            {
+                                <tr class="text-right">
+
+                                   
+                                    <td colspan="4" style="font-weight:bold">Discount :</td>
+                                    <td style="font-weight:bold">@(String.Format(BDFormat, "{0:N}", Convert.ToDecimal(Model.DisAmt))) </td>
+
+                                </tr>
+                            }
+                                @if (@Model.TotalVat > 0)
+                                {
+                                    <tr class="text-right">
+
+                                       
+                                        <td colspan="4" style="font-weight:bold">Sales Tax :</td>
+                                        <td style="font-weight:bold">@(String.Format(BDFormat, "{0:N}", Convert.ToDecimal(Model.TotalVat))) </td>
+
+                                    </tr>
+                                }
+                                <tr class="text-right">
+
+                              
+                                    <td colspan="4" style="font-weight:bold">Net Payable :</td>
+                                    <td style="font-weight:bold">@(String.Format(BDFormat, "{0:N}", Convert.ToDecimal(Model.NetAmount))) </td>
+
+                                </tr>
+                                <tr class="text-right">
+
+                               
+                                    <td colspan="4" style="font-weight:bold">Paid Amount :</td>
+                                    <td style="font-weight:bold">@(String.Format(BDFormat, "{0:N}", Convert.ToDecimal(Model.PaidAmt))) </td>
+
+                                </tr>
+                                @if (@Model.DueAmt > 0)
+                                {
+                                    <tr class="text-right">
+
+                                       
+                                        <td colspan="4" style="font-weight:bold;color:red">Due :</td>
+                                        <td style="font-weight:bold">@(String.Format(BDFormat, "{0:N}", Convert.ToDecimal(Model.DueAmt))) </td>
+
+                                    </tr>
+                                }
+                            }
+                        </tfoot>
+                </table>
+
+
+
+            </div>
+        </div>
+    </form>
+
+
+</body>
+</html>

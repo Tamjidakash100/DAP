@@ -1,0 +1,347 @@
+﻿
+@model GTERP.Controllers.HR.DashboardController.Dashboard
+
+
+    <link href="~/Content/ProjectLibFile/css/dashboard/dashboard.css" rel="stylesheet" />
+
+    <section class="card p-3">
+        @{
+            Html.RenderPartial("_DailyAttendance", Model.DailyAttendance);
+            Html.RenderPartial("_DailyAttendanceSum", Model.DailyAttendanceSum);
+            Html.RenderPartial("_MonthlyAttendance", Model.MonthlyAttendance);
+            Html.RenderPartial("_EmployeeDetails", Model.EmployeeDetails);
+            Html.RenderPartial("_SalaryDeatils", Model.SalaryDetails);
+        }
+    </section>
+
+
+    @section Scripts{
+
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <script type="text/javascript">
+
+        $("#dtLoad").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            onSelect: function (date) {
+                // Your CSS changes, just in case you still need them
+                $('a.ui-state-default').removeClass('ui-state-highlight');
+                $(this).addClass('ui-state-highlight');
+                var dateFormat = $("#dtLoad").datepicker("option", "dateFormat");
+                //setter
+                $("#dtLoad").datepicker("option", "dateFormat", 'dd-M-yy');
+            }
+        });
+
+        $("#btnLoad").click(function () {
+            alert($("#dtLoad").val());
+            window.location.href = '@Url.Action("LoadData", "Dashboard")?dtLoad=' + $("#dtLoad").val();
+        });
+
+    //$(".dropdown").on("click", function() {
+    //    if (this.classList.contains("open")) {
+    //        this.classList.remove("open");
+    //        return;
+    //    }
+    //    this.classList.add("open");
+    //});
+
+    //My code
+    @*$(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            url: '@Url.Action("GetDailyAttSum", "Dashboard")',
+            success: function (result) {
+                window.google.charts.load('current', {
+                    'packages': ['corechart']
+                });
+                window.google.charts.setOnLoadCallback(function () {
+                    drawChart(result);
+                });
+            }
+        });
+    });*@
+
+    var totalEmp=@Model.DailyAttendance.TotalEmployee;
+    var present =@Model.DailyAttendance.Present;
+    var absent =@Model.DailyAttendance.Absent;
+    var leave =@Model.DailyAttendance.Leave;
+    var late = @Model.DailyAttendance.Late;
+
+    var pp = (present / totalEmp) * 100;
+    var ap =(absent / totalEmp) * 100;
+    var lap=(late / totalEmp) * 100;
+    var lep=(leave / totalEmp) * 100;
+
+    var maleemployee = @Model.EmployeeDetails.MaleEmployee;
+        var femalemployee = @Model.EmployeeDetails.FemaleEmployee;
+
+
+
+    google.charts.load("current", {
+        packages: ["corechart"]
+    });
+
+
+    // Donut Chart Start=
+    google.charts.setOnLoadCallback(drawDonutChart);
+
+    function drawDonutChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Daily Attendance', 'Per Day'],
+            ['TotalEmployee', totalEmp],
+            ['Present',pp],
+            ['Absent', ap],
+            ['Late', lap],
+            ['Leave',lep ]
+        ]);
+
+        var options = {
+            //title: 'My Daily Activities',
+            //is3D: true,
+            //isStacked: 'relative',
+            //isStacked: true,
+            'width': '100%',
+            'height': 300,
+            pieHole: 0.5,
+            top: 5,
+            legend: {
+                position: "top",
+                alignment: "center"
+            },
+            chartArea: {
+                alignment: "center",
+                top: 30,
+                //height: "auto",
+                'width': '98%',
+
+            }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+
+    }
+    // Donut Chart End
+
+
+    // Pie Chart Start
+    google.charts.setOnLoadCallback(drawPieChart);
+
+    function drawPieChart() {
+
+        var data = google.visualization.arrayToDataTable([
+            ['Employee', 'Total'],
+            ['Female', femalemployee],
+            ['Male', maleemployee]
+        ]);
+
+        var options = {
+            // title: 'My Daily Activities'
+            // pieHole: 0.5,
+            'width': '100%',
+            'height': 300,
+            top: 5,
+            legend: {
+                position: "top",
+                alignment: "center"
+            },
+
+            chartArea: {
+                top: 35,
+                display:"block",
+                alignment: "center",
+                width:  "98%"
+                //height:"90%"
+
+            }
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+    }
+    // Pie Chart End
+
+
+    @*$(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            url: '@Url.Action("GetDailyAttSum", "Dashboard")',
+            success: function (result) {
+                window.google.charts.load('current', {
+                    'packages': ['corechart']
+                });
+                window.google.charts.setOnLoadCallback(function () {
+                    drawChart(result);
+                });
+            }
+        });
+    });*@
+
+
+
+    @*google.charts.load('current', { 'packages': ['line'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var json = $.ajax({
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            url: '@Url.Action("GetDailyAttSum", "Dashboard")',
+            success: function (jsonData) {
+                var data = new window.google.visualization.DataTable();
+                data.addColumn('string', 'Section');
+                data.addColumn('string', 'Perday Sal');
+
+                for (var i = 0; i < jsonData.length; i++) {
+                    var mes = jsonData[i].SectionName;
+                    var total = jsonData[i].TotalEmployee;
+                    data.addRow([mes, total]);
+                }
+                var options = {
+                    chart: {
+                        title: 'Gráfico de Faturamento Mensal',
+                        subtitle: 'Moeda (R$)'
+                    },
+                    width: 600,
+                    height: 300,
+                    axes: {
+                        x: {
+                            10: { side: 'top' }
+                        }
+                    }
+                };
+                var chart = new window.google.charts.Line(document.getElementById('dailyAttSumChart'));
+                chart.draw(data, window.google.charts.Line.convertOptions(options));
+            }
+        });
+    }*@
+
+
+
+    $(document).ready(function () {
+        //var date = $('#dtLoad').val();
+        //var json = { date: dat };
+         $.ajax({
+             type: "POST",
+             dataType: "json",
+             contentType: "application/json",
+             url: '@Url.Action("GetDailyAttSum", "Dashboard")',
+             //data: JSON.stringify(json),
+             success: function (result) {
+                 window.google.charts.load('current', {
+                     'packages': ['corechart']
+                 });
+                 window.google.charts.setOnLoadCallback(function () {
+                     drawStuff(result);
+                 });
+             }
+         });
+     });
+
+
+    //Column Chart Start
+    google.charts.load('current', {
+        'packages': ['bar']
+    });
+    //google.charts.setOnLoadCallback(drawStuff);
+
+    function drawStuff(result) {
+
+        // var button = document.getElementById('change-chart');
+        var chartDiv = document.getElementById('dailyAttSumChart');
+        //result = JSON.parse(result);
+        //var data = google.visualization.arrayToDataTable([result]);
+
+        var data = window.google.visualization.arrayToDataTable([
+
+            ['Section', 'TotalEmployee', 'Present', 'Late', 'Absent', 'Leave', 'Perday Salary', 'Over Time'],
+            [result[0].SectionName, parseInt(result[0].totalEmp), parseInt(result[0].PresentPercent), parseInt(result[0].LatePercent), parseInt(result[0].AbsentPercent), parseInt(result[0].LeavePercent), parseInt(result[0].SalaryPerDay), parseInt(result[0].OTHour)],
+            [result[1].SectionName, parseInt(result[1].totalEmp),parseInt(result[1].PresentPercent),parseInt(result[1].LatePercent),parseInt(result[1].AbsentPercent),parseInt(result[1].LeavePercent),parseInt(result[1].SalaryPerDay),parseInt(result[1].OTHour)],
+            [result[2].SectionName, parseInt(result[2].totalEmp),parseInt(result[2].PresentPercent),parseInt(result[2].LatePercent),parseInt(result[2].AbsentPercent),parseInt(result[2].LeavePercent),parseInt(result[2].SalaryPerDay),parseInt(result[2].OTHour)],
+            [result[3].SectionName, parseInt(result[3].totalEmp),parseInt(result[3].PresentPercent),parseInt(result[3].LatePercent),parseInt(result[3].AbsentPercent),parseInt(result[3].LeavePercent),parseInt(result[3].SalaryPerDay),parseInt(result[3].OTHour)],
+            [result[4].SectionName, parseInt(result[4].totalEmp),parseInt(result[4].PresentPercent),parseInt(result[4].LatePercent),parseInt(result[4].AbsentPercent),parseInt(result[4].LeavePercent),parseInt(result[4].SalaryPerDay),parseInt(result[4].OTHour)]
+
+        ]);
+
+        //for (var i = 0; i < 5; i++) {
+        //    var mes = result[i].SectionName;
+        //    var total = result[i].SectionName;
+        //    data.addRow([mes, total]);
+        //}
+        var materialOptions = {
+            width: '90%'
+            //chart: {
+            //    title: 'Nearby galaxies',
+            //    subtitle: 'distance on the left, brightness on the right'
+            //},
+            //series: {
+            //    0: {
+            //        axis: 'distance'
+            //    }, // Bind series 0 to an axis named 'distance'.
+            //    1: {
+            //        axis: 'brightness'
+            //    } // Bind series 1 to an axis named 'brightness'.
+            //},
+            //axes: {
+            //    y: {
+            //        distance: {
+            //            label: 'parsecs'
+            //        }, // Left y-axis.
+            //        brightness: {
+            //            side: 'right',
+            //            label: 'apparent magnitude'
+            //        } // Right y-axis.
+            //    }
+            //}
+        };
+
+        var classicOptions = {
+            width: '90%',
+            series: {
+                0: {
+                    targetAxisIndex: 0
+                },
+                1: {
+                    targetAxisIndex: 1
+                }
+            }
+            //title: 'Nearby galaxies - distance on the left, brightness on the right',
+            //vAxes: {
+            //    // Adds titles to each axis.
+            //    0: {
+            //        title: 'parsecs'
+            //    },
+            //    1: {
+            //        title: 'apparent magnitude'
+            //    }
+            //}
+        };
+
+        // function drawMaterialChart() {
+        //     var materialChart = new google.charts.Bar(chartDiv);
+        //     materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
+        //     button.innerText = 'Change to Classic';
+        //     button.onclick = drawClassicChart;
+        // }
+
+        function drawClassicChart() {
+            var classicChart = new window.google.visualization.ColumnChart(chartDiv);
+            classicChart.draw(data, classicOptions);
+            // button.innerText = 'Change to Material';
+            // button.onclick = drawMaterialChart;
+        }
+
+        drawClassicChart();
+    };
+    //Column Chart End
+
+
+        </script>
+    }

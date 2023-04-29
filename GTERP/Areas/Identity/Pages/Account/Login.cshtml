@@ -1,0 +1,236 @@
+﻿@page
+@model GTERP.Areas.Identity.Pages.Account.LoginModel
+@{
+}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/customLoginStyle.css" rel="stylesheet" />
+
+    <link href="~/Content/ecommerce/fonts/fontawesome/css/fontawesome-all.css" rel="stylesheet" />
+    @*<link href="~/Content/fakeloader/fakeloader.css" rel="stylesheet" />*@
+    @*<script src="~/toastr.js/toastr.min.js"></script>*@
+
+    @*<script src="~/Scripts/popper.js"></script>*@
+    @*<script src="~/Scripts/Toast/toastr.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Content/fakeloader/fakeloader.js"></script>*@
+
+    <style>
+        a, label {
+            color: cadetblue;
+        }
+
+            a:hover {
+                text-decoration: none;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-md-6 col-12">
+                <div class="row">
+                    <h5 class="text-info" style="font-family: 'Raleway', sans-serif;">
+                        <img src="~/Content/img/daplogo.png" class="rounded img-fluid mb-2" alt="DAP Fertilizer Co. Ltd.">
+                        DAP Fertilizer Company Limited
+                    </h5>
+                </div>                <div class="p-100">
+
+                    <p class="text-justify" style="font-size:16px;">Diammonium phosphate (DAP) is the world’s most widely used phosphorus fertilizer. It’s made from two common constituents in the fertilizer industry, and its relatively high nutrient content and excellent physical properties make it a popular choice in farming and other industries.  </p>
+
+                    <p class="text-justify" style="font-size:16px;">Ammonium phosphate fertilizers first became available in the 1960s, and DAP rapidly became the most popular in this class of products. It’s formulated in a controlled reaction of phosphoric acid with ammonia, where the hot slurry is then cooled, granulated and sieved. DAP handles and stores well. The standard nutrient grade of DAP is relatively high, at 18-46-0, so fertilizer products with lower nutrient content may not be labeled DAP.</p>
+
+                    <p class="text-justify" style="font-size:16px;">The inputs required to produce one ton of DAP fertilizer are approximately 1.5 to 2 tons of phosphate rock, 0.4 tons of sulfur (S) to dissolve the rock, and 0.2 tons of ammonia. Changes in the supply or price of any of these inputs will impact DAP prices and availability. The high nutrient content of DAP helps reduce handling, freight and application costs. DAP is produced in many locations in the world and is a widely traded fertilizer commodity.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-12 ">
+                <div class="login-wrap">
+
+                    <div class="login-html">
+                        <div>
+                            <span style="color:red">@ViewBag.error</span>
+                        </div>
+                        <input id="tab-1" type="radio" name="tab" class="sign-in t" checked><label for="tab-1" class="tab">Log In</label>
+                        <input id="tab-2" type="radio" name="tab" class="sign-up t"><label for="tab-2" class="tab">Sign Up</label>
+                        <div class="login-form">
+                            <form asp-page-handler="Login" method="post" id="login-form">
+                                @Html.AntiForgeryToken()
+
+
+                                <div class="sign-in-htm">
+                                    <div class="form-group">
+                                        <label asp-for="Input.Email"></label>
+                                        <input asp-for="Input.Email" required oninvalid="this.setCustomValidity('Email is required')" oninput="this.setCustomValidity('')" class="form-control" />
+                                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Input.Password"></label>
+                                        <input asp-for="Input.Password" required oninvalid="this.setCustomValidity('Password is required')" oninput="this.setCustomValidity('')" class="form-control" />
+                                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                    </div>
+                            
+                                    @*<div class="form-group">
+                                    <div class="checkbox">
+                                    <label asp-for="Input.RememberMe">
+                                    <input asp-for="Input.RememberMe" />
+                                    @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                    </label>
+                                    </div>
+                                    </div>*@
+                                    <div class="group">
+                                        <input type="submit" class="button" value="Sign In">
+                                    </div>
+                                    <div class="hr"></div>
+
+                                    <div class="foot-lnk">
+                                        <a id="forgot-password" asp-page-handler="ForgotPassword">Forgot your password?</a>
+
+
+
+                                    </div>
+
+                                    @*<div class="text-white" style="font:bold">
+                                    @Html.ValidationSummary(true)
+                                    </div>*@
+
+                                </div>
+
+
+
+                            </form>
+
+
+
+                            <form asp-page-handler="Register" method="post" id="reg-form">
+                                @Html.AntiForgeryToken()
+
+                                <div class="sign-up-htm">
+                                    <div class="form-group row">
+                                        <label asp-for="RegisterMod.Email" class="col-md-5"></label>
+                                        <input asp-for="RegisterMod.Email" required oninvalid="this.setCustomValidity('Email is required')" oninput="this.setCustomValidity('')" class="form-control col-md-7" autocomplete="off" />
+                                        <span asp-validation-for="RegisterMod.Email" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label asp-for="RegisterMod.Password" class="col-md-5"></label>
+                                        <input asp-for="RegisterMod.Password" required oninvalid="this.setCustomValidity('Password is required')" oninput="this.setCustomValidity('')" class="form-control col-md-7" autocomplete="off" />
+                                        <span asp-validation-for="RegisterMod.Password" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group row">
+
+                                        <label asp-for="RegisterMod.ConfirmPassword" class="col-md-5"></label>
+                                        <input asp-for="RegisterMod.ConfirmPassword" required oninvalid="this.setCustomValidity('Confirm Password is required')" oninput="this.setCustomValidity('')" class="form-control col-md-7" autocomplete="off" />
+                                        <span asp-validation-for="RegisterMod.ConfirmPassword" class="text-danger"></span>
+
+                                    </div>
+                                     <div class="form-group row">
+
+                                        <label asp-for="RegisterMod.PhoneNumber" class="col-md-5"></label>
+                                        <input asp-for="RegisterMod.PhoneNumber" required oninvalid="this.setCustomValidity('Phone number is required')" type="number" maxlength="13" oninput="this.setCustomValidity('')" class="form-control col-md-7" autocomplete="off" />
+                                        <span asp-validation-for="RegisterMod.PhoneNumber" class="text-danger"></span>
+
+                                    </div>
+
+                                    <div class="group">
+                                        <input type="submit" class="button" value="Sign Up">
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="foot-lnk">
+                                        @*<label for="tab-1">Already Member?</label>*@
+                                        <!--<input id="tab-1" name="tab" class="sign-in"><label for="tab-1" class="tab">Already Member?</label>-->
+                                        @*<a class="" href="@Url.Action("ForgotPassword", "Account")">Forgot your password? </a>*@
+                                    </div>
+
+                                </div>
+                            </form>
+
+
+
+                        </div>
+                        <div class="text-white" style="font:bold">
+                            @Html.ValidationSummary(true)
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/ProjectLibFile/js/jquery/jquery.min.js"></script>
+    @section Scripts{
+
+        <script type="text/javascript">
+
+
+
+            alert('abc');
+
+            $(document).ready(function () {
+                //$("input:radio:first").prop("checked", true).trigger("click");
+
+                var x = @ViewData["Type"];
+                alert(x);
+                if (x == "Register") {
+                    $("#tab-2").prop("checked", true).trigger("click");
+                    // $("#tab-2").trigger("click");
+                }
+                else {
+                    $("#tab-1").prop("checked", true).trigger("click");
+
+                }
+
+
+            });
+        </script>
+
+
+
+        @*<script src="~/Scripts/Toast/toaster_custom.js"></script>*@
+        @*<script> customFile("@TempData["Status"]","@TempData["Message"]"); </script>*@
+        <script>
+            alert('test');
+
+            //$("input:radio:first").prop("checked", true).trigger("click");
+
+
+
+            $(document).on('change', '.t', function (e) {
+                var val = e.target.id;
+                if (val == 'tab-1') {
+                    //empty register form
+                    $("#reg-form").find('input:text, input:password, select')
+                        .each(function () {
+                            $(this).val('');
+                        });
+                }
+                else if (val == 'tab-2') {
+                    //empty login form
+                    $("#login-form").find('input:text, input:password, select')
+                        .each(function () {
+                            $(this).val('');
+                        });
+                }
+            })
+        </script>
+
+
+
+    }
+
+    </body>
+
+    </html>
+

@@ -1,0 +1,1761 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <UseRazorBuildServer>false</UseRazorBuildServer>
+    <UserSecretsId>aspnet-DAP-0701D15E-0D61-4F3F-8BC2-1129869F6E72</UserSecretsId>
+    <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <OutputType>Exe</OutputType>
+    <StartupObject></StartupObject>
+    <!--<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <RazorCompileOnBuild>false</RazorCompileOnBuild>
+    <RazorCompileOnPublish>false</RazorCompileOnPublish>-->
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Dataset\**" />
+    <Compile Remove="Models\HR\**" />
+    <Compile Remove="Publish\**" />
+    <Compile Remove="ReportFile\**" />
+    <Compile Remove="Views\Acc_ChartOfAccountPFs\**" />
+    <Compile Remove="Views\Acc_Voucher_PF\**" />
+    <Compile Remove="Views\BufferDC\**" />
+    <Compile Remove="Views\BufferDO\**" />
+    <Compile Remove="Views\BufferGatePass\**" />
+    <Compile Remove="Views\EmpInfoTemp\**" />
+    <Compile Remove="Views\FA_Master - Copy\**" />
+    <Compile Remove="Views\GatePass_wrong\**" />
+    <Compile Remove="Views\RawMaterialReceive\**" />
+    <Compile Remove="Views\Report\**" />
+    <Content Remove="Dataset\**" />
+    <Content Remove="Models\HR\**" />
+    <Content Remove="Publish\**" />
+    <Content Remove="ReportFile\**" />
+    <Content Remove="Views\Acc_ChartOfAccountPFs\**" />
+    <Content Remove="Views\Acc_Voucher_PF\**" />
+    <Content Remove="Views\BufferDC\**" />
+    <Content Remove="Views\BufferDO\**" />
+    <Content Remove="Views\BufferGatePass\**" />
+    <Content Remove="Views\EmpInfoTemp\**" />
+    <Content Remove="Views\FA_Master - Copy\**" />
+    <Content Remove="Views\GatePass_wrong\**" />
+    <Content Remove="Views\RawMaterialReceive\**" />
+    <Content Remove="Views\Report\**" />
+    <EmbeddedResource Remove="Dataset\**" />
+    <EmbeddedResource Remove="Models\HR\**" />
+    <EmbeddedResource Remove="Publish\**" />
+    <EmbeddedResource Remove="ReportFile\**" />
+    <EmbeddedResource Remove="Views\Acc_ChartOfAccountPFs\**" />
+    <EmbeddedResource Remove="Views\Acc_Voucher_PF\**" />
+    <EmbeddedResource Remove="Views\BufferDC\**" />
+    <EmbeddedResource Remove="Views\BufferDO\**" />
+    <EmbeddedResource Remove="Views\BufferGatePass\**" />
+    <EmbeddedResource Remove="Views\EmpInfoTemp\**" />
+    <EmbeddedResource Remove="Views\FA_Master - Copy\**" />
+    <EmbeddedResource Remove="Views\GatePass_wrong\**" />
+    <EmbeddedResource Remove="Views\RawMaterialReceive\**" />
+    <EmbeddedResource Remove="Views\Report\**" />
+    <None Remove="Dataset\**" />
+    <None Remove="Models\HR\**" />
+    <None Remove="Publish\**" />
+    <None Remove="ReportFile\**" />
+    <None Remove="Views\Acc_ChartOfAccountPFs\**" />
+    <None Remove="Views\Acc_Voucher_PF\**" />
+    <None Remove="Views\BufferDC\**" />
+    <None Remove="Views\BufferDO\**" />
+    <None Remove="Views\BufferGatePass\**" />
+    <None Remove="Views\EmpInfoTemp\**" />
+    <None Remove="Views\FA_Master - Copy\**" />
+    <None Remove="Views\GatePass_wrong\**" />
+    <None Remove="Views\RawMaterialReceive\**" />
+    <None Remove="Views\Report\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Identity\Pages\Account\Login_old.cshtml.cs" />
+    <Compile Remove="BLL\Commercial.cs" />
+    <Compile Remove="Controllers\Account\Acc_ChartOfAccountPFsController.cs" />
+    <Compile Remove="Controllers\Account\Acc_Voucher_PFController.cs" />
+    <Compile Remove="Controllers\BankAccountNoLienBanksController.cs" />
+    <Compile Remove="Controllers\BrandInfoesController.cs" />
+    <Compile Remove="Controllers\Buffer\BufferDCController.cs" />
+    <Compile Remove="Controllers\Buffer\BufferDOController.cs" />
+    <Compile Remove="Controllers\Buffer\BufferGatePass.cs" />
+    <Compile Remove="Controllers\BusinessTypesController.cs" />
+    <Compile Remove="Controllers\CategoriesController.cs" />
+    <Compile Remove="Controllers\ChartOfAccountsController.cs" />
+    <Compile Remove="Controllers\CitiesController.cs" />
+    <Compile Remove="Controllers\COM_BBLC_MasterController.cs" />
+    <Compile Remove="Controllers\COM_CNFBillExportMasterController.cs" />
+    <Compile Remove="Controllers\COM_CNFBillImportMasterController.cs" />
+    <Compile Remove="Controllers\COM_CNFExpenseTypeController.cs" />
+    <Compile Remove="Controllers\COM_CommercialInvoiceController.cs" />
+    <Compile Remove="Controllers\COM_DocumentAcceptanceController.cs" />
+    <Compile Remove="Controllers\COM_DocumentAcceptance_MasterController.cs" />
+    <Compile Remove="Controllers\COM_GroupLC_MainController.cs" />
+    <Compile Remove="Controllers\COM_MachinaryLC_MasterController.cs" />
+    <Compile Remove="Controllers\COM_MachineryLCMasterController_Sayeed.cs" />
+    <Compile Remove="Controllers\ConsigneesController.cs" />
+    <Compile Remove="Controllers\CountriesController.cs" />
+    <Compile Remove="Controllers\CustomersController.cs" />
+    <Compile Remove="Controllers\CustomerSerialController.cs" />
+    <Compile Remove="Controllers\DashboardController.cs" />
+    <Compile Remove="Controllers\EmployeesController.cs" />
+    <Compile Remove="Controllers\ErrorHandlerController.cs" />
+    <Compile Remove="Controllers\ExcelUploadController.cs" />
+    <Compile Remove="Controllers\ExportOrdersController.cs" />
+    <Compile Remove="Controllers\ExportRealizationBankInfoController.cs" />
+    <Compile Remove="Controllers\ExportRealizationMastersController.cs" />
+    <Compile Remove="Controllers\ExportRealization_MasterController.cs" />
+    <Compile Remove="Controllers\HouseKeeping\SupplierInformationsController.cs" />
+    <Compile Remove="Controllers\HR\HrReport\IncrementReportShController.cs" />
+    <Compile Remove="Controllers\ImportDocumentsReportController.cs" />
+    <Compile Remove="Controllers\InvoiceController.cs" />
+    <Compile Remove="Controllers\ItemDescsController.cs" />
+    <Compile Remove="Controllers\ItemGroupsController.cs" />
+    <Compile Remove="Controllers\ManageController.cs" />
+    <Compile Remove="Controllers\NotifyPartiesController.cs" />
+    <Compile Remove="Controllers\Payroll\SalaryProcessController.cs" />
+    <Compile Remove="Controllers\ProductCategoriesController.cs" />
+    <Compile Remove="Controllers\ProductGroupsController.cs" />
+    <Compile Remove="Controllers\ProductsController.cs" />
+    <Compile Remove="Controllers\PurchaseController.cs" />
+    <Compile Remove="Controllers\ReportCoreController.cs" />
+    <Compile Remove="Controllers\RolesAdminController.cs" />
+    <Compile Remove="Controllers\SalesController.cs" />
+    <Compile Remove="Controllers\SoftwarePackagesController.cs" />
+    <Compile Remove="Controllers\StyleInformationsController.cs" />
+    <Compile Remove="Controllers\SubCategoriesController.cs" />
+    <Compile Remove="Controllers\SupplierInformationsController.cs" />
+    <Compile Remove="Controllers\SuppliersController.cs" />
+    <Compile Remove="Controllers\SupportController.cs" />
+    <Compile Remove="Controllers\TermsMainsController.cs" />
+    <Compile Remove="Controllers\TypesController.cs" />
+    <Compile Remove="Controllers\UnitGroupsController.cs" />
+    <Compile Remove="Controllers\UploadController.cs" />
+    <Compile Remove="Controllers\UploaderController.cs" />
+    <Compile Remove="Controllers\UserAdminController.cs" />
+    <Compile Remove="Controllers\UsersController.cs" />
+    <Compile Remove="Controllers\UserTransactionController.cs" />
+    <Compile Remove="Controllers\VoucherController.cs" />
+    <Compile Remove="Controllers\WarehousesController.cs" />
+    <Compile Remove="Controllers\WorkOrderMastersController.cs" />
+    <Compile Remove="Controllers\xCompaniesController.cs" />
+    <Compile Remove="Controllers\xCompanyController.cs" />
+    <Compile Remove="Controllers\xUserCompanyPermissionsController.cs" />
+    <Compile Remove="Migrations\GTRDB\20200302094645_abcd.cs" />
+    <Compile Remove="Migrations\GTRDB\20200302094645_abcd.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200305032017_1stInitialfromfahad.cs" />
+    <Compile Remove="Migrations\GTRDB\20200305032017_1stInitialfromfahad.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200305034123_1stInitialfromfahad.cs" />
+    <Compile Remove="Migrations\GTRDB\20200305034123_1stInitialfromfahad.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200305035927_ModuleMenuParentIdRemoce.cs" />
+    <Compile Remove="Migrations\GTRDB\20200305035927_ModuleMenuParentIdRemoce.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200305040433_PerfectModulemenuList.cs" />
+    <Compile Remove="Migrations\GTRDB\20200305040433_PerfectModulemenuList.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200305041837_MenupermissionIdRelation.cs" />
+    <Compile Remove="Migrations\GTRDB\20200305041837_MenupermissionIdRelation.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200305042132_MenupermissionIdRelation.cs" />
+    <Compile Remove="Migrations\GTRDB\20200305042132_MenupermissionIdRelation.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200307141214_HRMdoel1.cs" />
+    <Compile Remove="Migrations\GTRDB\20200307141214_HRMdoel1.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200308045109_variabledata.cs" />
+    <Compile Remove="Migrations\GTRDB\20200308045109_variabledata.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200308045555_variabledata.cs" />
+    <Compile Remove="Migrations\GTRDB\20200308045555_variabledata.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200308061154_useridupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200308061154_useridupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200308115604_Grade.cs" />
+    <Compile Remove="Migrations\GTRDB\20200308115604_Grade.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200308120306_Grade.cs" />
+    <Compile Remove="Migrations\GTRDB\20200308120306_Grade.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200308120911_GradeName.cs" />
+    <Compile Remove="Migrations\GTRDB\20200308120911_GradeName.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200309104728_SectionModify.cs" />
+    <Compile Remove="Migrations\GTRDB\20200309104728_SectionModify.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200310042440_SectionAmotation.cs" />
+    <Compile Remove="Migrations\GTRDB\20200310042440_SectionAmotation.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200310072954_NewMigration.cs" />
+    <Compile Remove="Migrations\GTRDB\20200310072954_NewMigration.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200310104748_finalhosekeeping.cs" />
+    <Compile Remove="Migrations\GTRDB\20200310104748_finalhosekeeping.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200310105544_distidupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200310105544_distidupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200310112308_destidupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200310112308_destidupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200310114612_removedistid2.cs" />
+    <Compile Remove="Migrations\GTRDB\20200310114612_removedistid2.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200310115319_changedist.cs" />
+    <Compile Remove="Migrations\GTRDB\20200310115319_changedist.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200311101751_MakeComIdString.cs" />
+    <Compile Remove="Migrations\GTRDB\20200311101751_MakeComIdString.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200311103903_updatemodel.cs" />
+    <Compile Remove="Migrations\GTRDB\20200311103903_updatemodel.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200311110002_districtid.cs" />
+    <Compile Remove="Migrations\GTRDB\20200311110002_districtid.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200311112029_removedistrict.cs" />
+    <Compile Remove="Migrations\GTRDB\20200311112029_removedistrict.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200311115540_distpolice.cs" />
+    <Compile Remove="Migrations\GTRDB\20200311115540_distpolice.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200311120129_distpolice1.cs" />
+    <Compile Remove="Migrations\GTRDB\20200311120129_distpolice1.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200311120714_floorid.cs" />
+    <Compile Remove="Migrations\GTRDB\20200311120714_floorid.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200312080319_removepolice.cs" />
+    <Compile Remove="Migrations\GTRDB\20200312080319_removepolice.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200312085106_changes2.cs" />
+    <Compile Remove="Migrations\GTRDB\20200312085106_changes2.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200312085845_changes3.cs" />
+    <Compile Remove="Migrations\GTRDB\20200312085845_changes3.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200312091416_changes4byShariat.cs" />
+    <Compile Remove="Migrations\GTRDB\20200312091416_changes4byShariat.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200312115434_busstomExchangerate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200312115434_busstomExchangerate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200312120332_busstomExchangerate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200312120332_busstomExchangerate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200313050041_BuidingTypeAsad2.cs" />
+    <Compile Remove="Migrations\GTRDB\20200313050041_BuidingTypeAsad2.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200313055625_PoliceStationPostOffice.cs" />
+    <Compile Remove="Migrations\GTRDB\20200313055625_PoliceStationPostOffice.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200315033524_LastUpdateMarch15.cs" />
+    <Compile Remove="Migrations\GTRDB\20200315033524_LastUpdateMarch15.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200315070751_removeEmpRel.cs" />
+    <Compile Remove="Migrations\GTRDB\20200315070751_removeEmpRel.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200315071603_addEmpInfo.cs" />
+    <Compile Remove="Migrations\GTRDB\20200315071603_addEmpInfo.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200315072448_addEmpInfo.cs" />
+    <Compile Remove="Migrations\GTRDB\20200315072448_addEmpInfo.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200315123926_sohel3raihan1.cs" />
+    <Compile Remove="Migrations\GTRDB\20200315123926_sohel3raihan1.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200315125043_sohel3raihan1.cs" />
+    <Compile Remove="Migrations\GTRDB\20200315125043_sohel3raihan1.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200316054951_empupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200316054951_empupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200316072827_empupdate1.cs" />
+    <Compile Remove="Migrations\GTRDB\20200316072827_empupdate1.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200316075954_empupdate2.cs" />
+    <Compile Remove="Migrations\GTRDB\20200316075954_empupdate2.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200317125523_BankandBranchInfo.cs" />
+    <Compile Remove="Migrations\GTRDB\20200317125523_BankandBranchInfo.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200318061541_empaddeduexp.cs" />
+    <Compile Remove="Migrations\GTRDB\20200318061541_empaddeduexp.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200318104713_updateHr.cs" />
+    <Compile Remove="Migrations\GTRDB\20200318104713_updateHr.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200318124106_empimage.cs" />
+    <Compile Remove="Migrations\GTRDB\20200318124106_empimage.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200319061226_HR_add.cs" />
+    <Compile Remove="Migrations\GTRDB\20200319061226_HR_add.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200322105024_ProcessData.cs" />
+    <Compile Remove="Migrations\GTRDB\20200322105024_ProcessData.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200323033715_nameB.cs" />
+    <Compile Remove="Migrations\GTRDB\20200323033715_nameB.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200323045626_genderLeave.cs" />
+    <Compile Remove="Migrations\GTRDB\20200323045626_genderLeave.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200323062326_emptype.cs" />
+    <Compile Remove="Migrations\GTRDB\20200323062326_emptype.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200323090801_HRAttendFixedTable.cs" />
+    <Compile Remove="Migrations\GTRDB\20200323090801_HRAttendFixedTable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200323094040_FixedAttandenceModification.cs" />
+    <Compile Remove="Migrations\GTRDB\20200323094040_FixedAttandenceModification.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200324053416_empsalary.cs" />
+    <Compile Remove="Migrations\GTRDB\20200324053416_empsalary.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200324100002_empsalaryUpdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200324100002_empsalaryUpdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200324113724_empsalaryUpdate1.cs" />
+    <Compile Remove="Migrations\GTRDB\20200324113724_empsalaryUpdate1.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200328072520_hrtemp.cs" />
+    <Compile Remove="Migrations\GTRDB\20200328072520_hrtemp.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200328123236_jobcard.cs" />
+    <Compile Remove="Migrations\GTRDB\20200328123236_jobcard.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200328141346_HR_TempJob_Modification.cs" />
+    <Compile Remove="Migrations\GTRDB\20200328141346_HR_TempJob_Modification.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200329101208_Salary.cs" />
+    <Compile Remove="Migrations\GTRDB\20200329101208_Salary.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200329113514_HR_IncType.cs" />
+    <Compile Remove="Migrations\GTRDB\20200329113514_HR_IncType.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200329132023_HR_IncTypeModification.cs" />
+    <Compile Remove="Migrations\GTRDB\20200329132023_HR_IncTypeModification.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200330044249_IncrementModification.cs" />
+    <Compile Remove="Migrations\GTRDB\20200330044249_IncrementModification.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200330095915_SalaryAdd.cs" />
+    <Compile Remove="Migrations\GTRDB\20200330095915_SalaryAdd.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200330101910_empinfoupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200330101910_empinfoupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200330105132_empinfoprossdt.cs" />
+    <Compile Remove="Migrations\GTRDB\20200330105132_empinfoprossdt.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200331055105_Emp_IncrementModification.cs" />
+    <Compile Remove="Migrations\GTRDB\20200331055105_Emp_IncrementModification.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200401133643_shiftinput.cs" />
+    <Compile Remove="Migrations\GTRDB\20200401133643_shiftinput.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200402083154_HR_Emp_Salary_Modification.cs" />
+    <Compile Remove="Migrations\GTRDB\20200402083154_HR_Emp_Salary_Modification.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200402091123_bankinfo.cs" />
+    <Compile Remove="Migrations\GTRDB\20200402091123_bankinfo.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200402111956_bankinfoupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200402111956_bankinfoupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200402120820_cat2.cs" />
+    <Compile Remove="Migrations\GTRDB\20200402120820_cat2.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200402153259_rmBI.cs" />
+    <Compile Remove="Migrations\GTRDB\20200402153259_rmBI.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200402154940_rmBI.cs" />
+    <Compile Remove="Migrations\GTRDB\20200402154940_rmBI.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200402160108_addBI.cs" />
+    <Compile Remove="Migrations\GTRDB\20200402160108_addBI.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200404044236_uBI.cs" />
+    <Compile Remove="Migrations\GTRDB\20200404044236_uBI.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200404175115_LeaveBalance_ModuleMenu.cs" />
+    <Compile Remove="Migrations\GTRDB\20200404175115_LeaveBalance_ModuleMenu.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200404181402_Module.cs" />
+    <Compile Remove="Migrations\GTRDB\20200404181402_Module.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200405052815_rptType.cs" />
+    <Compile Remove="Migrations\GTRDB\20200405052815_rptType.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200405065409_rptTypeslno.cs" />
+    <Compile Remove="Migrations\GTRDB\20200405065409_rptTypeslno.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200405151543_Year_Change.cs" />
+    <Compile Remove="Migrations\GTRDB\20200405151543_Year_Change.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200405154100_Year_Change.cs" />
+    <Compile Remove="Migrations\GTRDB\20200405154100_Year_Change.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200407055858_varType.cs" />
+    <Compile Remove="Migrations\GTRDB\20200407055858_varType.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200407155158_HRProcessLock.cs" />
+    <Compile Remove="Migrations\GTRDB\20200407155158_HRProcessLock.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200407162917_NurBusExchence.cs" />
+    <Compile Remove="Migrations\GTRDB\20200407162917_NurBusExchence.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200407171407_LvTypeNullable.cs" />
+    <Compile Remove="Migrations\GTRDB\20200407171407_LvTypeNullable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200408054647_LeaveBalanceDtOpBalRemove.cs" />
+    <Compile Remove="Migrations\GTRDB\20200408054647_LeaveBalanceDtOpBalRemove.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200408123252_islockprosslock.cs" />
+    <Compile Remove="Migrations\GTRDB\20200408123252_islockprosslock.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200408124624_saladdagain.cs" />
+    <Compile Remove="Migrations\GTRDB\20200408124624_saladdagain.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200408131358_shariat.cs" />
+    <Compile Remove="Migrations\GTRDB\20200408131358_shariat.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200409150822_saldeduction.cs" />
+    <Compile Remove="Migrations\GTRDB\20200409150822_saldeduction.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200411184837_accountpart.cs" />
+    <Compile Remove="Migrations\GTRDB\20200411184837_accountpart.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200412155642_fahadCheckMigraionHimuProblem.cs" />
+    <Compile Remove="Migrations\GTRDB\20200412155642_fahadCheckMigraionHimuProblem.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200412165159_fahadCheckMigraionHimuProblem_2.cs" />
+    <Compile Remove="Migrations\GTRDB\20200412165159_fahadCheckMigraionHimuProblem_2.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200412170502_fahadCheckMigraionHimuProblem_3.cs" />
+    <Compile Remove="Migrations\GTRDB\20200412170502_fahadCheckMigraionHimuProblem_3.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200412172805_fahadCheckMigraionHimuProblem_4.cs" />
+    <Compile Remove="Migrations\GTRDB\20200412172805_fahadCheckMigraionHimuProblem_4.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200412173724_fahadCheckMigraionHimuProblem_5.cs" />
+    <Compile Remove="Migrations\GTRDB\20200412173724_fahadCheckMigraionHimuProblem_5.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200412185311_FinalErrorSolve.cs" />
+    <Compile Remove="Migrations\GTRDB\20200412185311_FinalErrorSolve.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200413050702_DecimalErrorTesting.cs" />
+    <Compile Remove="Migrations\GTRDB\20200413050702_DecimalErrorTesting.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200413070357_vouchernoprefixes.cs" />
+    <Compile Remove="Migrations\GTRDB\20200413070357_vouchernoprefixes.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200413142434_leavedateproblem.cs" />
+    <Compile Remove="Migrations\GTRDB\20200413142434_leavedateproblem.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200414061348_leaveremarksnullable.cs" />
+    <Compile Remove="Migrations\GTRDB\20200414061348_leaveremarksnullable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200415120414_empinfoup.cs" />
+    <Compile Remove="Migrations\GTRDB\20200415120414_empinfoup.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200415130936_fixattendanceTableStatusOthourinTimeAdd.cs" />
+    <Compile Remove="Migrations\GTRDB\20200415130936_fixattendanceTableStatusOthourinTimeAdd.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200416100021_salded.cs" />
+    <Compile Remove="Migrations\GTRDB\20200416100021_salded.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417051904_AccountsModelAddAccPrefix.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417051904_AccountsModelAddAccPrefix.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417073539_comidgoesttostringfromint.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417073539_comidgoesttostringfromint.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417074159_comidgoesttostringfromint.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417074159_comidgoesttostringfromint.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417153404_vouchernoprefixesrename.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417153404_vouchernoprefixesrename.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417154126_checkvouchernoprefixes.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417154126_checkvouchernoprefixes.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417171913_VoucherTypescheck.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417171913_VoucherTypescheck.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417173356_Voucheridforeignkeycheck.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417173356_Voucheridforeignkeycheck.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417175122_comidstringfromint.cs" />
+    <Compile Remove="Migrations\GTRDB\20200417175122_comidstringfromint.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200418111320_combangla.cs" />
+    <Compile Remove="Migrations\GTRDB\20200418111320_combangla.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419035625_transactiionLog.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419035625_transactiionLog.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419053913_vouchernotypes.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419053913_vouchernotypes.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419054504_vouchernotypes.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419054504_vouchernotypes.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419073805_vouchernocreatedtypes.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419073805_vouchernocreatedtypes.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419121413_transactiionLog1.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419121413_transactiionLog1.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419133529_AllLoanTable.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419133529_AllLoanTable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419134231_AllLoanTable.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419134231_AllLoanTable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419143836_TransactionLogDocumentReferance.cs" />
+    <Compile Remove="Migrations\GTRDB\20200419143836_TransactionLogDocumentReferance.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200420034454_latitudeaddedinthelogininfoes.cs" />
+    <Compile Remove="Migrations\GTRDB\20200420034454_latitudeaddedinthelogininfoes.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200420063410_OTFC.cs" />
+    <Compile Remove="Migrations\GTRDB\20200420063410_OTFC.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200420100534_EmpinfoLinkUserId.cs" />
+    <Compile Remove="Migrations\GTRDB\20200420100534_EmpinfoLinkUserId.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200420122142_vouchersubidoknow.cs" />
+    <Compile Remove="Migrations\GTRDB\20200420122142_vouchersubidoknow.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200421133043_otfcprosstype.cs" />
+    <Compile Remove="Migrations\GTRDB\20200421133043_otfcprosstype.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200423062913_FiscalYearlinkwithvoucher.cs" />
+    <Compile Remove="Migrations\GTRDB\20200423062913_FiscalYearlinkwithvoucher.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200423063431_ChartOfAccountInitial.cs" />
+    <Compile Remove="Migrations\GTRDB\20200423063431_ChartOfAccountInitial.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200423085436_vouchernolength20.cs" />
+    <Compile Remove="Migrations\GTRDB\20200423085436_vouchernolength20.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200423085922_vouchernolength20.cs" />
+    <Compile Remove="Migrations\GTRDB\20200423085922_vouchernolength20.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200424133621_EmpIdinVoucher.cs" />
+    <Compile Remove="Migrations\GTRDB\20200424133621_EmpIdinVoucher.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200425063155_approval.cs" />
+    <Compile Remove="Migrations\GTRDB\20200425063155_approval.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200425083207_locationupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200425083207_locationupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200425093221_categorysubcategory.cs" />
+    <Compile Remove="Migrations\GTRDB\20200425093221_categorysubcategory.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200426084741_inventorytable.cs" />
+    <Compile Remove="Migrations\GTRDB\20200426084741_inventorytable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427045221_approvalpanelChange.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427045221_approvalpanelChange.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427082131_SalesPurchaeReturn.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427082131_SalesPurchaeReturn.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427104946_Salesmainchange.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427104946_Salesmainchange.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427135521_Termsmain.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427135521_Termsmain.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427171940_SalesmainCorrection.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427171940_SalesmainCorrection.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427173501_AllSalesTableDrop.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427173501_AllSalesTableDrop.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427174445_AllSalesTableDrop.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427174445_AllSalesTableDrop.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427175050_AllSalesTableDrop.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427175050_AllSalesTableDrop.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427180100_AllSalesTableDrop2ndtest.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427180100_AllSalesTableDrop2ndtest.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427180404_AllSalesTableDrop3rdmigration.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427180404_AllSalesTableDrop3rdmigration.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427180643_AllSalesTableDropSalesTerms.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427180643_AllSalesTableDropSalesTerms.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427181702_deletesalestermssub.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427181702_deletesalestermssub.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427182142_SalesSubsandTermsnewlymigrate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427182142_SalesSubsandTermsnewlymigrate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427184137_testingbyfahad.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427184137_testingbyfahad.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427184729_SalesTermsSubs.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427184729_SalesTermsSubs.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427185137_salespaymentsubforeignkeychange.cs" />
+    <Compile Remove="Migrations\GTRDB\20200427185137_salespaymentsubforeignkeychange.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428075956_AllRelationalTableAdjustment.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428075956_AllRelationalTableAdjustment.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428081724_AllRelationalTableAdjustment.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428081724_AllRelationalTableAdjustment.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428083423_PurchaseTable.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428083423_PurchaseTable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428100000_PurchasesubPurchaseid.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428100000_PurchasesubPurchaseid.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428100243_PurchasesubPurchaseid.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428100243_PurchasesubPurchaseid.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428105302_DecimaltoFloatTest.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428105302_DecimaltoFloatTest.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428134815_purchasemainsubsresearch.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428134815_purchasemainsubsresearch.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428154934_purchasemainsubsresearch.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428154934_purchasemainsubsresearch.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428155229_paymentsubs.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428155229_paymentsubs.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428170515_useridcomidrequiredfalse.cs" />
+    <Compile Remove="Migrations\GTRDB\20200428170515_useridcomidrequiredfalse.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200430072442_EmployeeTableUpdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200430072442_EmployeeTableUpdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200430110406_appkeyupdatetostring.cs" />
+    <Compile Remove="Migrations\GTRDB\20200430110406_appkeyupdatetostring.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200501125650_TermsMains.cs" />
+    <Compile Remove="Migrations\GTRDB\20200501125650_TermsMains.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200503103124_appkey.cs" />
+    <Compile Remove="Migrations\GTRDB\20200503103124_appkey.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200517084322_iselpaid.cs" />
+    <Compile Remove="Migrations\GTRDB\20200517084322_iselpaid.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200519055945_purchaserequisition.cs" />
+    <Compile Remove="Migrations\GTRDB\20200519055945_purchaserequisition.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200520083852_updatePurReq.cs" />
+    <Compile Remove="Migrations\GTRDB\20200520083852_updatePurReq.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200603103534_PurchaseOrderEntry.cs" />
+    <Compile Remove="Migrations\GTRDB\20200603103534_PurchaseOrderEntry.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200606110210_GoodsReceive.cs" />
+    <Compile Remove="Migrations\GTRDB\20200606110210_GoodsReceive.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200607060059_CustomerUpdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200607060059_CustomerUpdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200607172931_CustomerListDistrictPoliceStation.cs" />
+    <Compile Remove="Migrations\GTRDB\20200607172931_CustomerListDistrictPoliceStation.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200607173435_CustomerListDistrictPoliceStation.cs" />
+    <Compile Remove="Migrations\GTRDB\20200607173435_CustomerListDistrictPoliceStation.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200607174039_CustomerListDistrictPoliceStation.cs" />
+    <Compile Remove="Migrations\GTRDB\20200607174039_CustomerListDistrictPoliceStation.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200607180118_CustomerListDistrictPoliceStation.cs" />
+    <Compile Remove="Migrations\GTRDB\20200607180118_CustomerListDistrictPoliceStation.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200608072938_recreationanddocument.cs" />
+    <Compile Remove="Migrations\GTRDB\20200608072938_recreationanddocument.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200608073512_recreationanddocument.cs" />
+    <Compile Remove="Migrations\GTRDB\20200608073512_recreationanddocument.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200608102128_iscreatoin.cs" />
+    <Compile Remove="Migrations\GTRDB\20200608102128_iscreatoin.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200609102833_Booking.cs" />
+    <Compile Remove="Migrations\GTRDB\20200609102833_Booking.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200609112723_BookingModification.cs" />
+    <Compile Remove="Migrations\GTRDB\20200609112723_BookingModification.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200611042648_documentupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200611042648_documentupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200614061658_tempidcard.cs" />
+    <Compile Remove="Migrations\GTRDB\20200614061658_tempidcard.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200615055720_HR_Loan_IncreaseInfo.cs" />
+    <Compile Remove="Migrations\GTRDB\20200615055720_HR_Loan_IncreaseInfo.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200616043245_DeliveryOrder.cs" />
+    <Compile Remove="Migrations\GTRDB\20200616043245_DeliveryOrder.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200616072154_medicalpart.cs" />
+    <Compile Remove="Migrations\GTRDB\20200616072154_medicalpart.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200616073003_medicalpart.cs" />
+    <Compile Remove="Migrations\GTRDB\20200616073003_medicalpart.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200616132002_medicineupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200616132002_medicineupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200617153913_voucehrRefCustomerSupplier.cs" />
+    <Compile Remove="Migrations\GTRDB\20200617153913_voucehrRefCustomerSupplier.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200618044225_salarysettings.cs" />
+    <Compile Remove="Migrations\GTRDB\20200618044225_salarysettings.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200618044747_salarysettings.cs" />
+    <Compile Remove="Migrations\GTRDB\20200618044747_salarysettings.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200618052427_salaryemptype.cs" />
+    <Compile Remove="Migrations\GTRDB\20200618052427_salaryemptype.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200620051942_SalaryAllSetting.cs" />
+    <Compile Remove="Migrations\GTRDB\20200620051942_SalaryAllSetting.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200620104508_swallow.cs" />
+    <Compile Remove="Migrations\GTRDB\20200620104508_swallow.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200620105014_swallow.cs" />
+    <Compile Remove="Migrations\GTRDB\20200620105014_swallow.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200621055010_salsettupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200621055010_salsettupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200621064148_salsetMinupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200621064148_salsetMinupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200621065557_salsetMin.cs" />
+    <Compile Remove="Migrations\GTRDB\20200621065557_salsetMin.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200621112157_dtMonth_SummerAllownace.cs" />
+    <Compile Remove="Migrations\GTRDB\20200621112157_dtMonth_SummerAllownace.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200621125937_winsummallow.cs" />
+    <Compile Remove="Migrations\GTRDB\20200621125937_winsummallow.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200621131137_winsummallowadd.cs" />
+    <Compile Remove="Migrations\GTRDB\20200621131137_winsummallowadd.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200622050819_DistrictWiseBooking.cs" />
+    <Compile Remove="Migrations\GTRDB\20200622050819_DistrictWiseBooking.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200622051259_DistrictWiseBooking.cs" />
+    <Compile Remove="Migrations\GTRDB\20200622051259_DistrictWiseBooking.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200622071042_winsummallowupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200622071042_winsummallowupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200622091845_DistrictWiseBooking_Modification.cs" />
+    <Compile Remove="Migrations\GTRDB\20200622091845_DistrictWiseBooking_Modification.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200622095843_DistrictWiseBooking_Modification.cs" />
+    <Compile Remove="Migrations\GTRDB\20200622095843_DistrictWiseBooking_Modification.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200622121817_hrsettupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200622121817_hrsettupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200623083619_Booking_and_SummerWinterAllow_Modification.cs" />
+    <Compile Remove="Migrations\GTRDB\20200623083619_Booking_and_SummerWinterAllow_Modification.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200623090624_Booking_Modification.cs" />
+    <Compile Remove="Migrations\GTRDB\20200623090624_Booking_Modification.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200623101719_Booking_DistWiseBookingId_Nullablee.cs" />
+    <Compile Remove="Migrations\GTRDB\20200623101719_Booking_DistWiseBookingId_Nullablee.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200624041734_swallowprosstype.cs" />
+    <Compile Remove="Migrations\GTRDB\20200624041734_swallowprosstype.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200624091111_Cat_IncomeTaxChk_DelivaryOrderModification.cs" />
+    <Compile Remove="Migrations\GTRDB\20200624091111_Cat_IncomeTaxChk_DelivaryOrderModification.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200625062458_incrementupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200625062458_incrementupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200625100142_ProductMainGroup.cs" />
+    <Compile Remove="Migrations\GTRDB\20200625100142_ProductMainGroup.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200625105035_ProductMainGroupLinkwithProduct.cs" />
+    <Compile Remove="Migrations\GTRDB\20200625105035_ProductMainGroupLinkwithProduct.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200625122024_ProductMainGroupLinkwithProduct.cs" />
+    <Compile Remove="Migrations\GTRDB\20200625122024_ProductMainGroupLinkwithProduct.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200625123232_ProductMainGroupLinkwithProduct.cs" />
+    <Compile Remove="Migrations\GTRDB\20200625123232_ProductMainGroupLinkwithProduct.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200625182835_ProductMainGroupLinkwithProductFinal.cs" />
+    <Compile Remove="Migrations\GTRDB\20200625182835_ProductMainGroupLinkwithProductFinal.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200626042804_EmployeeChangestoHrEmpInfo.cs" />
+    <Compile Remove="Migrations\GTRDB\20200626042804_EmployeeChangestoHrEmpInfo.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200627053813_Cat_ITComputationSetting_DeliveryOrder_Migration.cs" />
+    <Compile Remove="Migrations\GTRDB\20200627053813_Cat_ITComputationSetting_DeliveryOrder_Migration.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200627104350_Cat_ITComputationSetting_And_Cat_PostOffice_Migration.cs" />
+    <Compile Remove="Migrations\GTRDB\20200627104350_Cat_ITComputationSetting_And_Cat_PostOffice_Migration.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200627105350_Cat_ITComputationSetting_And_Cat_PostOffice_Migration.cs" />
+    <Compile Remove="Migrations\GTRDB\20200627105350_Cat_ITComputationSetting_And_Cat_PostOffice_Migration.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200627145446_migrationerr.cs" />
+    <Compile Remove="Migrations\GTRDB\20200627145446_migrationerr.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200627150127_migrationerr.cs" />
+    <Compile Remove="Migrations\GTRDB\20200627150127_migrationerr.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200627150704_migrationerr.cs" />
+    <Compile Remove="Migrations\GTRDB\20200627150704_migrationerr.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200628085621_DeliveryChallan.cs" />
+    <Compile Remove="Migrations\GTRDB\20200628085621_DeliveryChallan.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200628111354_elencasement.cs" />
+    <Compile Remove="Migrations\GTRDB\20200628111354_elencasement.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200628112643_elencasement.cs" />
+    <Compile Remove="Migrations\GTRDB\20200628112643_elencasement.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200628123338_Custoemrcode.cs" />
+    <Compile Remove="Migrations\GTRDB\20200628123338_Custoemrcode.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200629070432_storeRequisition.cs" />
+    <Compile Remove="Migrations\GTRDB\20200629070432_storeRequisition.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200629103754_lvencashment.cs" />
+    <Compile Remove="Migrations\GTRDB\20200629103754_lvencashment.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200629135643_Suppliment.cs" />
+    <Compile Remove="Migrations\GTRDB\20200629135643_Suppliment.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200629172913_Newmigrationforchanges.cs" />
+    <Compile Remove="Migrations\GTRDB\20200629172913_Newmigrationforchanges.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200630131334_suplimentupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200630131334_suplimentupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200630185154_doublefloat.cs" />
+    <Compile Remove="Migrations\GTRDB\20200630185154_doublefloat.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200701073407_variable.cs" />
+    <Compile Remove="Migrations\GTRDB\20200701073407_variable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200702042947_instnoallloan.cs" />
+    <Compile Remove="Migrations\GTRDB\20200702042947_instnoallloan.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200704035253_addcolmultipleClass.cs" />
+    <Compile Remove="Migrations\GTRDB\20200704035253_addcolmultipleClass.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200704063228_skill.cs" />
+    <Compile Remove="Migrations\GTRDB\20200704063228_skill.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200705093717_itax.cs" />
+    <Compile Remove="Migrations\GTRDB\20200705093717_itax.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200705112937_district.cs" />
+    <Compile Remove="Migrations\GTRDB\20200705112937_district.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200707065157_prosslockupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200707065157_prosslockupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200712111419_BookingDeliveryChallan.cs" />
+    <Compile Remove="Migrations\GTRDB\20200712111419_BookingDeliveryChallan.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200712121552_FiscalYearidandMonthid.cs" />
+    <Compile Remove="Migrations\GTRDB\20200712121552_FiscalYearidandMonthid.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200713115922_distupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200713115922_distupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200713154405_DeliveryorderOldDONO.cs" />
+    <Compile Remove="Migrations\GTRDB\20200713154405_DeliveryorderOldDONO.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200714101315_gatepass.cs" />
+    <Compile Remove="Migrations\GTRDB\20200714101315_gatepass.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200714115746_incrementaddcolumn.cs" />
+    <Compile Remove="Migrations\GTRDB\20200714115746_incrementaddcolumn.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200714122656_SLNo.cs" />
+    <Compile Remove="Migrations\GTRDB\20200714122656_SLNo.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200716050320_manPGrade.cs" />
+    <Compile Remove="Migrations\GTRDB\20200716050320_manPGrade.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200716100239_otadd.cs" />
+    <Compile Remove="Migrations\GTRDB\20200716100239_otadd.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200716104639_otadd.cs" />
+    <Compile Remove="Migrations\GTRDB\20200716104639_otadd.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200716105641_otadd.cs" />
+    <Compile Remove="Migrations\GTRDB\20200716105641_otadd.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200716112342_otnullable.cs" />
+    <Compile Remove="Migrations\GTRDB\20200716112342_otnullable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200718051728_attfixedCUpdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200718051728_attfixedCUpdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200718102859_salaryrange.cs" />
+    <Compile Remove="Migrations\GTRDB\20200718102859_salaryrange.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200718155844_fiscalyeardatetime.cs" />
+    <Compile Remove="Migrations\GTRDB\20200718155844_fiscalyeardatetime.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200718164158_fiscalmonthdatetime.cs" />
+    <Compile Remove="Migrations\GTRDB\20200718164158_fiscalmonthdatetime.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200719043443_LHaltAddcol.cs" />
+    <Compile Remove="Migrations\GTRDB\20200719043443_LHaltAddcol.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200719162339_DeliveryChallanGatepass.cs" />
+    <Compile Remove="Migrations\GTRDB\20200719162339_DeliveryChallanGatepass.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200720000412_TotalQtyGatePass.cs" />
+    <Compile Remove="Migrations\GTRDB\20200720000412_TotalQtyGatePass.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200720001853_DateGatePass.cs" />
+    <Compile Remove="Migrations\GTRDB\20200720001853_DateGatePass.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200720043139_lvaddcol.cs" />
+    <Compile Remove="Migrations\GTRDB\20200720043139_lvaddcol.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200721070401_GatePassSubs.cs" />
+    <Compile Remove="Migrations\GTRDB\20200721070401_GatePassSubs.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200722092712_Productmodelchange.cs" />
+    <Compile Remove="Migrations\GTRDB\20200722092712_Productmodelchange.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200722094407_Productmodelchangeanother.cs" />
+    <Compile Remove="Migrations\GTRDB\20200722094407_Productmodelchangeanother.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200722110003_incbns.cs" />
+    <Compile Remove="Migrations\GTRDB\20200722110003_incbns.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200722140108_directGrr.cs" />
+    <Compile Remove="Migrations\GTRDB\20200722140108_directGrr.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200723042016_SWUpdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200723042016_SWUpdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200723050803_SWsetUpdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200723050803_SWsetUpdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200723051724_rmIndexSW.cs" />
+    <Compile Remove="Migrations\GTRDB\20200723051724_rmIndexSW.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200723052228_rmIndexSW.cs" />
+    <Compile Remove="Migrations\GTRDB\20200723052228_rmIndexSW.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200723052653_addIndexSW.cs" />
+    <Compile Remove="Migrations\GTRDB\20200723052653_addIndexSW.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200724041900_GatePassChanged.cs" />
+    <Compile Remove="Migrations\GTRDB\20200724041900_GatePassChanged.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200726083222_gatepassnounique.cs" />
+    <Compile Remove="Migrations\GTRDB\20200726083222_gatepassnounique.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200726181151_TotalPriceInwords.cs" />
+    <Compile Remove="Migrations\GTRDB\20200726181151_TotalPriceInwords.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200728044123_FixedAsset.cs" />
+    <Compile Remove="Migrations\GTRDB\20200728044123_FixedAsset.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200728143112_storerequsitionUpdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200728143112_storerequsitionUpdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200728155927_SomeChangesbyfahad.cs" />
+    <Compile Remove="Migrations\GTRDB\20200728155927_SomeChangesbyfahad.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200728174942_MoreChanges.cs" />
+    <Compile Remove="Migrations\GTRDB\20200728174942_MoreChanges.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200731184414_ProductPrice.cs" />
+    <Compile Remove="Migrations\GTRDB\20200731184414_ProductPrice.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200731184840_ProductPriceChange.cs" />
+    <Compile Remove="Migrations\GTRDB\20200731184840_ProductPriceChange.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200802054333_RequiredField.cs" />
+    <Compile Remove="Migrations\GTRDB\20200802054333_RequiredField.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200802082639_StatusforEverystep.cs" />
+    <Compile Remove="Migrations\GTRDB\20200802082639_StatusforEverystep.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200802154333_stockupdatecode.cs" />
+    <Compile Remove="Migrations\GTRDB\20200802154333_stockupdatecode.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200803091335_Departmentid.cs" />
+    <Compile Remove="Migrations\GTRDB\20200803091335_Departmentid.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200803115822_GoodsReceviedchange.cs" />
+    <Compile Remove="Migrations\GTRDB\20200803115822_GoodsReceviedchange.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200803122427_GoodsReceviedchangemore.cs" />
+    <Compile Remove="Migrations\GTRDB\20200803122427_GoodsReceviedchangemore.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200803152337_CalculatedPrice.cs" />
+    <Compile Remove="Migrations\GTRDB\20200803152337_CalculatedPrice.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200803181324_IssueWarehousesub.cs" />
+    <Compile Remove="Migrations\GTRDB\20200803181324_IssueWarehousesub.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200803183012_decimalproblem.cs" />
+    <Compile Remove="Migrations\GTRDB\20200803183012_decimalproblem.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200804042314_storeissuecheckbox.cs" />
+    <Compile Remove="Migrations\GTRDB\20200804042314_storeissuecheckbox.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200805080111_somechangesaboutissues.cs" />
+    <Compile Remove="Migrations\GTRDB\20200805080111_somechangesaboutissues.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200805173002_Grrsubwarehouseadd.cs" />
+    <Compile Remove="Migrations\GTRDB\20200805173002_Grrsubwarehouseadd.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200805182819_grrfinalcheck.cs" />
+    <Compile Remove="Migrations\GTRDB\20200805182819_grrfinalcheck.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200805183213_grrfinalcheckmore.cs" />
+    <Compile Remove="Migrations\GTRDB\20200805183213_grrfinalcheckmore.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200805183552_grrfinalcheckanother.cs" />
+    <Compile Remove="Migrations\GTRDB\20200805183552_grrfinalcheckanother.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200805183945_finalmigration.cs" />
+    <Compile Remove="Migrations\GTRDB\20200805183945_finalmigration.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200806093559_stockupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200806093559_stockupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200806150245_Costcalculatedtableupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200806150245_Costcalculatedtableupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200807052045_costcalulatedinproduct.cs" />
+    <Compile Remove="Migrations\GTRDB\20200807052045_costcalulatedinproduct.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200808060215_fi.cs" />
+    <Compile Remove="Migrations\GTRDB\20200808060215_fi.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200808063925_fi2.cs" />
+    <Compile Remove="Migrations\GTRDB\20200808063925_fi2.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200808084127_ProductionModelModification.cs" />
+    <Compile Remove="Migrations\GTRDB\20200808084127_ProductionModelModification.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200808085428_ProductionModelModification.cs" />
+    <Compile Remove="Migrations\GTRDB\20200808085428_ProductionModelModification.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200808095441_PrdUnitAddInProduction.cs" />
+    <Compile Remove="Migrations\GTRDB\20200808095441_PrdUnitAddInProduction.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200808112004_fi4.cs" />
+    <Compile Remove="Migrations\GTRDB\20200808112004_fi4.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200808112726_AddSomeFieldProduction.cs" />
+    <Compile Remove="Migrations\GTRDB\20200808112726_AddSomeFieldProduction.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200809052213_fi11.cs" />
+    <Compile Remove="Migrations\GTRDB\20200809052213_fi11.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200809192611_fa222.cs" />
+    <Compile Remove="Migrations\GTRDB\20200809192611_fa222.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200809193825_fa2221.cs" />
+    <Compile Remove="Migrations\GTRDB\20200809193825_fa2221.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200810032120_ProductionComIdString.cs" />
+    <Compile Remove="Migrations\GTRDB\20200810032120_ProductionComIdString.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200810041627_fa2223.cs" />
+    <Compile Remove="Migrations\GTRDB\20200810041627_fa2223.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200811054813_fa000000migration.cs" />
+    <Compile Remove="Migrations\GTRDB\20200811054813_fa000000migration.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200811132141_fa99999.cs" />
+    <Compile Remove="Migrations\GTRDB\20200811132141_fa99999.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200811201513_fa999990.cs" />
+    <Compile Remove="Migrations\GTRDB\20200811201513_fa999990.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200812101722_re_reffadd.cs" />
+    <Compile Remove="Migrations\GTRDB\20200812101722_re_reffadd.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813033553_fa0008888999.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813033553_fa0008888999.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813054851_prdupate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813054851_prdupate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813061152_fa77777.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813061152_fa77777.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813061822_labourstrike.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813061822_labourstrike.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813062216_purchaserequisitionsectid.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813062216_purchaserequisitionsectid.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813063933_labourstrike.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813063933_labourstrike.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813095615_refupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813095615_refupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813153131_ChartofAccountsDep.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813153131_ChartofAccountsDep.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813193852_purchaseordervalidtable.cs" />
+    <Compile Remove="Migrations\GTRDB\20200813193852_purchaseordervalidtable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200816052241_otherdedass.cs" />
+    <Compile Remove="Migrations\GTRDB\20200816052241_otherdedass.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200816140605_fa0000999988.cs" />
+    <Compile Remove="Migrations\GTRDB\20200816140605_fa0000999988.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200817140755_test6666666.cs" />
+    <Compile Remove="Migrations\GTRDB\20200817140755_test6666666.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200817141323_test6666666.cs" />
+    <Compile Remove="Migrations\GTRDB\20200817141323_test6666666.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200818053119_fa44444444449999.cs" />
+    <Compile Remove="Migrations\GTRDB\20200818053119_fa44444444449999.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200818060930_fa4444666666666.cs" />
+    <Compile Remove="Migrations\GTRDB\20200818060930_fa4444666666666.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200818061322_fa4444666666666.cs" />
+    <Compile Remove="Migrations\GTRDB\20200818061322_fa4444666666666.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200819070204_fa009887777777776.cs" />
+    <Compile Remove="Migrations\GTRDB\20200819070204_fa009887777777776.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200819072956_fa00986876767.cs" />
+    <Compile Remove="Migrations\GTRDB\20200819072956_fa00986876767.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200819105557_Empsalarupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200819105557_Empsalarupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200820182242_LCNOLCDAte.cs" />
+    <Compile Remove="Migrations\GTRDB\20200820182242_LCNOLCDAte.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200821042153_LPNOLPDAte.cs" />
+    <Compile Remove="Migrations\GTRDB\20200821042153_LPNOLPDAte.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200822043202_nightupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200822043202_nightupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200822134316_bookingcolumnuniqe.cs" />
+    <Compile Remove="Migrations\GTRDB\20200822134316_bookingcolumnuniqe.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200823112659_substoreReq.cs" />
+    <Compile Remove="Migrations\GTRDB\20200823112659_substoreReq.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200823123222_otherdedupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200823123222_otherdedupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200823203314_AllotmentType.cs" />
+    <Compile Remove="Migrations\GTRDB\20200823203314_AllotmentType.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200823211032_AllotmentTypeinDistrictWiseBooking.cs" />
+    <Compile Remove="Migrations\GTRDB\20200823211032_AllotmentTypeinDistrictWiseBooking.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200824115857_incupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200824115857_incupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200824123543_customerserial.cs" />
+    <Compile Remove="Migrations\GTRDB\20200824123543_customerserial.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200825043746_faprocessrecord.cs" />
+    <Compile Remove="Migrations\GTRDB\20200825043746_faprocessrecord.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200825092553_validation.cs" />
+    <Compile Remove="Migrations\GTRDB\20200825092553_validation.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200825094626_validation1.cs" />
+    <Compile Remove="Migrations\GTRDB\20200825094626_validation1.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200825104620_whupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200825104620_whupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200826062911_newee.cs" />
+    <Compile Remove="Migrations\GTRDB\20200826062911_newee.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200826171317_PurchaseOrderChange.cs" />
+    <Compile Remove="Migrations\GTRDB\20200826171317_PurchaseOrderChange.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200826180309_purchaseordermain.cs" />
+    <Compile Remove="Migrations\GTRDB\20200826180309_purchaseordermain.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200827075535_prdupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200827075535_prdupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200828143642_fa_changes.cs" />
+    <Compile Remove="Migrations\GTRDB\20200828143642_fa_changes.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200829043938_lvApprove.cs" />
+    <Compile Remove="Migrations\GTRDB\20200829043938_lvApprove.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200829080739_lvApproveSt.cs" />
+    <Compile Remove="Migrations\GTRDB\20200829080739_lvApproveSt.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200829114209_fa_dep_schedule_tem.cs" />
+    <Compile Remove="Migrations\GTRDB\20200829114209_fa_dep_schedule_tem.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200831105312_issuesubst.cs" />
+    <Compile Remove="Migrations\GTRDB\20200831105312_issuesubst.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200901070412_produpdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200901070412_produpdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200901111313_prdtarget.cs" />
+    <Compile Remove="Migrations\GTRDB\20200901111313_prdtarget.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200901112513_prdtarget.cs" />
+    <Compile Remove="Migrations\GTRDB\20200901112513_prdtarget.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200901114315_prdtargetset.cs" />
+    <Compile Remove="Migrations\GTRDB\20200901114315_prdtargetset.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200902080140_medicalupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200902080140_medicalupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200902101425_dtMedical.cs" />
+    <Compile Remove="Migrations\GTRDB\20200902101425_dtMedical.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200902121332_suppaddcol.cs" />
+    <Compile Remove="Migrations\GTRDB\20200902121332_suppaddcol.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200905051430_dwntimeUtil.cs" />
+    <Compile Remove="Migrations\GTRDB\20200905051430_dwntimeUtil.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200906040322_downtime.cs" />
+    <Compile Remove="Migrations\GTRDB\20200906040322_downtime.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200906063803_dtpromotion.cs" />
+    <Compile Remove="Migrations\GTRDB\20200906063803_dtpromotion.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200907054307_prdfiscalupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200907054307_prdfiscalupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200907095503_checknoclearing.cs" />
+    <Compile Remove="Migrations\GTRDB\20200907095503_checknoclearing.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200907100100_checknoclearing.cs" />
+    <Compile Remove="Migrations\GTRDB\20200907100100_checknoclearing.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200907163953_bookingtype.cs" />
+    <Compile Remove="Migrations\GTRDB\20200907163953_bookingtype.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200908072610_salvageparcentadded.cs" />
+    <Compile Remove="Migrations\GTRDB\20200908072610_salvageparcentadded.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200909073053_checknoclearingclelar.cs" />
+    <Compile Remove="Migrations\GTRDB\20200909073053_checknoclearingclelar.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200909120059_clsqty.cs" />
+    <Compile Remove="Migrations\GTRDB\20200909120059_clsqty.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200910084233_decimal10decimal.cs" />
+    <Compile Remove="Migrations\GTRDB\20200910084233_decimal10decimal.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200912053433_prductionsales.cs" />
+    <Compile Remove="Migrations\GTRDB\20200912053433_prductionsales.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200912070707_prductionstock.cs" />
+    <Compile Remove="Migrations\GTRDB\20200912070707_prductionstock.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200912123742_medialpatient.cs" />
+    <Compile Remove="Migrations\GTRDB\20200912123742_medialpatient.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200913065314_rawmatreceive.cs" />
+    <Compile Remove="Migrations\GTRDB\20200913065314_rawmatreceive.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200913070321_rawmatreceiveupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200913070321_rawmatreceiveupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200913072529_prdtargetupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200913072529_prdtargetupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200913184948_costcalculatedaddwarehouseid.cs" />
+    <Compile Remove="Migrations\GTRDB\20200913184948_costcalculatedaddwarehouseid.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200914131122_packinglistreport.cs" />
+    <Compile Remove="Migrations\GTRDB\20200914131122_packinglistreport.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200915101248_rawmaterialstk.cs" />
+    <Compile Remove="Migrations\GTRDB\20200915101248_rawmaterialstk.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200915101957_rawmaterialstk.cs" />
+    <Compile Remove="Migrations\GTRDB\20200915101957_rawmaterialstk.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200915103139_rawmaterialstk.cs" />
+    <Compile Remove="Migrations\GTRDB\20200915103139_rawmaterialstk.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200915131651_rawmaterialstkupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200915131651_rawmaterialstkupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200917052708_subsrr.cs" />
+    <Compile Remove="Migrations\GTRDB\20200917052708_subsrr.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200921101924_medicalincludeissue.cs" />
+    <Compile Remove="Migrations\GTRDB\20200921101924_medicalincludeissue.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200921110740_coscalculated.cs" />
+    <Compile Remove="Migrations\GTRDB\20200921110740_coscalculated.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200922035156_agepatient.cs" />
+    <Compile Remove="Migrations\GTRDB\20200922035156_agepatient.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200922070227_emppermission.cs" />
+    <Compile Remove="Migrations\GTRDB\20200922070227_emppermission.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200923043647_emppermissionupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200923043647_emppermissionupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200923054151_isdirectissue.cs" />
+    <Compile Remove="Migrations\GTRDB\20200923054151_isdirectissue.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200923125530_isconsumable.cs" />
+    <Compile Remove="Migrations\GTRDB\20200923125530_isconsumable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200924091938_DynamicReportAddNewField.cs" />
+    <Compile Remove="Migrations\GTRDB\20200924091938_DynamicReportAddNewField.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200924155031_chartofaccountsamountdecimalfield.cs" />
+    <Compile Remove="Migrations\GTRDB\20200924155031_chartofaccountsamountdecimalfield.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200927190156_productcodeuniqe.cs" />
+    <Compile Remove="Migrations\GTRDB\20200927190156_productcodeuniqe.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200929062802_BOM.cs" />
+    <Compile Remove="Migrations\GTRDB\20200929062802_BOM.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200929143908_BOMMainId.cs" />
+    <Compile Remove="Migrations\GTRDB\20200929143908_BOMMainId.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200930055805_productionsales.cs" />
+    <Compile Remove="Migrations\GTRDB\20200930055805_productionsales.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200930095010_innodate.cs" />
+    <Compile Remove="Migrations\GTRDB\20200930095010_innodate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20200930164252_issuemainDept.cs" />
+    <Compile Remove="Migrations\GTRDB\20200930164252_issuemainDept.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201001155854_budgetmainandsub.cs" />
+    <Compile Remove="Migrations\GTRDB\20201001155854_budgetmainandsub.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201001161438_budgetmainandsub.cs" />
+    <Compile Remove="Migrations\GTRDB\20201001161438_budgetmainandsub.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201003193403_goodsreceive6digit.cs" />
+    <Compile Remove="Migrations\GTRDB\20201003193403_goodsreceive6digit.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201003194452_goodsreceive6digitquality.cs" />
+    <Compile Remove="Migrations\GTRDB\20201003194452_goodsreceive6digitquality.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201004165101_productcodeincrease.cs" />
+    <Compile Remove="Migrations\GTRDB\20201004165101_productcodeincrease.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201004171302_productcodeincreasemore.cs" />
+    <Compile Remove="Migrations\GTRDB\20201004171302_productcodeincreasemore.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201004180503_FixedAssetMasterTable.cs" />
+    <Compile Remove="Migrations\GTRDB\20201004180503_FixedAssetMasterTable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201004181654_Percentage.cs" />
+    <Compile Remove="Migrations\GTRDB\20201004181654_Percentage.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201004183111_nullabledepreciationid.cs" />
+    <Compile Remove="Migrations\GTRDB\20201004183111_nullabledepreciationid.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201004200844_Writtendownvaluecolumn.cs" />
+    <Compile Remove="Migrations\GTRDB\20201004200844_Writtendownvaluecolumn.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201004201925_PurchaseDate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201004201925_PurchaseDate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201005050122_requisitionupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201005050122_requisitionupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201005150340_grrupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201005150340_grrupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201006163700_decimalfieldchanges.cs" />
+    <Compile Remove="Migrations\GTRDB\20201006163700_decimalfieldchanges.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201008100507_Technical.cs" />
+    <Compile Remove="Migrations\GTRDB\20201008100507_Technical.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201008111606_addfadepstatusclasstodaperp.cs" />
+    <Compile Remove="Migrations\GTRDB\20201008111606_addfadepstatusclasstodaperp.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201008124512_addfadepstatusclasstodaperp2.cs" />
+    <Compile Remove="Migrations\GTRDB\20201008124512_addfadepstatusclasstodaperp2.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201009151221_interestrate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201009151221_interestrate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201010121724_technicalupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201010121724_technicalupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201010150138_allfiscalyear.cs" />
+    <Compile Remove="Migrations\GTRDB\20201010150138_allfiscalyear.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201010170034_purchaserequistionfiscalyearid.cs" />
+    <Compile Remove="Migrations\GTRDB\20201010170034_purchaserequistionfiscalyearid.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201011050648_testmigration.cs" />
+    <Compile Remove="Migrations\GTRDB\20201011050648_testmigration.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201011065250_supplierupdowntime.cs" />
+    <Compile Remove="Migrations\GTRDB\20201011065250_supplierupdowntime.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201011174821_manualsrrno.cs" />
+    <Compile Remove="Migrations\GTRDB\20201011174821_manualsrrno.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201011182924_manualsrrdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201011182924_manualsrrdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201012032124_uniquekey.cs" />
+    <Compile Remove="Migrations\GTRDB\20201012032124_uniquekey.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201012135651_newtest.cs" />
+    <Compile Remove="Migrations\GTRDB\20201012135651_newtest.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201014034323_newmigrationdateadded.cs" />
+    <Compile Remove="Migrations\GTRDB\20201014034323_newmigrationdateadded.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201014071050_newmigrationdateadded1.cs" />
+    <Compile Remove="Migrations\GTRDB\20201014071050_newmigrationdateadded1.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201015155050_technicalmodelrem.cs" />
+    <Compile Remove="Migrations\GTRDB\20201015155050_technicalmodelrem.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201017195306_chrtofaccountsmodelchange.cs" />
+    <Compile Remove="Migrations\GTRDB\20201017195306_chrtofaccountsmodelchange.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201017200112_chrtofaccountsmodelchange.cs" />
+    <Compile Remove="Migrations\GTRDB\20201017200112_chrtofaccountsmodelchange.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201018155840_montylysalesproduciton.cs" />
+    <Compile Remove="Migrations\GTRDB\20201018155840_montylysalesproduciton.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201018192615_uniqueycol.cs" />
+    <Compile Remove="Migrations\GTRDB\20201018192615_uniqueycol.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201019054230_technicalmaster.cs" />
+    <Compile Remove="Migrations\GTRDB\20201019054230_technicalmaster.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201020035437_techmasterupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201020035437_techmasterupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201020064254_costallocation.cs" />
+    <Compile Remove="Migrations\GTRDB\20201020064254_costallocation.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201020071450_costallowupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201020071450_costallowupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201022093314_costallonullable.cs" />
+    <Compile Remove="Migrations\GTRDB\20201022093314_costallonullable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201024044833_loanreturntype.cs" />
+    <Compile Remove="Migrations\GTRDB\20201024044833_loanreturntype.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201025072451_Accountsitemconsumedchanges.cs" />
+    <Compile Remove="Migrations\GTRDB\20201025072451_Accountsitemconsumedchanges.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201025072655_cstdetailsupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201025072655_cstdetailsupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201027161138_isLocked.cs" />
+    <Compile Remove="Migrations\GTRDB\20201027161138_isLocked.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201028043817_Acccode_Oldadded.cs" />
+    <Compile Remove="Migrations\GTRDB\20201028043817_Acccode_Oldadded.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201028104432_catmeetingupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201028104432_catmeetingupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201028155953_vouchersubcheckidnullable.cs" />
+    <Compile Remove="Migrations\GTRDB\20201028155953_vouchersubcheckidnullable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201028183746_comidadded.cs" />
+    <Compile Remove="Migrations\GTRDB\20201028183746_comidadded.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201028184959_Creiteria.cs" />
+    <Compile Remove="Migrations\GTRDB\20201028184959_Creiteria.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201029080650_testeter.cs" />
+    <Compile Remove="Migrations\GTRDB\20201029080650_testeter.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201031071354_datetimeupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201031071354_datetimeupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201102054810_budgetrelease.cs" />
+    <Compile Remove="Migrations\GTRDB\20201102054810_budgetrelease.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201102110420_issuesubcoladd.cs" />
+    <Compile Remove="Migrations\GTRDB\20201102110420_issuesubcoladd.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201104144826_longtextStatus.cs" />
+    <Compile Remove="Migrations\GTRDB\20201104144826_longtextStatus.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201104145637_username.cs" />
+    <Compile Remove="Migrations\GTRDB\20201104145637_username.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201107040035_recreationderef.cs" />
+    <Compile Remove="Migrations\GTRDB\20201107040035_recreationderef.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201107142503_representative.cs" />
+    <Compile Remove="Migrations\GTRDB\20201107142503_representative.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201107180217_representativeaddress.cs" />
+    <Compile Remove="Migrations\GTRDB\20201107180217_representativeaddress.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201108044201_processlockcoladd.cs" />
+    <Compile Remove="Migrations\GTRDB\20201108044201_processlockcoladd.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201112085708_bomsubslno.cs" />
+    <Compile Remove="Migrations\GTRDB\20201112085708_bomsubslno.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201112100149_reorderlevel.cs" />
+    <Compile Remove="Migrations\GTRDB\20201112100149_reorderlevel.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201114050036_decimalfieldchange.cs" />
+    <Compile Remove="Migrations\GTRDB\20201114050036_decimalfieldchange.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201114051032_issueqtytable.cs" />
+    <Compile Remove="Migrations\GTRDB\20201114051032_issueqtytable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201118075156_PayrollIntegrationTable.cs" />
+    <Compile Remove="Migrations\GTRDB\20201118075156_PayrollIntegrationTable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201118081345_PayrollIntegrationTableslno.cs" />
+    <Compile Remove="Migrations\GTRDB\20201118081345_PayrollIntegrationTableslno.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201118083112_IntegrationMasterDetails.cs" />
+    <Compile Remove="Migrations\GTRDB\20201118083112_IntegrationMasterDetails.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201118142104_integsettingupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201118142104_integsettingupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201121042845_intesettinupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201121042845_intesettinupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201121073001_intesettinupdatecol.cs" />
+    <Compile Remove="Migrations\GTRDB\20201121073001_intesettinupdatecol.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201121122419_intesettinupdatecolll.cs" />
+    <Compile Remove="Migrations\GTRDB\20201121122419_intesettinupdatecolll.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201122155128_monthlyproductionvalue.cs" />
+    <Compile Remove="Migrations\GTRDB\20201122155128_monthlyproductionvalue.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201124110009_loanallremarks.cs" />
+    <Compile Remove="Migrations\GTRDB\20201124110009_loanallremarks.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201125102844_UserPermission.cs" />
+    <Compile Remove="Migrations\GTRDB\20201125102844_UserPermission.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201126071949_UserPermissionAddcol.cs" />
+    <Compile Remove="Migrations\GTRDB\20201126071949_UserPermissionAddcol.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201129114021_userperupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201129114021_userperupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201205050732_pfcontribution.cs" />
+    <Compile Remove="Migrations\GTRDB\20201205050732_pfcontribution.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201205060250_persionalinfoupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201205060250_persionalinfoupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201205141958_abcded.cs" />
+    <Compile Remove="Migrations\GTRDB\20201205141958_abcded.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201206090644_columnlengthincrease.cs" />
+    <Compile Remove="Migrations\GTRDB\20201206090644_columnlengthincrease.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201209042820_GovtSchedule.cs" />
+    <Compile Remove="Migrations\GTRDB\20201209042820_GovtSchedule.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201209112048_GovtSchedule_loan.cs" />
+    <Compile Remove="Migrations\GTRDB\20201209112048_GovtSchedule_loan.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201209152142_GovtSchedule_Foreignloan.cs" />
+    <Compile Remove="Migrations\GTRDB\20201209152142_GovtSchedule_Foreignloan.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201209170620_Exchangeratedecimalfour.cs" />
+    <Compile Remove="Migrations\GTRDB\20201209170620_Exchangeratedecimalfour.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201209180729_JapaneseLoan.cs" />
+    <Compile Remove="Migrations\GTRDB\20201209180729_JapaneseLoan.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201209182823_portiontypechange.cs" />
+    <Compile Remove="Migrations\GTRDB\20201209182823_portiontypechange.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201209184344_InterestAmountTaka.cs" />
+    <Compile Remove="Migrations\GTRDB\20201209184344_InterestAmountTaka.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201210045225_subsidystoreintransit.cs" />
+    <Compile Remove="Migrations\GTRDB\20201210045225_subsidystoreintransit.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201212133340_suppliermodelupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201212133340_suppliermodelupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201212150124_vouchertype.cs" />
+    <Compile Remove="Migrations\GTRDB\20201212150124_vouchertype.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201212170252_productionbudget.cs" />
+    <Compile Remove="Migrations\GTRDB\20201212170252_productionbudget.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201213081117_representative.cs" />
+    <Compile Remove="Migrations\GTRDB\20201213081117_representative.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201213103044_assign.cs" />
+    <Compile Remove="Migrations\GTRDB\20201213103044_assign.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201213185041_assign1.cs" />
+    <Compile Remove="Migrations\GTRDB\20201213185041_assign1.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201213190606_assign1.cs" />
+    <Compile Remove="Migrations\GTRDB\20201213190606_assign1.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201213191233_assign2.cs" />
+    <Compile Remove="Migrations\GTRDB\20201213191233_assign2.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201217054244_prdclassupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201217054244_prdclassupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201219125131_newfa.cs" />
+    <Compile Remove="Migrations\GTRDB\20201219125131_newfa.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201219131843_newfat.cs" />
+    <Compile Remove="Migrations\GTRDB\20201219131843_newfat.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201222090511_prdunitdeliverychallan.cs" />
+    <Compile Remove="Migrations\GTRDB\20201222090511_prdunitdeliverychallan.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201223060525_prdsalestargetupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20201223060525_prdsalestargetupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201224172611_GRRSubProvision.cs" />
+    <Compile Remove="Migrations\GTRDB\20201224172611_GRRSubProvision.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201224173414_GRRSubProvisionDebit.cs" />
+    <Compile Remove="Migrations\GTRDB\20201224173414_GRRSubProvisionDebit.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201225054953_GRRSubProvisionDebitAmount.cs" />
+    <Compile Remove="Migrations\GTRDB\20201225054953_GRRSubProvisionDebitAmount.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20201230065008_lpnostoreintransit.cs" />
+    <Compile Remove="Migrations\GTRDB\20201230065008_lpnostoreintransit.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210104072500_signatory.cs" />
+    <Compile Remove="Migrations\GTRDB\20210104072500_signatory.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210104105927_signatoryupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20210104105927_signatoryupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210105045452_signatorydate.cs" />
+    <Compile Remove="Migrations\GTRDB\20210105045452_signatorydate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210109053326_utilitiesconsump.cs" />
+    <Compile Remove="Migrations\GTRDB\20210109053326_utilitiesconsump.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210109111200_prdnamebangla.cs" />
+    <Compile Remove="Migrations\GTRDB\20210109111200_prdnamebangla.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210113110356_bomupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20210113110356_bomupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210113111250_bomupdate.cs" />
+    <Compile Remove="Migrations\GTRDB\20210113111250_bomupdate.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210119054505_FAfieldsadd.cs" />
+    <Compile Remove="Migrations\GTRDB\20210119054505_FAfieldsadd.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210124044728_note123remarks.cs" />
+    <Compile Remove="Migrations\GTRDB\20210124044728_note123remarks.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210124050509_note123remarks.cs" />
+    <Compile Remove="Migrations\GTRDB\20210124050509_note123remarks.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210125072440_assetfieldsadd.cs" />
+    <Compile Remove="Migrations\GTRDB\20210125072440_assetfieldsadd.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210126064350_reportPermissiontable.cs" />
+    <Compile Remove="Migrations\GTRDB\20210126064350_reportPermissiontable.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210128071330_arrearbill.cs" />
+    <Compile Remove="Migrations\GTRDB\20210128071330_arrearbill.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210131074829_SisterConcernCompany.cs" />
+    <Compile Remove="Migrations\GTRDB\20210131074829_SisterConcernCompany.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210131084337_sisterconcerncompany.cs" />
+    <Compile Remove="Migrations\GTRDB\20210131084337_sisterconcerncompany.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210131092212_comidstring.cs" />
+    <Compile Remove="Migrations\GTRDB\20210131092212_comidstring.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210131093511_pfaddcol.cs" />
+    <Compile Remove="Migrations\GTRDB\20210131093511_pfaddcol.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210131094627_HR_Emp_PF_OPBal.cs" />
+    <Compile Remove="Migrations\GTRDB\20210131094627_HR_Emp_PF_OPBal.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210131102748_comidstringfinal.cs" />
+    <Compile Remove="Migrations\GTRDB\20210131102748_comidstringfinal.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210131104210_comidstringfinal.cs" />
+    <Compile Remove="Migrations\GTRDB\20210131104210_comidstringfinal.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210201065706_moreledgermodel.cs" />
+    <Compile Remove="Migrations\GTRDB\20210201065706_moreledgermodel.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210204092741_fasalesandschedule.cs" />
+    <Compile Remove="Migrations\GTRDB\20210204092741_fasalesandschedule.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210204095410_fasalesandschedule.cs" />
+    <Compile Remove="Migrations\GTRDB\20210204095410_fasalesandschedule.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210207042414_saleschedule.cs" />
+    <Compile Remove="Migrations\GTRDB\20210207042414_saleschedule.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210207051819_saleschedule.cs" />
+    <Compile Remove="Migrations\GTRDB\20210207051819_saleschedule.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210207052713_saleschedule.cs" />
+    <Compile Remove="Migrations\GTRDB\20210207052713_saleschedule.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210207060024_saleschedule.cs" />
+    <Compile Remove="Migrations\GTRDB\20210207060024_saleschedule.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210207061613_salescheduleid.cs" />
+    <Compile Remove="Migrations\GTRDB\20210207061613_salescheduleid.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210207101511_salescheduletem.cs" />
+    <Compile Remove="Migrations\GTRDB\20210207101511_salescheduletem.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210208061505_temsaleschedule.cs" />
+    <Compile Remove="Migrations\GTRDB\20210208061505_temsaleschedule.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210208073633_temsalescheduleup.cs" />
+    <Compile Remove="Migrations\GTRDB\20210208073633_temsalescheduleup.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210209121524_permission.cs" />
+    <Compile Remove="Migrations\GTRDB\20210209121524_permission.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210211091856_BusinessController.cs" />
+    <Compile Remove="Migrations\GTRDB\20210211091856_BusinessController.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304075651_vouchergroupadded.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304075651_vouchergroupadded.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304084004_vouchersubtransactiongroup.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304084004_vouchersubtransactiongroup.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304084843_changes.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304084843_changes.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304114937_integrationRemarks.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304114937_integrationRemarks.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304121121_billadvanceadd.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304121121_billadvanceadd.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304183602_vouchertrangroupnokey.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304183602_vouchertrangroupnokey.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304184138_vouchertrangroupnokey.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304184138_vouchertrangroupnokey.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304184652_vouchertrangroupnokey.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304184652_vouchertrangroupnokey.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304184926_vouchertrangroupnokeyfahad.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304184926_vouchertrangroupnokeyfahad.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304190038_vouchertrangroupnokeyfahad.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304190038_vouchertrangroupnokeyfahad.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304190808_vouchertrangroupnokeyfahad.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304190808_vouchertrangroupnokeyfahad.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304191244_vouchertrangroupnokeyoknow.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304191244_vouchertrangroupnokeyoknow.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304191922_vouchertrangroupnokeyoknow.cs" />
+    <Compile Remove="Migrations\GTRDB\20210304191922_vouchertrangroupnokeyoknow.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210305034314_voucherTranGroupWithKey.cs" />
+    <Compile Remove="Migrations\GTRDB\20210305034314_voucherTranGroupWithKey.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210305044305_trangroupsomechanges.cs" />
+    <Compile Remove="Migrations\GTRDB\20210305044305_trangroupsomechanges.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210408141208_trangroupidinrowlevel.cs" />
+    <Compile Remove="Migrations\GTRDB\20210408141208_trangroupidinrowlevel.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210419190359_salesinvoicemorechanges.cs" />
+    <Compile Remove="Migrations\GTRDB\20210419190359_salesinvoicemorechanges.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210421055543_wh.cs" />
+    <Compile Remove="Migrations\GTRDB\20210421055543_wh.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210804050250_deliveryorderpayslipno.cs" />
+    <Compile Remove="Migrations\GTRDB\20210804050250_deliveryorderpayslipno.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210909163232_userlogingusername.cs" />
+    <Compile Remove="Migrations\GTRDB\20210909163232_userlogingusername.Designer.cs" />
+    <Compile Remove="Migrations\GTRDB\20210909164255_userlogingusername.cs" />
+    <Compile Remove="Migrations\GTRDB\20210909164255_userlogingusername.Designer.cs" />
+    <Compile Remove="Models\Common\GTR_ANTIFORZERY.cs" />
+    <Compile Remove="Models\ReportViewerModel.cs" />
+    <Compile Remove="Services\UserTransactionLog.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Areas\Identity\Pages\Account\Login_old.cshtml" />
+    <Content Remove="Views\Acc_ChartOfAccounts\COATreeEditable.cshtml" />
+    <Content Remove="Views\GTF_ChartOfAccounts\COATree.cshtml" />
+    <Content Remove="Views\GTF_ChartOfAccounts\Create.cshtml" />
+    <Content Remove="Views\GTF_ChartOfAccounts\Details.cshtml" />
+    <Content Remove="Views\GTF_ChartOfAccounts\Edit.cshtml" />
+    <Content Remove="Views\GTF_ChartOfAccounts\Index.cshtml" />
+    <Content Remove="Views\GTF_ChartOfAccounts\Simple.cshtml" />
+    <Content Remove="Views\WFF_ChartOfAccounts\COATree.cshtml" />
+    <Content Remove="Views\WFF_ChartOfAccounts\Create.cshtml" />
+    <Content Remove="Views\WFF_ChartOfAccounts\Details.cshtml" />
+    <Content Remove="Views\WFF_ChartOfAccounts\Edit.cshtml" />
+    <Content Remove="Views\WFF_ChartOfAccounts\Index.cshtml" />
+    <Content Remove="Views\WFF_ChartOfAccounts\Simple.cshtml" />
+    <Content Remove="Views\GTF_GeneralReport\Report.cshtml" />
+    <Content Remove="Views\WFF_GeneralReport\Report.cshtml" />
+    <Content Remove="Views\PF_GeneralReport\Report.cshtml" />
+    <Content Remove="Views\PF_ChartOfAccounts\COATree.cshtml" />
+    <Content Remove="Views\PF_ChartOfAccounts\Create.cshtml" />
+    <Content Remove="Views\PF_ChartOfAccounts\Details.cshtml" />
+    <Content Remove="Views\PF_ChartOfAccounts\Edit.cshtml" />
+    <Content Remove="Views\PF_ChartOfAccounts\Index.cshtml" />
+    <Content Remove="Views\PF_ChartOfAccounts\Simple.cshtml" />
+    <Content Remove="Views\Acc_FiscalYear\Delete.cshtml" />
+    <Content Remove="Views\Acc_FiscalYear\Details.cshtml" />
+    <Content Remove="Views\Acc_FiscalYear\Edit.cshtml" />
+    <Content Remove="Views\GTF_Voucher\Create.cshtml" />
+    <Content Remove="Views\GTF_Voucher\Index.cshtml" />
+    <Content Remove="Views\WFF_Voucher\Create.cshtml" />
+    <Content Remove="Views\WFF_Voucher\Index.cshtml" />
+    <Content Remove="Views\PF_Voucher\Create.cshtml" />
+    <Content Remove="Views\PF_Voucher\Index.cshtml" />
+    <Content Remove="Views\FA_Master\FADetailEdit.cshtml" />
+    <Content Remove="Views\FA_Master\SaleList - Copy %282%29.cshtml" />
+    <Content Remove="Views\Issues\Delete.cshtml" />
+    <Content Remove="Views\Issues\Details.cshtml" />
+    <Content Remove="Views\Issues\Edit.cshtml" />
+    <Content Remove="Views\NoteDescription\Create.cshtml" />
+    <Content Remove="Views\NoteDescription\Index.cshtml" />
+    <Content Remove="Views\ShareHolding\Create.cshtml" />
+    <Content Remove="Views\ShareHolding\Index.cshtml" />
+    <Content Remove="wwwroot\js\BsMultiSelect.esm.js" />
+    <Content Remove="wwwroot\js\BsMultiSelect.esm.js.map" />
+    <Content Remove="wwwroot\js\BsMultiSelect.esm.min.js" />
+    <Content Remove="wwwroot\js\BsMultiSelect.esm.min.js.map" />
+    <Content Remove="wwwroot\js\BsMultiSelect.js" />
+    <Content Remove="wwwroot\js\BsMultiSelect.js.map" />
+    <Content Remove="wwwroot\js\BsMultiSelect.min.js" />
+    <Content Remove="wwwroot\js\BsMultiSelect.min.js.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Controllers\POS\GatePassesController.rar" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="App_Code\Treeview.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="App_Code\GlyphIcon.cshtml" />
+    <None Include="Views\Acc_AccountProcess\Index.cshtml" />
+    <None Include="Views\Acc_ChartOfAccounts\COATreeEditable.cshtml" />
+    <None Include="Views\BufferList\Create.cshtml" />
+    <None Include="Views\BufferList\Index.cshtml" />
+    <None Include="Views\BufferRepresentative\Create.cshtml" />
+    <None Include="Views\BufferRepresentative\Index.cshtml" />
+    <None Include="Views\BufferWishBooking\Create.cshtml" />
+    <None Include="Views\BufferWishBooking\Delete.cshtml" />
+    <None Include="Views\BufferWishBooking\Edit.cshtml" />
+    <None Include="Views\BufferWishBooking\Index.cshtml" />
+    <None Include="Views\Buffer_Del_Cha\Create.cshtml" />
+    <None Include="Views\GTF_ChartOfAccounts\COATree.cshtml" />
+    <None Include="Views\GTF_ChartOfAccounts\Create.cshtml" />
+    <None Include="Views\GTF_ChartOfAccounts\Details.cshtml" />
+    <None Include="Views\GTF_ChartOfAccounts\Edit.cshtml" />
+    <None Include="Views\GTF_ChartOfAccounts\Index.cshtml" />
+    <None Include="Views\GTF_ChartOfAccounts\Simple.cshtml" />
+    <None Include="Views\RepresentativeBooking\Create.cshtml" />
+    <None Include="Views\RepresentativeBooking\Delete.cshtml" />
+    <None Include="Views\RepresentativeBooking\Edit.cshtml" />
+    <None Include="Views\RepresentativeBooking\Index.cshtml" />
+    <None Include="Views\WFF_ChartOfAccounts\COATree.cshtml" />
+    <None Include="Views\WFF_ChartOfAccounts\Create.cshtml" />
+    <None Include="Views\WFF_ChartOfAccounts\Details.cshtml" />
+    <None Include="Views\WFF_ChartOfAccounts\Edit.cshtml" />
+    <None Include="Views\WFF_ChartOfAccounts\Index.cshtml" />
+    <None Include="Views\WFF_ChartOfAccounts\Simple.cshtml" />
+    <None Include="Views\GTF_GeneralReport\Report.cshtml" />
+    <None Include="Views\WFF_GeneralReport\Report.cshtml" />
+    <None Include="Views\PF_GeneralReport\Report.cshtml" />
+    <None Include="Views\PF_ChartOfAccounts\COATree.cshtml" />
+    <None Include="Views\PF_ChartOfAccounts\Create.cshtml" />
+    <None Include="Views\PF_ChartOfAccounts\Details.cshtml" />
+    <None Include="Views\PF_ChartOfAccounts\Edit.cshtml" />
+    <None Include="Views\PF_ChartOfAccounts\Index.cshtml" />
+    <None Include="Views\PF_ChartOfAccounts\Simple.cshtml" />
+    <None Include="Views\GTF_Voucher\Create.cshtml" />
+    <None Include="Views\GTF_Voucher\Index.cshtml" />
+    <None Include="Views\WFF_Voucher\Create.cshtml" />
+    <None Include="Views\WFF_Voucher\Index.cshtml" />
+    <None Include="Views\PF_Voucher\Create.cshtml" />
+    <None Include="Views\PF_Voucher\Index.cshtml" />
+    <None Include="Views\BankAccountNoes\Create.cshtml" />
+    <None Include="Views\BankAccountNoes\Index.cshtml" />
+    <None Include="Views\BuyerGroups\Create.cshtml" />
+    <None Include="Views\BuyerGroups\Index.cshtml" />
+    <None Include="Views\BuyerInformations\Create.cshtml" />
+    <None Include="Views\BuyerInformations\Index.cshtml" />
+    <None Include="Views\Acc_ChartOfAccounts\COATree.cshtml" />
+    <None Include="Views\Acc_ChartOfAccounts\Create.cshtml" />
+    <None Include="Views\Acc_ChartOfAccounts\Details.cshtml" />
+    <None Include="Views\Acc_ChartOfAccounts\Edit.cshtml" />
+    <None Include="Views\Acc_ChartOfAccounts\Index.cshtml" />
+    <None Include="Views\Acc_ChartOfAccounts\Simple.cshtml" />
+    <None Include="Views\NoteDescription\Create.cshtml" />
+    <None Include="Views\NoteDescription\Index.cshtml" />
+    <None Include="Views\ShareHolding\Create.cshtml" />
+    <None Include="Views\ShareHolding\Index.cshtml" />
+    <None Include="Views\SisterConcernCompany\Create.cshtml" />
+    <None Include="Views\SisterConcernCompany\Index.cshtml" />
+    <None Include="Views\Companies\Create.cshtml" />
+    <None Include="Views\Companies\Index.cshtml" />
+    <None Include="Views\COM_MasterLC\Create - Backup5nov19.cshtml" />
+    <None Include="Views\COM_MasterLC\Create.cshtml" />
+    <None Include="Views\COM_MasterLC\Index - Backup5nov19.cshtml" />
+    <None Include="Views\COM_MasterLC\Index.cshtml" />
+    <None Include="Views\COM_MasterLC\LCMarginWithAvailableBalance.cshtml" />
+    <None Include="Views\COM_MasterLC\SalesContactMasterLC.cshtml" />
+    <None Include="Views\COM_MasterLC\ShipmentScheduleIndex.cshtml" />
+    <None Include="Views\COM_ProformaInvoice\Create.cshtml" />
+    <None Include="Views\COM_ProformaInvoice\Edit.cshtml" />
+    <None Include="Views\COM_ProformaInvoice\Index - orginal.cshtml" />
+    <None Include="Views\COM_ProformaInvoice\Index.cshtml" />
+    <None Include="Views\COM_ProformaInvoice\PIDailyReceiving.cshtml" />
+    <None Include="Views\Currencies\Create.cshtml" />
+    <None Include="Views\Currencies\Index.cshtml" />
+    <None Include="Views\Dashboard\Index.cshtml" />
+    <None Include="Views\Dashboard\_DailyAttendance.cshtml" />
+    <None Include="Views\Dashboard\_DailyAttendanceSum.cshtml" />
+    <None Include="Views\Dashboard\_EmployeeDetails.cshtml" />
+    <None Include="Views\Dashboard\_MonthlyAttendance.cshtml" />
+    <None Include="Views\Dashboard\_SalaryDeatils.cshtml" />
+    <None Include="Views\Destinations\Create.cshtml" />
+    <None Include="Views\Destinations\Index.cshtml" />
+    <None Include="Views\Document\Create.cshtml" />
+    <None Include="Views\Document\Index.cshtml" />
+    <None Include="Views\ExportInvoiceMasters\backup perfect.cshtml" />
+    <None Include="Views\ExportInvoiceMasters\Create - Before Integration text box in grid.cshtml" />
+    <None Include="Views\ExportInvoiceMasters\Create - PerfectBackup Before Adding PackingList.cshtml" />
+    <None Include="Views\ExportInvoiceMasters\Create.cshtml" />
+    <None Include="Views\ExportInvoiceMasters\ExportShippingReport.cshtml" />
+    <None Include="Views\ExportInvoiceMasters\Index.cshtml" />
+    <None Include="Views\Acc_GeneralReport\Report.cshtml" />
+    <None Include="Views\LienBanks\Create.cshtml" />
+    <None Include="Views\LienBanks\Index.cshtml" />
+    <None Include="Views\MenuPermission\Create.cshtml" />
+    <None Include="Views\MenuPermission\Index.cshtml" />
+    <None Include="Views\ModuleGroups\Create.cshtml" />
+    <None Include="Views\ModuleGroups\Index.cshtml" />
+    <None Include="Views\ModuleMenus\Create.cshtml" />
+    <None Include="Views\ModuleMenus\Index.cshtml" />
+    <None Include="Views\Modules\Create.cshtml" />
+    <None Include="Views\Modules\Index.cshtml" />
+    <None Include="Views\OpeningBanks\Create.cshtml" />
+    <None Include="Views\OpeningBanks\Index.cshtml" />
+    <None Include="Views\PortOfDischarges\Create.cshtml" />
+    <None Include="Views\PortOfDischarges\Index.cshtml" />
+    <None Include="Views\PortOfLoadings\Create.cshtml" />
+    <None Include="Views\PortOfLoadings\Index.cshtml" />
+    <None Include="Views\PrdUnit\Create.cshtml" />
+    <None Include="Views\PrdUnit\Index.cshtml" />
+    <None Include="Views\Shift\Create.cshtml" />
+    <None Include="Views\Shift\Index.cshtml" />
+    <None Include="Views\Acc_ShowVoucher\Report.cshtml" />
+    <None Include="Views\Acc_SummaryReport\Report.cshtml" />
+    <None Include="Views\Acc_Voucher\Create.cshtml" />
+    <None Include="Views\Acc_Voucher\Index.cshtml" />
+    <None Include="wwwroot\Content\ProjectLibFile\css\customCssFile\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\Content\ProjectLibFile\css\customCssFile\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\Content\ProjectLibFile\css\customCssFile\fonts\themify.svg" />
+    <None Include="wwwroot\Content\ProjectLibFile\css\customCssFile\images\icon\market-value\Thumbs.db" />
+    <None Include="wwwroot\Content\ProjectLibFile\css\customCssFile\images\icon\Thumbs.db" />
+    <None Include="wwwroot\Content\ProjectLibFile\UserManualimage\ERUMV3.pdf" />
+    <None Include="wwwroot\css\customForm\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
+    <None Include="wwwroot\css\customForm\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <None Include="wwwroot\css\customForm\js\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\css\customForm\js\jquery-ui.min.js" />
+    <None Include="wwwroot\css\customForm\js\jquery.steps.js" />
+    <None Include="wwwroot\css\customForm\js\main.js" />
+    <None Include="wwwroot\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
+    <None Include="wwwroot\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="DatatablesParser-core" Version="1.5.0" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.15.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.SelfHost" Version="5.2.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.1.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Compilers" Version="4.1.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.2" />
+    <PackageReference Include="Microsoft.Net.Compilers" Version="4.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="6.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.15" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    <PackageReference Include="UAParser" Version="3.1.47" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Controllers\Sales\SalesReport\" />
+    <Folder Include="Views\BufferDC\" />
+    <Folder Include="ReportViewer\BufferReport\" />
+    <Folder Include="wwwroot\Content\ecommerce\js\customScript\" />
+    <Folder Include="wwwroot\Content\fakeloader\" />
+    <Folder Include="wwwroot\EmpDocument\" />
+    <Folder Include="Upload\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Update="Views\IncrementReport\_EmployeeGrid.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\IncrementReport\_EmpTypeGrid.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\IncrementReport\_LocationGrid.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\IncrementReport\_ReportGrid.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\IncrementReport\_SectionGrid.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\Content\ProjectLibFile\css\jquery\jquery-ui.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\IncrementReport\_DepartmentGrid.cshtml" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\IncrementReport\_DepartmentGrid.cshtml" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="bafdailybmSuprep.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>bafdailybmSuprep.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="bufferdapsupplychallan.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>bufferdapsupplychallan.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="bufferlistreport.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>bufferlistreport.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="bufferrptsuprep.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>bufferrptsuprep.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Buffersellsinammount.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Buffersellsinammount.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Buffer_DAPFertilizerFillTruckGatePass.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Buffer_DAPFertilizerFillTruckGatePass.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Buffer_Receivefrom_buffer_Bank_Ammount.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Buffer_Receivefrom_buffer_Bank_Ammount.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Buffer_Receivefrom_buffer_Bank_Ammount1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Buffer_Receivefrom_buffer_Bank_Ammount1.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Buffer_rptAllBuffersupplyAllotment.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Buffer_rptAllBuffersupplyAllotment.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Buffer_Sales_Statement_in_Amount.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Buffer_Sales_Statement_in_Amount.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Buffer_Sales_Statement_in_Quantity.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Buffer_Sales_Statement_in_Quantity.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Buffer_Sells_statement_Final.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Buffer_Sells_statement_Final.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="bufrepalllist.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>bufrepalllist.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="dsIncomeTaxCertificate.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dsIncomeTaxCertificate.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="GTRERP_DAPDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GTRERP_DAPDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="IntegratedAllocationwise_Daily_Basis.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IntegratedAllocationwise_Daily_Basis.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="monthlybasissupplyrep.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>monthlybasissupplyrep.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="namebuffer.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>namebuffer.xsd</DependentUpon>
+    </Compile>
+
+    <Compile Update="GTRERP_DAPdap2.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GTRERP_DAPdap2.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="GTRERP_DAPDataSet1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GTRERP_DAPDataSet1.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Update="bafdailybmSuprep.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bafdailybmSuprep.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="bufferdapsupplychallan.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bufferdapsupplychallan.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="bufferlistreport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bufferlistreport.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="bufferrptsuprep.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bufferrptsuprep.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Buffersellsinammount.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Buffersellsinammount.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Buffer_DAPFertilizerFillTruckGatePass.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Buffer_DAPFertilizerFillTruckGatePass.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Buffer_Receivefrom_buffer_Bank_Ammount.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Buffer_Receivefrom_buffer_Bank_Ammount.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Buffer_Receivefrom_buffer_Bank_Ammount1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Buffer_Receivefrom_buffer_Bank_Ammount1.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Buffer_rptAllBuffersupplyAllotment.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Buffer_rptAllBuffersupplyAllotment.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Buffer_Sales_Statement_in_Amount.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Buffer_Sales_Statement_in_Amount.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Buffer_Sales_Statement_in_Quantity.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Buffer_Sales_Statement_in_Quantity.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Buffer_Sells_statement_Final.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Buffer_Sells_statement_Final.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="bufrepalllist.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bufrepalllist.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="dsIncomeTaxCertificate.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsIncomeTaxCertificate.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="GTRERP_DAPDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GTRERP_DAPDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="IntegratedAllocationwise_Daily_Basis.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IntegratedAllocationwise_Daily_Basis.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="monthlybasissupplyrep.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>monthlybasissupplyrep.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="namebuffer.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>namebuffer.Designer.cs</LastGenOutput>
+    </None>
+
+    <None Update="GTRERP_DAPdap2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GTRERP_DAPdap2.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="GTRERP_DAPDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GTRERP_DAPDataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="ReportViewer\BufferReport\rptSalesStatement.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

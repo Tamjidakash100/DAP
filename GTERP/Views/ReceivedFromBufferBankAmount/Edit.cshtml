@@ -1,0 +1,217 @@
+﻿@model GTERP.Models.ReceivedFromBufferBankAmountModel.ReceivedFromBufferBankAmountsModels
+
+<link href="~/css/customFormStyle.css" rel="stylesheet" />
+<style>
+    #styletext {
+        color: transparent;
+        background: #666666;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+        font-weight: 100;
+        font-size: 40px;
+    }
+</style>
+
+
+@using (Html.BeginForm("Edit", "ReceivedFromBufferBankAmount", FormMethod.Post))
+{
+    @*@Html.AntiForgeryToken()*@
+
+    <div class="container" style="max-width: 800px;">
+        <div class="py-7 text-center">
+            <input asp-for="BankAmountId"  hidden  />
+
+            <h1 id="styletext">Received From Buffer (Bank Amount)</h1>
+            <p class="lead"></p>
+        </div>
+
+        <div id="modalbodyfahad" class="row card p-4">
+            <div class="col-md-12 order-md-1">
+                <h4 class="mb-3">Received From Buffer (Bank Amount) @ViewBag.Title</h4>
+
+                <form class="needs-validation card p-4" novalidate>
+
+                    <input name="comid" type="text" value="@Model.comid" hidden />
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <label asp-for="BufferId" class="col-sm-2 control-label">Buffer Name</label>
+                                        </span>
+                                    </div>
+                                    <select asp-for="BufferId" disabled class="form-control" asp-items="ViewBag.BufferId">
+                                        <option>Select Buffer Name</option>
+                                    </select>
+                                    <input type="text" name="BufferId" value="@Model.BufferId"  hidden/>
+                                    <span asp-validation-for="BufferId" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <label asp-for="FiscalYearId" class="col-sm-2 control-label">Fiscal Year</label>
+                                        </span>
+                                    </div>
+                                    <select name="FiscalYearId"  disabled id="fiscalYear" class="form-control" asp-items="ViewBag.FiscalYearId">
+                                        <option>Select Fiscal Year</option>
+                                    </select>
+                                    <input type="text" name="FiscalYearId" value="@Model.FiscalYearId"  hidden/>
+                                    <span asp-validation-for="FiscalYearId" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <label asp-for="FiscalMonthId"  class="col-sm-2 control-label">Fiscal Month</label>
+                                        </span>
+                                    </div>
+                                    <select  id="fiscalMonth" name="FiscalMonthId" disabled asp-items="ViewBag.FiscalMonthId" class="form-control">
+                                        <option value="0">Select Fiscal Month</option>
+                                    </select> <br />
+                                    <input type="text" name="FiscalMonthId" value="@Model.FiscalMonthId"  hidden/>
+                                    <span asp-validation-for="FiscalMonthId" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <label asp-for="Amount" class="col-sm-3 control-label">Amount</label>
+                                        </span>
+                                    </div>
+                                    <input asp-for="Amount" id="amountTk" class="form-control" autocomplete="off" />
+                                    <span asp-validation-for="Amount" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <label asp-for="BankID" class="col-sm-2 control-label">Bank</label>
+                                        </span>
+                                    </div>
+                                    <select asp-for="BankID" disabled class="form-control" asp-items="ViewBag.BankId">
+                                        <option>Select Bank</option>
+                                    </select>
+                                    <input type="text" name="BankID" value="@Model.BankID"  hidden/>
+                                    <span asp-validation-for="BankID" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <label asp-for="DtInput" class="col-sm-3 control-label">&nbsp; Date &nbsp;</label>
+                                        </span>
+                                    </div>
+                                    <input name="DtInput" asp-for="DtInput" class="form-control tg" type="date"  autocomplete="off" />
+
+                                    <span asp-validation-for="DtInput" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-2">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <label asp-for="Note" class="col-sm-3 control-label">Note</label>
+                                        </span>
+                                    </div>
+                                    <input asp-for="Note" id="PayInSlipNo" class="form-control" autocomplete="off" />
+                                    <span asp-validation-for="Note" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row text-center m-2">
+                            <br />
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4 col-xs-12 d-block mx-auto">
+
+                                @if (ViewBag.Title == "Create")
+                                {
+                                    <input type="submit" value="Save" class="btn btn-primary btn-md btn-block rounded-0" />
+
+                                }
+                                else if (ViewBag.Title == "Edit")
+                                {
+
+                                    <input type="submit" value="Update" class="btn btn-warning btn-block rounded-0" />
+                                }
+                                else if (ViewBag.Title == "Delete")
+                                {
+                                    <button class="btn btn-danger btn-md btn-block rounded-0" type="button" onclick="Buffer_delete()">Delete</button>
+                                }
+                            </div>
+                            <div class="col-md-4 col-xs-12 d-block mx-auto">
+                                @Html.ActionLink("Back", "Index", "ReceivedFromBufferBankAmount", null, new { @class = "btn btn-info btn-block rounded-0", @id = "btnBack" })
+
+                            </div>
+                            <div class="col-md-2"></div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+}
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.1/js/bootstrap-multiselect.min.js" integrity="sha512-fp+kGodOXYBIPyIXInWgdH2vTMiOfbLC9YqwEHslkUxc8JLI7eBL2UQ8/HbB5YehvynU3gA3klc84rAQcTQvXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        $().ready(() => {
+            $("rep_dropdown").multiselect();
+            $("dist_dropdown").multiselect();
+        })
+
+
+        $('#fiscalYear').change(function () {
+            let did = $("#fiscalYear option:selected").val();
+            $.ajax({
+                url: '/ReceivedFromBufferBankAmount/getFiscalMonthName',
+                cache: false,
+                type: 'GET',
+                dataType: 'JSON',
+                data: { id: did },
+                success: function (mdata) {
+                    console.log(mdata);
+                    if (mdata.flag == "1") {
+                        $('#fiscalMonth').empty();
+                        $('#fiscalMonth').empty();
+                        $.each(mdata.data, function (i, obj) {
+                            let s = '<option value="' + obj.MonthId + '">' + obj.MonthName + '</option>';
+                            $('#fiscalMonth').append(s);
+                        });
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        });
+
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+

@@ -1,0 +1,351 @@
+﻿@Html.AntiForgeryToken()
+@model GTERP.Models.Supplier
+
+
+<style>
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+</head>
+
+<body>
+
+    <h2></h2>
+    @using (Html.BeginForm("Create", "suppliers", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+
+    <div class="container" style="max-width:1000px;">
+        <div class="py-7 text-center">
+            @*<img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">*@
+            <h2>Supplier Entry</h2>
+            <hr />
+            <p class="lead"></p>
+        </div>
+
+
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @if (Model != null)
+        {
+            <input type="hidden" id="Salesid" name="SupplierId" value="@Model.SupplierId" />
+            @Html.HiddenFor(model => model.userid)
+            @Html.HiddenFor(model => model.comid)
+            @Html.HiddenFor(model => model.useridUpdate)
+            @Html.HiddenFor(model => model.DateAdded)
+            @Html.HiddenFor(model => model.DateUpdated)
+        }
+        else
+        {
+            <input type="hidden" id="comid" name="comid" value="" />
+        }
+
+
+        <div id="modalbodyfahad" class="row card p-4">
+            <div class="col-md-12 order-md-1">
+                <h4 class="mb-3">Supplier Information</h4>
+                <div class="needs-validation" novalidate>
+                    <div class="row">
+                     
+                        <div class="col-md-12 col-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text py-0">
+                                        @Html.LabelFor(model => model.SupplierCode, htmlAttributes: new { @class = "control-label" })
+                                    </span>
+                                </div>
+                                @Html.EditorFor(model => model.SupplierCode, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.SupplierCode, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text py-0">
+                                        @Html.LabelFor(model => model.SupplierName, htmlAttributes: new { @class = "control-label" })
+                                    </span>
+                                </div>
+                                @Html.EditorFor(model => model.SupplierName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.SupplierName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+               
+                        <div class="col-md-6 col-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text py-0">
+                                        @Html.LabelFor(model => model.SupplierNameB, htmlAttributes: new { @class = "control-label" })
+                                    </span>
+                                </div>
+                                @Html.EditorFor(model => model.SupplierNameB, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.SupplierNameB, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-6 col-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text py-0">
+                                        @Html.LabelFor(model => model.EmailId, htmlAttributes: new { @class = "control-label" })
+                                    </span>
+                                </div>
+                                @Html.EditorFor(model => model.EmailId, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6 col-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text py-0">
+                                        @Html.LabelFor(model => model.CountryId, htmlAttributes: new { @class = "control-label" })
+                                    </span>
+                                </div>
+                                @Html.DropDownList("CountryId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.CountryId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text py-0">
+                                        @Html.LabelFor(model => model.DistId, htmlAttributes: new { @class = "control-label" })
+                                    </span>
+                                </div>
+                                <select asp-for="DistId" asp-items="ViewBag.DistId" class="form-control"></select>
+                                @Html.ValidationMessageFor(model => model.DistId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+               
+                        <div class="col-md-6 col-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text py-0">
+                                        @Html.LabelFor(model => model.PStationId, htmlAttributes: new { @class = "control-label" })
+                                    </span>
+                                </div>
+                                <select asp-for="PStationId" class="form-control"></select>
+                                @Html.ValidationMessageFor(model => model.PStationId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text py-0">
+                                        @Html.LabelFor(model => model.PrimaryAddress, htmlAttributes: new { @class = "control-label" })
+                                    </span>
+                                </div>
+                                @Html.EditorFor(model => model.PrimaryAddress, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PrimaryAddress, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text py-0">
+                                        @Html.LabelFor(model => model.SecoundaryAddress, new { htmlAttributes = new { @class = "control-label" } })
+                                    </span>
+                                </div>
+                                @Html.EditorFor(model => model.SecoundaryAddress, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.SecoundaryAddress, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text py-0">
+                                        @Html.LabelFor(model => model.PostalCode, htmlAttributes: new { @class = "control-label" })
+                                    </span>
+                                </div>
+                                @Html.EditorFor(model => model.PostalCode, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PostalCode, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+          
+                        <div class="col-md-6 col-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text py-0">
+                                        @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label" })
+                                    </span>
+                                </div>
+                                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text py-0">
+                                        @Html.LabelFor(model => model.PhoneNo, htmlAttributes: new { @class = "control-label" })
+                                    </span>
+                                </div>
+                                @Html.EditorFor(model => model.PhoneNo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PhoneNo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+               
+                        <div class="col-md-6 col-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text py-0">
+                                        @Html.LabelFor(model => model.TinNo, htmlAttributes: new { @class = "control-label" })
+                                    </span>
+                                </div>
+                                @Html.EditorFor(model => model.TinNo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.TinNo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text py-0">
+                                        @Html.LabelFor(model => model.OpBalance, htmlAttributes: new { @class = "control-label" })
+                                    </span>
+                                </div>
+                                @Html.EditorFor(model => model.OpBalance, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.OpBalance, "", new { @class = "text-danger" })
+                            </div>
+                        </div>                      
+                 
+                        <div class="col-md-3 col-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text py-0">
+                                        @Html.LabelFor(model => model.IsInActive, htmlAttributes: new { @class = "control-label" })
+                                    </span>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text checkbox">
+                                        @Html.EditorFor(model => model.IsInActive)
+                                        @Html.ValidationMessageFor(model => model.IsInActive, "", new { @class = "text-danger" })
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3 col-12">
+                            @if (ViewBag.Title == "Create")
+                            {
+                                <input type="submit" value="Create" class="btn btn-primary btn-block rounded-0" />
+                            }
+                            else if (ViewBag.Title == "Edit")
+                            {
+                                <input type="submit" value="Update" class="btn btn-warning btn-block rounded-0" />
+                            }
+                            else if (ViewBag.Title == "Delete")
+                            {
+                                <button class="btn btn-danger btn-block rounded-0" type="button" onclick="Suppliers_delete()">Delete</button>
+                            }
+                        </div>
+                        <div class="col-md-3 col-12">
+                            @Html.ActionLink("Back", "Index", "Suppliers", null, new { @class = "btn btn-info btn-block rounded-0" })
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    }
+    @section Scripts{ 
+
+        <script type="text/javascript">
+
+
+
+            $("#CountryId").select2();
+            $("#DistId").select2();
+            $("#PStationId").select2();
+
+            $('#DistId').change(function () {
+
+                if ($('#DistId').val() > 0) {
+                //alert('enter');
+                    CascadePoliceStation();
+                }
+                else {
+                    alert('Please Select District Information First.')
+                }
+            });
+
+        function CascadePoliceStation() {
+
+                $("#PStationId").empty();
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("getPoliceStation", "Suppliers")',
+                        dataType: 'json',
+                        async: false,
+                        data: { id: $("#DistId").val() },
+                        success: function (data) {
+                            var s ='<option value="-1">Please Select Police Station</option>';
+                            //$.each(data, function (i, data) {
+                            //    $("#Product").append('<option value="'+ data.Value + '">'
+                            //        + data.Text + '</option>');
+                            //});
+                            for (var i = 0; i < data.length; i++) {
+                                s += '<option value="' + data[i].Value + '">' + data[i].Text + '</option>';
+                            }
+                            $("#PStationId").html(s);
+                        },
+                        error: function (ex) {
+                            alert('Failed.' + ex);
+                        }
+
+                    });
+                return false;
+
+            };
+
+
+             function Suppliers_delete() {
+
+                 var SupplierId = $("#SupplierId").val();
+                    //alert(SalesId);
+                    $.ajax({
+
+                        url: '@Url.Action("Delete", "Suppliers")',
+                        //url: '@Url.Action("Delete")',
+                        data: JSON.stringify({ id: SupplierId }), //use id here
+                        //data: JSON.stringify(salesmain),
+                        type: 'POST',
+                        contentType: 'application/json;',
+                        dataType: 'json',
+                        success: function (result) {
+
+                            if (result.Success == "1") {
+                                window.location.href = '@Url.Action("Index", "Suppliers")';
+                            }
+                            else {
+                                alert(result.ex);
+                            }
+                        }
+                    });
+            }
+
+        </script>
+
+    }
+</body>
+

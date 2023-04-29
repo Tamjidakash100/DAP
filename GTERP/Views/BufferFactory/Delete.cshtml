@@ -1,0 +1,216 @@
+﻿@model GTERP.Models.FactoryDapInfo.BufferFactoryInfomation
+
+<style>
+
+
+    #styletext {
+        color: transparent;
+        background: #666666;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+        font-weight: 100;
+        font-size: 40px;
+    }
+</style>
+
+
+@using (Html.BeginForm("Edit", "BufferFactory", FormMethod.Post))
+{
+    @*@Html.AntiForgeryToken()*@
+
+    <div class="container" style="max-width: 700px;">
+        <div class="py-7 text-center">
+
+            <h1 id="styletext">Buffer Sales Report Entry</h1>
+            <p class="lead"></p>
+        </div>
+
+        @if (Model != null)
+        {
+            @Html.HiddenFor(x=> x.bufferFactoryInfoId)
+        }
+        else
+        {
+            <input type="hidden" asp-for="bufferFactoryInfoId"/>
+        }
+        <div id="modalbodyfahad" class="row card p-4">
+            <div class="col-md-12 order-md-1">
+                <h4 class="mb-3">Buffer @ViewBag.Title</h4>
+
+                <form class="needs-validation card p-4" novalidate>
+
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <input type="text" id="DtInput" class="form-control" name="DtInput" value="@Model.DtInput" />
+                                </div>
+                            </div>
+                            <input type="text" id="ComId" class="form-control" name="ComId" value="@Model.ComId" hidden />
+                            <input type="text" id="UserId" class="form-control" name="UserId" value="@Model.UserId " hidden />
+
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                            <label class="control-label">Year</label>
+                            <select asp-for="FiscalYearId" class="form-control" asp-items="ViewBag.FiscalYearId"></select>
+                            <span asp-validation-for="FiscalYearId" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                <label class="control-label">Month</label>
+                                <select asp-for="FiscalMonthId" class="form-control" asp-items="ViewBag.FiscalMonthId"></select>
+                                <span asp-validation-for="FiscalMonthId" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                            <label class="control-label">Buffer </label>
+
+                                <select asp-for="BufferId" class="form-control" asp-items="ViewBag.BufferId"></select>
+                                <span asp-validation-for="BufferId" class="text-danger"></span>                      </div>
+                            </div>
+
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+
+                            <div class="input-group mb-12 col-md-12 col-12 mt-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Production</span>
+                                </div>
+                                 <input type="text" id="Production" class="form-control" name="Production" value="@Model.Production" />
+                            </div>
+                            <div class="input-group mb-12 col-md-12 col-12 mt-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">SalesDAPFCLr</span>
+                                </div>
+                                 <input type="text" id="SalesDAPFCL" class="form-control" name="SalesDAPFCL"value="@Model.SalesDAPFCL" />
+                            </div>
+
+                            <div class="input-group mb-12 col-md-12 col-12 mt-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Opening Balance</span>
+                                </div>
+                                 <input type="text" id="OpeningBalance" class="form-control" name="OpeningBalance" value="@Model.OpeningBalance"/>
+                            </div>
+                            <div class="input-group mb-12 col-md-12 col-12 mt-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">DO Balance</span>
+                                </div>
+                                 <input type="text" id="DOBalance" class="form-control" name="DOBalance" value="@Model.DOBalance" />
+                            </div>
+
+                             <div class="input-group mb-12 col-md-12 col-12 mt-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Yearly Allotment MOA </span>
+                                </div>
+                                 <input type="text" id="YearlyAllotmentMOA" class="form-control" name="YearlyAllotmentMOA" value="@Model.YearlyAllotmentMOA" />
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+
+
+
+
+                        <div class="row text-center m-2">
+                            <br />
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4 col-xs-12 d-block mx-auto">
+
+                                @if (ViewBag.Title == "Create")
+                                {
+                                    <input type="submit" value="Save" class="btn btn-primary btn-md btn-block rounded-0" />
+
+                                    @*<button class="btn btn-primary btn-lg btn-block" type="button" onclick="Products_save()">Save</button>*@
+                                }
+                                else if (ViewBag.Title == "Edit")
+                                {
+
+                                    <input type="submit" value="Update" class="btn btn-warning btn-block rounded-0" />
+
+                                    @*<button class="btn btn-warning btn-lg btn-block" type="button" onclick="Products_save()">Update</button>*@
+                                }
+                                else if (ViewBag.Title == "Delete")
+                                {
+                                    <button class="btn btn-danger btn-md btn-block rounded-0" type="button" onclick="Buffer_delete()">Delete</button>
+                                }
+
+
+                            </div>
+                            <div class="col-md-4 col-xs-12 d-block mx-auto">
+                                @Html.ActionLink("Back", "Index", "BufferFactory", null, new { @class = "btn btn-info btn-block rounded-0", @id = "btnBack" })
+
+                            </div>
+                            <div class="col-md-2"></div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+}
+
+@*@section Styles{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.1/css/bootstrap-multiselect.css" integrity="sha512-Lif7u83tKvHWTPxL0amT2QbJoyvma0s9ubOlHpcodxRxpZo4iIGFw/lDWbPwSjNlnas2PsTrVTTcOoaVfb4kwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+}*@
+
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.1/js/bootstrap-multiselect.min.js" integrity="sha512-fp+kGodOXYBIPyIXInWgdH2vTMiOfbLC9YqwEHslkUxc8JLI7eBL2UQ8/HbB5YehvynU3gA3klc84rAQcTQvXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        $().ready(() => {
+            $("rep_dropdown").multiselect();
+            $("dist_dropdown").multiselect();
+        })
+
+        // $("#Sectid").select2();
+
+        function Buffer_delete() {
+
+            var FactoryInfoId = $("#bufferFactoryInfoId").val();
+            // alert(DesigId);
+            $.ajax({
+
+                url: '@Url.Action("Delete", "BufferFactory")',
+                //url: '@Url.Action("Delete")',
+                data: JSON.stringify({ id: FactoryInfoId }), //use id here
+                //data: JSON.stringify(salesmain),
+                type: 'POST',
+                contentType: 'application/json;',
+                dataType: 'json',
+                success: function (result) {
+                    debugger;
+                    if (result.Success == "1") {
+                        customFile('3', result.ex);
+                        window.setTimeout(function () {
+                            // Move to a new location or you can do something else
+                            window.location.href = '@Url.Action("Index", "BufferFactory")';
+                        }, 500);
+                    }
+                    else {
+                        toastr.error(result.ex);
+                    }
+                }
+            });
+        }
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+

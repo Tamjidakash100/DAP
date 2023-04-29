@@ -1,0 +1,1824 @@
+﻿
+@model GTERP.Models.GoodsReceiveMain
+
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@using GTERP.Models.Common
+@{
+    UserPermission permission = HttpContextAccessor.HttpContext.Session.GetObject<UserPermission>("userpermission");
+}
+<link href="~/Content/ProjectLibFile/css/customCssFile/customFormStyle.css" rel="stylesheet" />
+
+<style>
+
+    .modal:nth-of-type(odd) {
+        z-index: 1052 !important;
+        transition: opacity .15s linear;
+    }
+
+    table tr:hover {
+        cursor: pointer;
+    }
+
+    table.sortable tr:hover {
+        cursor: pointer;
+    }
+
+
+    td.addsubsection {
+        color: red;
+        font-weight: bold;
+    }
+    .input-group.input-group-sm{
+        font-size: 12px;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                @if (permission.IsProduction)
+                {
+                    <div>Store Requistion @ViewBag.Title</div>
+                }
+                else
+                {
+                    <div>Direct Received Good @ViewBag.Title</div>
+                }
+            </div>
+
+            <div class="card-body">
+                @*@Html.HiddenFor(m => m.UserId)*@
+                <input type="hidden" id="mode" value="@ViewBag.Title" />
+                @if (Model != null)
+                {
+                    @Html.HiddenFor(m => m.GRRMainId)
+                    @Html.HiddenFor(m => m.ComId)
+                    @Html.HiddenFor(m => m.UserId)
+                    @Html.HiddenFor(m => m.DateAdded)
+                    @Html.HiddenFor(m => m.IsDirectGRR)
+                    <input type="hidden" id="UnitId" name="UnitId" />
+                    <input type="hidden" id="UnitName" name="UnitName" />
+                    <input type="hidden" id="Status" name="Status" value="@Model.Status" />
+
+                }
+
+                <div class="row">
+                    <div class="col-md-12">
+                        @*<form method="post">*@
+                        <form>
+                            @Html.AntiForgeryToken()
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                            @Html.LabelFor(m => m.GRRNo)
+                                                    </span>
+                                                </div>
+                                                @Html.EditorFor(m => m.GRRNo, new { htmlAttributes = new { @class = "form-control", id = "GRRNo" } })
+                                                @Html.ValidationMessageFor(model => model.GRRNo, "", new { @class = "text-danger" })
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        @if (permission.IsProduction)
+                                                        {
+                                                            <label>SR Date</label>
+                                                        }
+                                                        else
+                                                        {
+                                                            @Html.LabelFor(m => m.GRRDate)
+                                                        }
+
+                                                    </span>
+                                                </div>
+                                                @Html.EditorFor(m => m.GRRDate, new { htmlAttributes = new { @class = "form-control", id = "GRRDate" } })
+                                                @Html.ValidationMessageFor(model => model.GRRDate, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="prd col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <label>Supplier</label>
+                                                    </span>
+                                                </div>
+                                                @Html.DropDownList("SupplierId", null, "--Select--", htmlAttributes: new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.SupplierId, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="prd col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <label>Currency</label>
+                                                    </span>
+                                                </div>
+                                                @Html.DropDownList("CurrencyId", null, "--Select--", htmlAttributes: new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.CurrencyId, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+
+                                        <div class="prd col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        @Html.LabelFor(model => model.ConvertionRate, htmlAttributes: new { @class = "control-label" })
+                                                    </span>
+                                                </div>
+                                                @Html.EditorFor(model => model.ConvertionRate, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.ConvertionRate, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="prd col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        @Html.LabelFor(model => model.TotalGRRValue, htmlAttributes: new { @class = "control-label" })
+                                                    </span>
+                                                </div>
+                                                @Html.EditorFor(model => model.TotalGRRValue, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.TotalGRRValue, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="prd col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <label>VAT</label>
+                                                        @*@Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "control-label" })*@
+                                                    </span>
+                                                </div>
+                                                <input id="vat" class="form-control" />
+                                                @*@Html.EditorFor(model => model.Remarks, new { htmlAttributes = new { @class = "form-control" } })*@
+                                                @*@Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })*@
+                                            </div>
+                                        </div>
+                                        <div class="prd col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        @Html.LabelFor(model => model.NetGRRValue, htmlAttributes: new { @class = "control-label" })
+                                                    </span>
+                                                </div>
+                                                @Html.EditorFor(model => model.NetGRRValue, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.NetGRRValue, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class=" col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        @Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "control-label" })
+                                                    </span>
+                                                </div>
+                                                @Html.EditorFor(model => model.Remarks, new { htmlAttributes = new { @class = "form-control" } })
+
+                                            </div>
+                                        </div>
+                                        <div class="prd col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        Supplier
+                                                    </span>
+                                                </div>
+                                                @Html.EditorFor(model => model.ManualSupplierName, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.ManualSupplierName, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <div class="text-center">
+                                        <h4>Create Receive Item</h4>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-md-12 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <label>Product Category</label>
+                                                    </span>
+                                                </div>
+
+                                                @*@Html.HiddenFor(m => m.PurchaseRequisitionSub.FirstOrDefault().PurReqSubId, new { id = "PurReqSubId" })*@
+
+                                                @Html.DropDownList("CategoryId", ViewBag.CategoryId as List<SelectListItem>, new { id = "CategoryId", @class = "form-control form-control-sm" })
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <label>Product Name</label>
+                                                    </span>
+                                                </div>
+                                                <select class="form-control" id="ProductId"></select>
+                                            
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">
+                                                            <span type="button" class="text-primary" data-toggle="modal" id="btnModal" data-target="#ProductModal"><i class="fa fa-plus fa-lg"></i></span>
+                                                        </span>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="prd col-md-12 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <label>Brand Name</label>
+                                                    </span>
+                                                </div>
+                                                <input id="ProductBrand" disabled="disabled" class="form-control" />
+                                            </div>
+                                        </div>
+
+                                        <div class="prd col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <label>Product Model</label>
+                                                    </span>
+                                                </div>
+
+                                                @Html.TextBox("ProductModel", "", new { id = "ProductModel", @class = "form-control", @disabled = "disabled" })
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <label>Store</label>
+                                                    </span>
+                                                </div>
+
+                                                @Html.DropDownList("WarehouseId", ViewBag.WarehouseId as List<SelectListItem>, new { id = "WarehouseId", @class = "form-control form-control" })
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        @if (permission.IsProduction)
+                                                        {
+                                                            <label>SR Qty</label>
+                                                        }
+                                                        else
+                                                        {
+                                                    <label>Rcvd. Qty</label>
+                                                        }
+                                                        
+                                                    </span>
+                                                </div>
+
+                                                @Html.TextBox("PurReqQty", "", new { id = "PurReqQty", @class = "form-control" })
+                                                <span id="QtySpan" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="prd col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <label>Rate</label>
+                                                    </span>
+                                                </div>
+                                                <input id="Rate" class="form-control" />
+                                                @*@Html.TextBox("PurReqQty", "", new { id = "PurReqQty", @class = "form-control" })*@
+                                                <span id="QtySpan" class="text-danger"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="prd col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <label>Stock Qty</label>
+                                                    </span>
+                                                </div>
+                                                @Html.TextBox("StockQty", "", new { id = "StockQty", @class = "form-control", @disabled = "disabled" })
+                                                <span id="StockQtySpan" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="prd col-md-6 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <label>Avg Rate</label>
+                                                    </span>
+                                                </div>
+                                                @Html.TextBox("AvgRate", "", new { id = "AvgRate", @class = "form-control", @disabled = "disabled" })
+                                                @*@Html.TextBox("PurReqQty", "", new { id = "PurReqQty", @class = "form-control" })*@
+                                                <span id="AvgRateSpan" class="text-danger"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="prd col-md-12 col-12">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <label>Remarks</label>
+                                                    </span>
+                                                </div>
+
+                                                @Html.TextBox("Note", "", new { @class = "form-control" })
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 offset-md-4 col-12 mb-3">
+                                            <span id="spn" class="row">
+                                                <button type="button" id="addBtn" onclick="Add()" class="btn btn-primary btnVoucher rounded-0 btn-block col">Add</button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row" id="goodsdiv">
+                    <div class="col-md-12 mb-2">
+                        <div class="card p-4">
+                                <div class="tab-pane fade show active" id="mrdetails" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="table-responsive">
+                                        <table id="tblgoodsinfo" class="table tbl display table-striped table-hover text-center text-nowrap" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>GRR Main Id</th>
+                                                    <th>GRR Sub Id</th>
+                                                    <th>PurReq Sub Id</th>
+                                                    <th>Product Id</th>
+                                                    <th>Unit Id</th>
+                                                    <th>Warehouse Id</th>
+                                                    <th>SL No</th>
+                                                    <th>Item Name</th>
+                                                    <th>UOM </th>
+                                                    <th>Store</th>
+                                                    <th>Rate</th>
+                                                    <th>Received</th>
+                                                    <th>Value</th>
+                                                    <th>Remarks</th>
+                                                    <th>Isdelete</th>
+                                                    <th></th>
+                                                    <th>WH</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                @if (Model != null)
+                                                {
+
+                                                    foreach (var item in Model.GoodsReceiveSub.OrderBy(x => x.SLNo))
+                                                    {
+                                                        var value = @item.Rate * @item.Quality;
+                                                        <tr class="txtPurchaseOrder">
+                                                            <td>
+                                                                @item.vProduct.CategoryId
+                                                            </td>
+                                                            <td>
+                                                                @item.GRRSubId
+                                                            </td>
+                                                            <td>
+                                                                @*@item.PurReqSubId*@
+                                                                0
+                                                            </td>
+
+                                                            <td>
+                                                                @item.ProductId
+                                                            </td>
+                                                            <td>
+                                                                @item.vProduct.UnitId
+                                                            </td>
+                                                            <td>
+                                                                @item.WarehouseId
+                                                            </td>
+
+                                                            <td>
+                                                                @item.SLNo
+                                                            </td>
+                                                            <td>
+                                                                @Html.DisplayTextFor(i => item.vProduct.ProductName) - [ @Html.DisplayTextFor(i => item.vProduct.ProductCode) ]
+                                                            </td>
+                                                            <td>
+                                                                @item.vProduct.vProductUnit.UnitName
+                                                            </td>
+                                                            <td>
+                                                                @if (@item.vWarehouse != null)
+                                                                {
+                                                                    @item.vWarehouse.WhShortName
+
+                                                                }
+                                                            </td>
+                                                            <td>
+                                                                @item.Rate
+                                                            </td>
+
+                                                            <td>
+                                                                @item.Received
+                                                            </td>
+                                                            <td>
+                                                                @value
+                                                            </td>
+                                                            <td>
+                                                                @item.Remarks
+                                                            </td>
+                                                            <td>
+                                                                @item.Isdelete
+                                                            </td>
+                                                            <td>
+                                                                <a class="dlttrash" data-itemId="0" href="#"><i class="fa fa-trash"></i></a>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" class="clickchk" onchange="cbChange(this)">
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="1"></td>
+                                                    <td class="text-right" colspan="2">
+                                                    </td>
+                                                    <td colspan="4">
+                                                    </td>
+
+                                                    <td colspan="1">
+                                                        <h4>
+                                                            Total Qty & Value :
+                                                        </h4>
+                                                    </td>
+                                                    <td colspan="3"></td>
+                                                    <td colspan="1">
+                                                        <h4 class="ttlreceived text-left">0</h4>
+                                                    </td>
+                                                    <td colspan="1">
+                                                        <h4 class="ttlvalue text-left">0</h4>
+                                                    </td>
+                                                    <td colspan="1"></td>
+                                                    <td colspan="1"></td>
+
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+
+                            <br />
+                            <div class="text-center">
+                                @if (ViewBag.Title == "Create")
+                                {
+                                    <span>
+                                        <button type="button" class="btn btn-primary btnGRRSaveEdit rounded-0" @*onclick="Goods_Save()"*@>
+                                            <span class="d-none spinner-border spinner-border-lg" role="status" aria-hidden="true"></span> Save
+                                        </button>
+                                    </span>
+
+                                }
+                                else if (ViewBag.Title == "Edit")
+                                {
+
+                                    <span>
+                                        <button type="button" class="btn btn-warning btnGRRSaveEdit rounded-0" @*onclick="Goods_Save()"*@>
+
+                                            <span class="d-none spinner-border spinner-border-lg" role="status" aria-hidden="true"></span> Update
+                                        </button>
+                                    </span>
+
+                                }
+                                else if (ViewBag.Title == "Delete")
+                                {
+                                    <span>
+                                        <button type="button" class="btn btn-danger btnGRRDelete rounded-0" @*onclick="Goods_Delete()"*@>
+
+                                            <span class="d-none spinner-border spinner-border-lg" role="status" aria-hidden="true"></span> Delete
+                                        </button>
+                                    </span>
+                                }
+                                @Html.ActionLink("Back", "Index", "GoodsReceive", null, new { @class = "btn btn-info rounded-0" })
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="ProductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div id="SubSectionList">
+                        <div class="order-md-1">
+                            <div class="row">
+                                <div class="col-md-12 col-12">
+                                    <div class="input-group input-group-sm mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                Product Name
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" id="MProductName" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-12">
+                                    <div class="input-group input-group-sm mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                Product Code
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" id="MProductCode" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-12">
+                                    <div class="input-group input-group-sm mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                Category
+                                            </span>
+                                        </div>
+                                        <select class="form-control" id="MCategoryId" asp-items="ViewBag.CategoryId">
+                                            <option value="">--Select From List--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-12">
+                                    <div class="input-group input-group-sm mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                Unit
+                                            </span>
+                                        </div>
+                                        <select class="form-control" id="MUnitId" asp-items="ViewBag.UnitId">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-danger rounded-0" data-dismiss="modal">Close</button>
+                    <button type="button" id="MbtnSave" onclick="Products_save()" class="btn btn-success rounded-0">Save Product</button>
+                    @*<button type="button" class="btn btn-primary">Save changes</button>*@
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+@section Scripts{
+    <script>
+
+        $("#GRRNo").focus();
+
+        function Products_save() {
+
+            if ($("#MProductName").val().length < 6) {
+                toastr.info("Product Name at least 6 charecter long");
+                return false;
+            }
+
+            if ($("#MProductCode").val().length < 6) {
+                toastr.info("Product Code at least 6 charecter long");
+                return false;
+            }
+
+
+            ///alert('save 2');
+
+            var Product = {
+                "userid": "", "useridUpdate": "", "DateAdded": "", "DateUpdated": "", "comid": "0",
+                "ProductId": "", "ProductName": "", "CategoryId": "","ProductMainGroupId":"", "Description": "", "CostPrice": "", "SalePrice": "", "RetailerPrice": "", "ReorderLevelOne": "", "MinimumOrderQty": "", "CountryId": "", "ProductBarcode": "", "vatPercentage": "",
+                "vatAmount": "", "ProductBrand": "", "ProductModel": "", "UnitId": "", "SubCategoryId": "", "ProductImage": "", "FileExtension": "", "ImagePath": "", "ProductCode": "", "AccIdInventory": "", "AccIdConsumption": ""
+                //"InventorySubs": []
+            };
+
+
+
+            Product.userid = "";
+
+            Product.useridUpdate = "";
+            Product.DateAdded = "";
+            Product.DateUpdated = "";
+
+            Product.ProductId = 0;
+            Product.ProductName = $("#MProductName").val();
+            Product.CategoryId = $("#MCategoryId").val();
+            Product.ProductMainGroupId = "";
+
+
+
+            Product.Description = "";
+            Product.CostPrice =  0;
+
+            Product.SalePrice =  0;
+            Product.RetailerPrice =  0;
+            Product.ReorderLevelOne =  0;
+            Product.MinimumOrderQty =  0;
+
+
+            Product.CountryId = "18"; // for BDT
+            Product.ProductImage ="";
+
+            Product.FileExtension = "";
+            Product.ImagePath = "";
+
+
+
+            Product.ProductCode = $("#MProductCode").val();
+            Product.AccIdInventory = "";
+            Product.AccIdConsumption = "";
+
+
+            Product.ProductBarcode ="";
+            Product.vatPercentage =  0;
+
+
+            Product.vatAmount = 0;
+            Product.ProductBrand = "";//$("#ProductBrand").val();
+            Product.ProductModel = "";//$("#ProductModel").val();
+            Product.UnitId = $("#MUnitId").val();
+            //Product.SubCategoryId = $("#MSubCategoryId").val();
+
+
+            $.ajax({
+                url: '@Url.Action("CreateProduct", "GoodsReceive")',
+                type: 'POST',
+                dataType:'JSON',
+                data: {product: Product},
+                success: function (result) {
+                    if (result.Success == "1") {
+                        $("#ProductId").append(`<option value="${result.data.ProductId}">${result.data.ProductName}</option>`);
+                        customFile("1", result.ex);
+                        $("#MProductName").val("");
+                        $("#MProductCode").val("");
+                        $("#MCategoryId").val();
+                        $("#MUnitId").val();
+                        ProductListLoad();
+                    }
+                     else {
+                        customFile(result.Success, result.ex);
+                     }
+                },
+                error: function (ex) {
+                    toastr.error("Something wrong")
+                }
+            });
+        }
+
+
+
+
+        var col = null;
+        var row = null;
+        var tblWarehousesearch;
+        var rownovouchersub;
+        var itemname;
+        var antiForgeryToken;
+
+
+
+
+
+        var accid;
+
+
+        function myCallbackFunction(updatedCell, updatedRow, oldValue) {
+
+            var total = 0;
+
+
+            $("#tblvoucherWarehouse").DataTable().rows({ filter: 'applied' }).every(function () {
+                var row = this.data();
+                console.log(row);
+
+                var e = row[7] | 0;
+                total += parseFloat(e) | 0;
+            });
+
+            $(".serialaddsubtotalunitprice").text(total);
+            $(".serialaddsubtotalunitprice").val(total);
+
+
+            var table = $('#tblgoodsinfo').DataTable();
+            var data;
+            data = table.row($('input[type=checkbox]:checked').parents('tr')).data();
+            rownovouchersub = table.row($('input[type=checkbox]:checked').parents('tr')).index();
+            //alert(rownovouchersub);
+            //alert('wait 1');
+            console.log(data);
+            if (data !== undefined) {
+                //alert('enter');
+                var cell = table.cell(rownovouchersub, 12);
+                cell.data(total);
+            }
+
+        }
+
+        function AddSubSection() {
+
+            //alert('Add Warehouse');
+
+            var check = $('#tblgoodsinfo').find('input[type=checkbox]:checked').length;
+            //var Qty = $('#tblgoodsinfo').find('input[type=checkbox]:checked').length;
+            if (check > 0) {
+
+            }
+            else {
+                alert("At least One Row Should Be Selected");
+                e.preventDefault();
+            }
+
+
+
+
+            /////////////////need to check for duplicate
+            $("#tblvoucherWarehouse").DataTable().rows({ filter: 'applied' }).every(function () {
+                var row = this.data();
+
+                var productidwarehouse = row[2];
+                var whidwarehouse = row[5];
+
+                //alert(row[2]); // productid
+                //alert(row[5]); // whid
+                if (accid == productidwarehouse && warehouseid == whidwarehouse) {
+                    alert('Duplicate Not Allow');
+                    e.preventDefault;
+                    //return;
+                }
+
+                var totalrow = this.length;
+                //alert(this.length);
+
+                if (totalrow > 0) { };
+
+                console.log(row);
+
+                //var e = row[7] | 0;
+                //total += parseFloat(e) | 0;
+            });
+
+
+
+
+
+
+
+            var subsectionamount = 0;
+            var vouchersubrowno = rownovouchersub;
+            var itemnamerow = itemname;
+
+           
+            $('#myInputSearch').val();
+            //serialQty();
+            //alert('addSerial');
+        }
+
+
+        function cbChange(obj) {
+
+            $('#btnsubsectiongrid').click();
+
+
+            var cbs = document.getElementsByClassName("clickchk");
+            for (var i = 0; i < cbs.length; i++) {
+                cbs[i].checked = false;
+            }
+            obj.checked = true;
+
+
+            var data = null;
+
+            if (obj.checked == true) {
+
+                var table = $('#tblgoodsinfo').DataTable();
+                data = table.row($('input[type=checkbox]:checked').parents('tr')).data();
+                rownovouchersub = table.row($('input[type=checkbox]:checked').parents('tr')).index();
+                //alert(rownovouchersub);
+                var cell = table.cell(rownovouchersub, 5);
+                cell.data(rownovouchersub);
+
+                accid = data[3];
+                rownovouchersub = data[1];
+                itemname = data[7];
+
+
+                $('#WarehouseModalLabel').val(itemname);
+                tblvoucherWarehouse.columns(2).search("^" + accid + "$", true, false).draw();
+                //tblgoodsinfocheckno.columns(2).search("^" + accid + "$", true, false).draw();
+                myCallbackFunction();
+            }
+            else {
+            }
+            //serialQty();
+
+        }
+
+
+
+        $('#MCategoryId').select2({
+            dropdownParent: $('#ProductModal')
+        });
+        $('#MUnitId').select2({
+            dropdownParent: $('#ProductModal')
+        });
+
+
+
+        $('#CategoryId').select2();
+        $('#ProductId').select2();
+        $('#SupplierId').select2();
+        $('#AccountMain').select2();
+
+
+
+        //$('#GRRDate').val(CurrentDate());
+        $('#PurReqId').attr('disabled', true)
+        $('#PurReqId').attr('visible', false)
+
+      
+        $('#TotalGRRValue').attr('disabled', true)
+        $('#NetGRRValue').attr('disabled', true)
+        $('#vat').attr('disabled', true)
+        $('#Deduction').attr('disabled', true)
+
+        $('#Deduction').keyup(function () {
+            alert("")
+            var $totalgrrvalue = $('#TotalGRRValue').val();
+            var $discount = $('#Deduction').val();
+            var $netgrrvalue = 0;
+            $netgrrvalue = $totalgrrvalue - $discount
+            $('#NetGRRValue').val($netgrrvalue)
+        });
+
+
+
+        var sl = 1;
+        var tblgoodsreceive;
+        tblgoodsreceive = $('#tblgoodsinfo').DataTable({
+            'aoColumns': [
+                { 'sClass': 'CategoryId', 'visible': false }, //0
+                { 'sClass': 'GRRSubId', 'visible': false },  //1
+                { 'sClass': 'PurReqSubId', 'visible': false },  //2
+                { 'sClass': 'ProductId', 'visible': false }, //3
+                { 'sClass': 'UnitId', 'visible': false }, //4
+                { 'sClass': 'WarehouseId', 'visible': false }, //5------
+                { 'sClass': 'SLNo', 'visible': true }, //6
+                { 'sClass': 'ProductName', 'visible': true }, //7
+                { 'sClass': 'UnitName', 'visible': true },  //8
+                { 'sClass': 'Store', 'visible': true },  //9-------------
+                { 'sClass': 'Rate', 'visible': true }, //10
+                { 'sClass': 'Received', 'visible': true }, //11
+                { 'sClass': 'TotalValue', 'visible': true }, //17
+                { 'sClass': 'Remarks', 'name': 'Remarks', 'visible': true }, //18
+                { 'sClass': 'Isdelete', 'name': 'Isdelete', 'visible': false }, //19
+                null,//20
+                { "name": "checkbox", "sClass": "checkbox", "visible": false }
+            ],
+            columnDefs: [
+                {
+                    "targets": 6,
+                    "render": function (data, type, row) {
+                        return '<input class="form-control form-control-sm text-center sl" id="SL" name="SL" type="text" data-val="true" value=' + data + '>';
+                    }
+
+                },
+                {
+                    "targets": 10,
+                    "render": function (data, type, row) {
+                        return '<input class="form-control form-control-sm  text-center rate" disabled id="Rate" name="Rate" type="text" data-val="true" value=' + data + '>';
+                    }
+
+                },
+                {
+                    "targets": 11,
+                    "render": function (data, type, row) {
+                        return '<input class="form-control form-control-sm  text-center " disabled id="Received" name="Received" type="text" data-val="true" value=' + data + '>';
+                    }
+
+                },
+                
+                {
+                    "targets": 12,
+                    "render": function (data, type, row) {
+                        return '<input class="form-control form-control-sm value  text-center" disabled id="Value" name="Value" type="text" data-val="true" value=' + data + '>';
+                    }
+
+                }
+
+            ],
+            rowCallBack: function (row) {
+                $(row).addClass('txtGoodsReceive');
+            },
+            // 'bLengthChange': false,
+            //'bFilter': false,
+            //'bSort': false,
+
+            select: {
+                style: 'single',
+                selector: 'td:nth-child(2)'
+            },
+            'paging': false,
+            'searching': false,
+            'sorting': false,
+            'ordering': false,
+            'scrolly' : true
+        });
+
+
+
+
+        function ProductListLoad() {
+
+            var CategoryId = $('#CategoryId option:selected').val();
+            $.ajax({
+                url: '@Url.Action("GetProductsGRR", "GoodsReceive")',
+                type: 'POST',
+                headers: { "X-CSRF-TOKEN-GTR_ANTIFORZERY": antiForgeryToken },
+                dataType: 'json',
+                async: false,
+                data: { id: CategoryId },
+                success: function (data, status, xhr) {
+                    $("#ProductId option").remove();
+                    createSelectList(data.item)
+
+                }
+
+            });
+        };
+
+
+        $(document).ready(function () {
+            antiForgeryToken = $("input[name='GTR_ANTIFORZERY']").val();
+            var mode = $("#mode").val();
+
+
+            $('#CategoryId').select2({})
+                .on("select2:select", function (e) {
+
+                    ProductListLoad();
+                });
+
+
+            $('#ProductId').select2({})
+                .on("select2:select", function (e) {
+
+                    ProductInfo();
+                });
+
+
+            $(".btnGRRSaveEdit").click(function () {
+                Goods_Save();
+
+        });
+            $(".btnGRRDelete").click(function () {
+                Goods_Delete();
+
+        });
+
+            TotalLoadQty();
+        });
+
+        function createSelectList(selItem) {
+            $('#ProductId').append(new Option("Select Product", "-1"));
+            for (var i = 0; i < selItem.length; ++i) {
+                optionValue = selItem[i].Value;
+                optionText = selItem[i].Text;
+                $('#ProductId').append(new Option(optionText, optionValue));
+
+            }
+
+        }
+
+        function CurrentDate() {
+            var date = new Date();
+            var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var val = date.getDate() + '-' + month[date.getMonth()] + '-' + date.getFullYear();
+            return val;
+        }
+
+
+        $('#PurOrderMainId').change(function () {
+            //alert($('#SupplierId option:selected').text())
+            changePurchaseRequisitionData()
+        });
+
+        function changePurchaseRequisitionData() {
+            var orderid = $('#PurOrderMainId').val();
+            $.ajax({
+                url: '@Url.Action("PurchaseOrderDetailsById", "GoodsReceive")',
+                type: 'POST',
+                dataType: 'json',
+                async:false,
+                data: { POId: orderid },
+                success: function (data) {
+                    //console.log(data);
+                    $('#PurReqId').val(data.PurReqId).show();
+                    $('#DeptId').val(data.Department).show();
+                    $('#PrdUnitId').val(data.PrdUnitId).show();
+                    $('#SupplierId').val(data.SupplierId).show();
+                    $('#PaymentTypeId').val(data.PaymentTypeId).show();
+                    //$('#SubSectId').val(data.SubSectId).show();
+                    $('#CurrencyId').val(data.CurrencyId).show();
+                    $('#ConvertionRate').val(data.ConvertionRate).show();
+
+                }
+            })
+            //purchaseOrderDetailsData(orderid)
+        };
+
+        function purchaseOrderDetailsData() {
+
+
+
+            var PurOrderMainId = $('#PurOrderMainId').val();
+            $.ajax({
+                url: '@Url.Action("PurchaseOrderSubDataByPOMId", "GoodsReceive")',
+                type: 'POST',
+                dataType: 'json',
+                async: false,
+                data: { PurOrderMainId: PurOrderMainId },
+                success: function (data) {
+                    console.log(data[0]);
+                    if (data != 0) {
+                        $("#goodsdiv").show();
+                        for (var i = 0; i < data.length; i++) {
+                            $('#tblgoodsinfo').dataTable().fnAddData([
+                                0,
+                                data[i].GRRSubId,
+                                data[i].PurReqSubId,
+                                data[i].PurOrderMainId,
+                                data[i].PurOrderSubId,
+                                data[i].ProductId,
+                                data[i].UnitId,
+                                data[i].WarehouseId,
+                                data[i].SLNo,
+                                data[i].PONo,
+                                data[i].ProductName,
+                                data[i].UnitName,
+                                data[i].WarehouseName,
+                                //data[i].RequisitionQty,
+                                data[i].RemainingReqQty,
+                                data[i].PurchaseQty,
+                                data[i].Rate,
+                                data[i].TotalValue,
+                                data[i].RemainingReqQty,
+                                0,
+                                0,
+                                data[i].Remarks,
+                                "",
+                                '<a data-itemId="0" href="#" class="dlttrash deleteItem"> <i class="fa fa-trash"></i></a >',
+                                '<input type="checkbox" class="clickchk select-checkbox"  onchange ="cbChange(this)">'
+                            ])
+                        }
+                    }
+                    else {
+                        alert('No Record Pending');
+                    }
+                },
+                error: function (ex) {
+                    alert(ex);
+                }
+            });
+        };
+
+        $('#tblgoodsinfo tbody').on('click', '.dlttrash', function () {
+            //alert('hit');
+            var d = $(this).data();
+            var i = this.parentNode.parentNode;
+            var mode = $("#mode").val();
+            if (mode == "Edit") {
+               var c= $('#tblgoodsinfo').dataTable().fnGetData();
+                var l = $(this).parent().parent().index();
+                var subid = c[l][1];
+                if (subid != null) {
+                    var l = $(this).parent().parent().index();
+                    tblgoodsreceive.cell(l, 19).data(true); ///is delete column need to be true cuase this data will not save in the database
+                    $(this).parent().parent().hide();
+                }
+                else {
+                    var table = $('#tblgoodsinfo').DataTable();
+                    table.row($(this).parents('tr')).remove().draw();
+                    if ($("#spn").children('#Cancel')) {
+                        $("#spn").children('#Cancel').remove();
+                    }
+                    $("#addBtn").text("Add");
+                    var x = "500.00";
+                    var y = $('#tblgoodsinfo').height();
+                    var z = parseFloat(x) + parseFloat(y);
+                    $('html, body').animate({ scrollTop: z }, 500);
+                }
+            }
+            else {
+                var table = $('#tblgoodsinfo').DataTable();
+                table.row($(this).parents('tr')).remove().draw();
+                if ($("#spn").children('#Cancel')) {
+                    $("#spn").children('#Cancel').remove();
+                }
+                $("#addBtn").text("Add");
+                var x = "500.00";
+                var y = $('#tblgoodsinfo').height();
+                var z = parseFloat(x) + parseFloat(y);
+                $('html, body').animate({ scrollTop: z }, 500);
+            }
+        });
+
+
+
+        $('#tblvoucherWarehouse tbody').on('click', '.addsubsection', function () {
+
+            //alert('hit tobdy');
+            var tableasdf = $('#tblvoucherWarehouse').DataTable();
+
+            row = tableasdf.cell(this).index().row;
+
+
+            col = tableasdf.cell(this).index().column;
+
+
+            //$("html, body").animate({ scrollTop: z }, 500);
+            $('#btnaddsubsection').click();
+
+            //multInputs();
+        });
+
+
+       
+
+
+        function multInputsOrder() {
+
+            $('.ttlpurchaseqty').text(0);
+            $('.ttlrate').text(0);
+            $('.ttlvalue').text(0);
+
+            var totalpurchaseqty = 0;
+            var totalreceivedQty = 0;
+            var totalGRR = 0;
+
+            var oTable = $('#tblgoodsinfo').dataTable().fnGetData();
+            var rows = $('#tblgoodsinfo').dataTable().fnGetNodes();
+            console.log(rows);
+            console.log(oTable);
+            for (var i = 0; i < rows.length; i++) {
+                var $purchaseQty = 0;
+                var $receivedQty = 0;
+                $purchaseQty = oTable[i][12];
+                $receivedQty = rows[i].cells[8].children[0].value;
+
+                totalpurchaseqty += parseFloat($purchaseQty);
+                totalreceivedQty += parseFloat($receivedQty);
+
+                $('.ttlpurchaseqty').val(totalpurchaseqty.toLocaleString());
+                $('.ttlpurchaseqty').text(totalpurchaseqty.toLocaleString());
+
+                $('.ttlreceived').val(totalreceivedQty.toLocaleString());
+                $('.ttlreceived').text(totalreceivedQty.toLocaleString());
+
+
+                $('#TotalGRRValue').val(totalreceivedQty.toLocaleString())
+            }
+
+        }
+
+
+
+        function Goods_Save() {
+
+            try {
+
+                var srnotest = $('#GRRNo').val();
+                var reqdatetest = $('#GRRDate').val();
+
+                if (srnotest.length < 3) {
+
+                    $("#SRNoSpan").text('Fill GRR / MR No.');
+                    toastr.error('Fill GRR / MR No.');
+                    StopSpinner(".btnGRRSaveEdit");
+                    return false;
+                }
+
+                if (reqdatetest.length < 3) {
+
+                    $("#ReqDateSpan").text('Fill GRR / MR Date');
+                    toastr.error('Fill GRR / MR Date');
+                    StopSpinner(".btnGRRSaveEdit");
+                    return false;
+
+                }
+
+                var GoodsReceiveSubWarehouse = {
+                    "GoodsReceiveSubWarehouseId": "", "WarehouseId": "", "ProductId": "", "GRRQty": "", "GRRSubId": "", "SRowNo": ""
+
+                };
+
+                var GoodsReceiveSubData = {
+                    GRRSubId: "", SLNo: "", ProductId: "", WarehouseId: "", RequisitionQty: "", RemainingReqQty: "", PurchaseQty: "", Rate: "", TotalValue: "", Quality: "", Received: "", Damage: "", Remarks: "", ComId: "", UserId: "", PurReqSubId: "", PurOrderMainId: "", PurOrderSubId: "", GRRMainId: "", CategoryId: 0, VatParcent: "", VatAmount: "", Discount: 0, Isdelete: false,
+                    "GoodsReceiveSubWarehouse": []
+                }
+
+
+                var GoodsReceiveProvisionData = {
+                    GRRMainId: "", GRRProvisionId: "", SLNo: "", AccId: "", Debit: 0, Credit: 0, Isdelete: false, Remarks: ""
+                }
+
+
+                var GoodsReceiveMain = {
+                    IsDirectGRR: false, GRRMainId: "", GRRNo: "", GRRDate: "", LPNo: "", LPDate: "", GRRRef: "", DeptId: "", PrdUnitId: "", PurReqId: "", SupplierId: "", PaymentTypeId: "", CurrencyId: "", ConvertionRate: "", TotalGRRValue: "", Deduction: "", NetGRRValue: "", SubSectId: "", PurOrderMainId: "", GateInHouseDate: "", ExpectedReciveDate: "", TermsAndCondition: "", VAT: "", ComId: "", UserId: "", Remarks: "", ManualSupplierName: "",
+                    ChallanNo: "", ChallanDate: "", CertificateNo: "", CertificateDate: "", GoodsReceiveSub: [], GoodsReceiveProvision: []
+                }
+
+                GoodsReceiveMain.IsDirectGRR = true;
+                GoodsReceiveMain.GRRMainId = $('#GRRMainId').val();
+                GoodsReceiveMain.GRRNo = $('#GRRNo').val();
+                GoodsReceiveMain.GRRDate = $('#GRRDate').val();
+               
+                GoodsReceiveMain.SupplierId = $('#SupplierId').val();
+                GoodsReceiveMain.PaymentTypeId = $('#PaymentTypeId').val();
+                GoodsReceiveMain.CurrencyId = $('#CurrencyId').val();
+                GoodsReceiveMain.ConvertionRate = $('#ConvertionRate').val();
+                GoodsReceiveMain.TotalGRRValue = $('#TotalGRRValue').val();
+                GoodsReceiveMain.Deduction = $('#Deduction').val();
+                GoodsReceiveMain.NetGRRValue = $('#NetGRRValue').val();
+                GoodsReceiveMain.VAT = $('#vat').val();
+                GoodsReceiveMain.Remarks = $('#Remarks').val();
+                GoodsReceiveMain.ManualSupplierName = $('#ManualSupplierName').val();
+
+                GoodsReceiveMain.ComId = $('#ComId').val();
+                GoodsReceiveMain.UserId = $('#UserId').val();
+
+
+                var oTable = $('#tblgoodsinfo').dataTable().fnGetData();
+                var rows = $('#tblgoodsinfo').dataTable().fnGetNodes();
+
+
+
+                //console.log(oTable);///need to open by fahad
+                if (oTable.length == 0) {
+                    alert('Please Fill Necessary Data.');
+                    StopSpinner(".btnGRRSaveEdit");
+                    return false;
+                };
+
+                for (var i = 0; i < oTable.length; i++) {
+                    if (oTable[i][19] != true) {
+                        GoodsReceiveSubData.GRRMainId = $('#GRRMainId').val();
+                        GoodsReceiveSubData.GRRSubId = oTable[i][1];////
+                        GoodsReceiveSubData.ProductId = oTable[i][3];///
+                        GoodsReceiveSubData.WarehouseId = oTable[i][5];///
+                        GoodsReceiveSubData.Remarks = oTable[i][18];
+                        GoodsReceiveSubData.Isdelete = oTable[i][19];
+
+                        GoodsReceiveSubData.SLNo = rows[i].cells[0].children[0].value;
+                        GoodsReceiveSubData.Rate = rows[i].cells[4].children[0].value;
+                        GoodsReceiveSubData.Received = rows[i].cells[5].children[0].value;
+                        GoodsReceiveSubData.TotalValue = rows[i].cells[6].children[0].value;
+
+
+                        var oTableVoucherWarehouse = $('#tblvoucherWarehouse').dataTable().fnGetData();
+                        //console.log(oTableVoucherWarehouse);
+                        //alert('checking.');
+
+                        for (var ii = 0; ii < oTableVoucherWarehouse.length; ii++) {
+
+                            {
+
+
+                                if (GoodsReceiveSubData.ProductId == oTableVoucherWarehouse[ii][2]) {
+
+                                    GoodsReceiveSubWarehouse.GoodsReceiveSubWarehouseId = oTableVoucherWarehouse[ii][0]; //ExportInvoiceDetail.ExportInvoiceDetailsId;
+                                    GoodsReceiveSubWarehouse.GRRSubId = oTableVoucherWarehouse[ii][1];
+
+                                    GoodsReceiveSubWarehouse.ProductId = oTableVoucherWarehouse[ii][2];
+                                    GoodsReceiveSubWarehouse.SRowNo = oTableVoucherWarehouse[ii][3];
+
+                                    GoodsReceiveSubWarehouse.WarehouseId = oTableVoucherWarehouse[ii][5];
+
+
+                                    GoodsReceiveSubWarehouse.GRRQty = oTableVoucherWarehouse[ii][7];
+
+                
+                                    GoodsReceiveSubData.GoodsReceiveSubWarehouse.push(GoodsReceiveSubWarehouse);
+                                    console.log(GoodsReceiveSubData);
+
+
+                                    GoodsReceiveSubWarehouse = {
+                                        "GoodsReceiveSubWarehouseId": "", "WarehouseId": "", "ProductId": "", "GRRQty": "", "GRRSubId": "", "SRowNo": ""
+
+                                    };
+
+                                }
+                                else {
+
+
+                                }
+                            }
+
+
+
+
+                        }
+
+
+
+                        GoodsReceiveMain.GoodsReceiveSub.push(GoodsReceiveSubData);
+
+
+
+                        var GoodsReceiveSubData = {
+                            GRRSubId: "", SLNo: "", ProductId: "", WarehouseId: "", RequisitionQty: "", RemainingReqQty: "", PurchaseQty: "", Rate: "", TotalValue: "", Quality: "", Received: "", Damage: "", Remarks: "", ComId: "", UserId: "", PurReqSubId: "", PurOrderMainId: "", PurOrderSubId: "", GRRMainId: "", CategoryId: 0, VatParcent: "", VatAmount: "", Discount: 0, Isdelete: false,
+                            "GoodsReceiveSubWarehouse": []
+                        }
+
+
+                    }
+                }
+
+
+
+
+                var oTableProvision = $('#tblgoodsprovision').dataTable().fnGetData();
+                var rowsProvision = $('#tblgoodsprovision').dataTable().fnGetNodes();
+
+                for (var i = 0; i < oTableProvision.length; i++) {
+                    //alert(oTableProvision[i][8]);
+                    if (oTableProvision[i][8] != true) {
+
+                        GoodsReceiveProvisionData.GRRMainId = $('#GRRMainId').val();
+                        GoodsReceiveProvisionData.GRRProvisionId = oTableProvision[i][1];////
+                        GoodsReceiveProvisionData.AccId = oTableProvision[i][2];////
+                        GoodsReceiveProvisionData.SLNo = oTableProvision[i][3];////
+
+                        GoodsReceiveProvisionData.DebitAmount = rowsProvision[i].cells[2].children[0].value;//oTableProvision[i][5];////
+                        GoodsReceiveProvisionData.CreditAmount = rowsProvision[i].cells[3].children[0].value;//oTableProvision[i][6];////
+                        GoodsReceiveProvisionData.Remarks = oTableProvision[i][7];////
+                    }
+
+                    GoodsReceiveMain.GoodsReceiveProvision.push(GoodsReceiveProvisionData);
+
+
+
+                    var GoodsReceiveProvisionData = {
+                        GRRMainId: "", GRRProvisionId: "", SLNo: "", AccId: "", Debit: 0, Credit: 0, Isdelete: false, Remarks: ""
+                    }
+                }
+
+                console.log(GoodsReceiveMain);
+                //alert('Check');
+
+                $.ajax({
+                    url: '@Url.Action("Create", "GoodsReceive")',
+                    //data: JSON.stringify(GoodsReceiveMain),
+                    data: { goodsReceiveMain: GoodsReceiveMain },
+                    type: 'POST',
+                    headers: { "X-CSRF-TOKEN-GTR_ANTIFORZERY": antiForgeryToken },
+                    //contentType: 'application/json;',
+                    dataType: 'json',
+                    success: function (result) {
+
+                        if (result.Success == "1") {
+                            alert('Data Save Successfully');
+                            window.location.href = '@Url.Action("DirectGrr", "GoodsReceive")';
+                        }
+                        else if (result.Success == "2") {
+                            alert('Data Update Successfully');
+                            window.location.href = '@Url.Action("Index", "GoodsReceive")';
+                        }
+                        else if (result.Success == "0") {
+                            toastr.error(result.error);
+                        }
+                        else {
+                            toastr.error("Some thing wrong");
+                            alert(result.ex)
+                        }
+                        StopSpinner(".btnGRRSaveEdit");
+                    }, error: function () {
+
+                        StopSpinner(".btnGRRSaveEdit");
+                        toastr.error("Some thing wrong");
+
+                    }
+                });
+
+
+            }
+            catch (e) {
+                alert(e);
+                StopSpinner(".btnGRRSaveEdit");
+
+            }
+        }
+
+
+
+
+
+
+        function Goods_Delete() {
+
+            var GRRMainId = $('#GRRMainId').val();
+            //alert(GRRMainId);
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("Delete", "GoodsReceive")',
+                dataType: 'json',
+                async: 'true',
+                data: { id: GRRMainId },
+                success: function (result) {
+
+                    if (result.Success == "1") {
+                        window.location.href = '@Url.Action("Index", "GoodsReceive")';
+                        
+                    }
+                    else {
+                        alert(result.ex);
+                    }
+                    StopSpinner(".btnGRRDelete");
+                },
+                error: function () {
+                    StopSpinner(".btnGRRDelete");
+                }
+
+            });
+        }
+
+
+
+
+        $('#tblgoodsprovision tbody').on('click', '.dlttrashprovision', function () {
+            var table = $('#tblgoodsprovision').DataTable();
+
+            table.row($(this).parents('tr')).remove().draw();
+            var x = "500.00";
+            var y = $('#tblgoodsprovision').height();
+            var z = parseFloat(x) + parseFloat(y);
+
+            $("html, body").animate({ scrollTop: z }, 500);
+
+            //TotalAmount();
+            //multInputs();
+        });
+
+
+        function getslno() {
+            //{ '.isdelete': false }
+            var d = $("#tblgoodsprovision").dataTable().fnGetNodes().length;
+            d++;
+            return d | 0;
+        };
+
+
+        function Add() {
+            var qty = $('#PurReqQty').val();
+            var prdid = $('#ProductId').val();
+
+            //alert(prdid);
+            if (prdid < 1) {
+                toastr.error('Please Select the Item');
+                StopSpinner(".btnVoucher");
+                return true;
+            }
+
+
+            ///-------------need code for product info
+            //alert('product info now work.');
+            ProductInfo();
+            //alert('product info now work. 2');
+
+
+            if (qty > -1) {
+                $("#goodsdiv").show();
+                $("#QtySpan").text('');
+                var oTableRequisitionSub = $('#tblgoodsinfo').dataTable().fnGetData();
+
+
+                if ($.fn.DataTable.isDataTable('#tblgoodsinfo')) {
+                    var ifExist = false;
+
+
+                    if (tblgoodsreceive.rows('.selected').any()) {
+
+
+                        for (var i = 0; i < oTableRequisitionSub.length; i++) {
+                            var item = oTableRequisitionSub[i][3];
+                            //alert(item)
+                            if (prdid == item) {
+                                var ind2 = tblgoodsreceive.row('.selected').index();
+                                if (i != ind2) {
+                                    toastr.error('Multiple GRR / MR of same product is not allowed');
+                                    ifExist = true;
+                                    StopSpinner(".btnVoucher");
+                                    return;
+                                }
+                            }
+
+                        }
+
+
+
+
+                        if (ifExist == false) {
+
+                            tblgoodsreceive
+                                .rows({ selected: true })
+                                .every(function (rowIdx, tableLoop, rowLoop) {
+                                    tblgoodsreceive.cell(rowIdx, 0).data($('#CategoryId').val());
+                                    tblgoodsreceive.cell(rowIdx, 3).data($('#ProductId').val());
+                                    tblgoodsreceive.cell(rowIdx, 4).data($('#UnitId').val());
+                                    tblgoodsreceive.cell(rowIdx, 5).data($('#WarehouseId').val());
+                                    tblgoodsreceive.cell(rowIdx, 7).data($('#ProductId option:selected').text());
+                                    tblgoodsreceive.cell(rowIdx, 8).data($('#UnitName').val());
+                                    tblgoodsreceive.cell(rowIdx, 9).data($('#WarehouseId option:selected').text());
+                                    tblgoodsreceive.cell(rowIdx, 10).data($('#Rate').val());
+
+                                    tblgoodsreceive.cell(rowIdx, 11).data($('#PurReqQty').val());
+                                    tblgoodsreceive.cell(rowIdx, 12).data(parseFloat($('#Rate').val() || 0) * parseFloat($('#PurReqQty').val() || 0));
+                                    tblgoodsreceive.cell(rowIdx, 13).data($('#Note').val() );
+                                    tblgoodsreceive.cell(rowIdx, 14).data(false);
+
+                                    tblgoodsreceive.cell(rowIdx, 15).data('<a data-itemId="0" href="#" class="dlttrash deleteItem" > <i class="fa fa-trash"></i></a > ');
+
+                                })
+                                .draw();
+                            tblgoodsreceive.$('tr.selected').removeClass('selected');
+                            $("#addBtn").text("Add");
+                            $("#Cancel").remove();
+                        }
+                    }
+                    else {
+                        for (var i = 0; i < oTableRequisitionSub.length; i++) {
+                            var item = oTableRequisitionSub[i][3];
+                            //alert(item)
+                            if (prdid == item) {
+                                toastr.error('Multiple GRR / MR of same product is not allowed');
+                                //ifExist = true;
+                                StopSpinner(".btnVoucher");
+                                return;
+                            }
+
+                        }
+
+                        //alert('tst');
+                        //alert($("#UnitName"));
+                        $('#tblgoodsinfo').dataTable().fnAddData([
+                            $('#CategoryId').val() | 0,
+                            //$('#ProductModel').val(),
+                            //$('#ProductBrand').val(),
+                            0,
+                            0,
+                            $('#ProductId').val()|0,
+                            $("#UnitId").val()|0,
+                            $('#WarehouseId').val() | 0,
+                            oTableRequisitionSub.length + 1,
+                            $('#ProductId option:selected').text(),
+                            $("#UnitName").val(),
+                            $('#WarehouseId option:selected').text(),
+
+                            $('#Rate').val() || 0,
+                            $('#PurReqQty').val() || 0,
+                            parseFloat($('#Rate').val()||0) * parseFloat($('#PurReqQty').val()||0),
+                            $('#Note').val(),
+                            false,
+                            '<a data-itemId="0" href="#" class="dlttrash deleteItem" > <i class="fa fa-trash"></i></a > ',//, false
+                            '<input type="checkbox" class="clickchk select-checkbox"  onchange ="cbChange(this)">'
+                        ]);
+                    }
+                    tblgoodsreceive = $('#tblgoodsinfo').DataTable();
+
+                    $('#ProductBrand').val("");
+                    $('#ProductModel').val("");
+                    $('#PurReqQty').val("");
+                    $('#Rate').val("");
+                    $('#Note').val("");
+                    $("#UnitId").val("");
+                    $("#UnitName").val("");
+                }
+
+                TotalLoadQty();
+            }
+            else {
+                $("#QtySpan").text('Please Fill Up the Qty.');
+                toastr.error('Please Fill Up the Qty.');
+            }
+            StopSpinner(".btnVoucher");
+
+        };
+
+                function ProductInfo() {
+
+                    var MyAppUrlSettings = {
+                        MyUsefulUrl : '@Url.Action("GetProductInfo", "GoodsReceive")'
+                    }
+
+                    $.ajax({
+                        type: 'POST',
+                        url: MyAppUrlSettings.MyUsefulUrl,
+                        dataType: 'json',
+                        async: false,
+                        data: { id: $("#ProductId").val(), whId : $("#WarehouseId").val() },
+                        success: function (result) {
+
+                            console.log(result);
+                            $("#UnitId").val(result.UnitId);
+                            $("#UnitName").val(result.UnitName);
+
+                            $("#StockQty").val(result.StockQty);
+                            $("#AvgRate").val(result.AvgRate);
+                            $("#ProductBrand").val(result.ProductBrand);
+                            $("#ProductModel").val(result.ProductModel);
+                        },
+                        error: function (ex) {
+                            alert('Failed.' + ex);
+                        }
+                    });
+                    return false;
+                };
+
+        
+        $('#tblgoodsinfo tbody').on('click', '.ProductName', function () {
+            if ($.fn.DataTable.isDataTable('#tblgoodsinfo')) {
+
+                tblgoodsreceive.$('tr.selected').removeClass('selected');
+                $(this).parent().addClass('selected');
+
+
+                var f = tblgoodsreceive.rows('.selected').data();
+
+                        console.log(f[0][0]);
+                        //console.log(f[0][3]);
+
+
+                        //selectedItem = `${f[0][2]}`;
+                        if ($('#CategoryId').val() == '0') {
+
+                            $.when($('#ProductId').val(`${f[0][3]}`).change()).then($('#ProductId').change());
+                            // alert('0 ok');
+                        }
+                        else {
+                            if ($('#ProductId').text().length == 0) {
+                                $('#CategoryId').val(0);
+                                ProductListLoad();
+                            }
+                            $.when($('#CategoryId').val(`${f[0][0]}`).change()).then($('#ProductId').val(`${f[0][3]}`)).then($('#ProductId').change());
+                            //alert('else ok');
+
+                        }
+                        $('#WarehouseId').val(f[0][5]);
+                        $('#PurReqQty').val(f[0][11]);
+                        $('#Rate').val(f[0][10]);
+                        $('#Note').val(f[0][18]);
+
+
+
+                $("#addBtn").text("Modify");
+                if ($("#spn").children('#Cancel')) {
+                    $("#spn").children('#Cancel').remove();
+                    $("#spn").append('<button type="button" id="Cancel" class="btn btn-danger btnVoucher cancel rounded-0 col">Cancel</button>');
+                }
+                else {
+                    $("#spn").append('<button type="button" id="Cancel" class="btn btn-danger btnVoucher cancel rounded-0 col">Cancel</button>');
+                }
+                StopSpinner(".btnVoucher");
+            };
+        });
+
+
+
+        $('#tblgoodsinfo tbody').on('click', ':not(.productName)', function () {
+            if ($.fn.DataTable.isDataTable('#tblgoodsinfo')) {
+                $(this).parent().removeClass("selected");
+            };
+        });
+
+
+        $(document).on('click', '.cancel', function () {
+            if ($.fn.DataTable.isDataTable('#tblgoodsinfo')) {
+                if (tblgoodsreceive.rows('.selected').any()) {
+                    $('#tblgoodsinfo tr.selected').removeClass('selected');
+                }
+                $("#addBtn").text("Add");
+                $(this).remove();
+                $('#CategoryId').val("0").change();
+                $('#ProductId').val("-1").change();
+                $('#ProductBrand').val("");
+                $('#ProductModel').val("");
+                $('#PurReqQty').val("");
+                $('#Note').val("");
+            }
+
+            StopSpinner(".btnVoucher");
+        });
+
+        function TotalLoadQty() {
+
+            var totalreceived = 0;
+            var totalvalue = 0;
+            var totalquality = 0;
+            var totaldamage = 0;
+            var totalvatamount = 0;
+            var totaldiscount = 0;
+            var rate = 0;
+            var totalgrr = 0;
+
+            var rows = $("#tblgoodsinfo").dataTable().fnGetNodes();
+
+
+            for (var i = 0; i < rows.length; i++) {
+
+                rate = rows[i].cells[4].children[0].value;//.replace(/[\$,]/g, '');
+                var received = rows[i].cells[5].children[0].value;//.replace(/[\$,]/g, '');
+              
+                var value = rows[i].cells[6].children[0].value;//.replace(/[\$,]/g, '');
+
+                var grr = parseFloat(rate) * parseFloat(received);
+                totalgrr += parseFloat(grr);
+                totalreceived += parseFloat(received);
+                totalvalue += parseFloat(value);
+            }
+
+            $(".ttlvalue").text(totalvalue.toFixed(2));
+            $(".ttlreceived").text(totalreceived.toLocaleString());
+            $("#TotalGRRValue").val(totalgrr.toLocaleString());
+
+            ///vat calculation
+            var t = ((parseFloat(totalvalue)) * 15) / 100;
+            $("#NetGRRValue").val(totalvalue.toFixed(2));
+            $("#Deduction").val(totaldiscount.toLocaleString() || 0);
+            $("#vat").val(totalvatamount.toLocaleString() || 0);
+
+
+        };
+
+
+
+        $(document).on('keyup', '#vat', function () {
+            var total = $("#TotalGRRValue").val()||0;
+            var vat = $("#vat").val() || 0;
+            var Deduction = $("#Deduction").val() || 0;
+            var p = (parseFloat(total) - parseFloat(Deduction)).toLocaleString();
+            $("#NetGRRValue").val(parseFloat(p) + parseFloat(vat));
+        });
+
+        $(document).on('keyup', '.rate', function () {
+
+            var v = $(this).val()||0;
+            var c = $(this).parent().parent();
+            var d = $(this).parent().parent().index();
+            var s = c[0].cells[6].children[0].value || 0;
+            var t = parseFloat(v) * parseFloat(s);
+            c[0].cells[4].children[0].value = (v);
+            c[0].cells[11].children[0].value = (t);///need to check
+            console.log(t)
+
+
+            TotalLoadQty();
+        });
+
+
+
+    </script>
+}
+

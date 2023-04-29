@@ -1,0 +1,171 @@
+﻿@using System.Collections
+@*@using GTERP.Controllers.HR.DashboardController*@
+@model IEnumerable<GTERP.Controllers.HR.DashboardController.DailyAttendanceSum>
+
+@using (Html.BeginForm("Index", "Dashboard", FormMethod.Post))
+{
+    <div class="card mb-4 p-3">
+        <div class="box-header card card-header-style pal-kyoo-gradient">
+            <div class="row">
+                <div class="col-md-8 col-12">
+                    <h3 class="box-title">Daily Attendance Summary</h3>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+        </div>
+        <div class="card-body pt-3">
+            <div class="row">
+                @*<div class="row">*@
+                @if (Model != null)
+                {
+                    IEnumerable<GTERP.Controllers.HR.DashboardController.DailyAttendanceSum> listOfAtt = ViewBag.ListOfAtt;
+                    <div class="table-responsive">
+                        <table class="text-center table table-hover table-striped border p-3">
+                            <thead>
+                                <tr>
+                                    <td>Department</td>
+                                    <td>Employee</td>
+                                    <td>Present</td>
+                                    <td>Present %</td>
+                                    <td>Late</td>
+                                    <td>Late %</td>
+                                    <td>Absent</td>
+                                    <td>Absent %</td>
+                                    <td>Leave</td>
+                                    <td>Leave %</td>
+                                    <td>Perday Salary</td>
+                                    <td>Over Time</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (GTERP.Controllers.HR.DashboardController.DailyAttendanceSum da in listOfAtt)
+                                {
+                                    <tr>
+                                        <td>@da.SectName</td>
+                                        <td>@da.TotalEmployee</td>
+                                        <td>@da.Present</td>
+                                        <td>@da.PresentPercent%</td>
+                                        <td>@da.Late</td>
+                                        <td>@da.LatePercent%</td>
+                                        <td>@da.Absent</td>
+                                        <td>@da.AbsentPercent%</td>
+                                        <td>@da.Leave</td>
+                                        <td>@da.LeavePercent%</td>
+                                        <td>@da.SalaryPerDay</td>
+                                        <td>@da.OTHour</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                }
+                else
+                {
+                    <center>
+                        <h3>No data to show</h3>
+                    </center>
+                }
+
+            </div>
+            <div id="dailyAttSumChart"></div>
+
+
+            @* </div>@***End of second info row*@
+            @*</div>*@@**End of info body*@
+            <div class="offset-md-1 col-md-3 col-12">
+                <div id="donutchart"></div>
+
+                @*style="width: 40em; height: 340px;"**@
+            </div>@**End of chart body*@
+        </div>
+    </div>
+    @*<div class="row">
+        <div class="col-md-12 col-12" id="dailyAtt">
+            <div class="box box-solid card">
+                <div class="box-header with-border card card-header-style purple-gradient">
+                    <div class="row">
+                        <div class="col-md-8 col-12">
+                            <h3 class="box-title">Daily Attendance Summary</h3>
+                        </div>
+                        <div class="col-md-4">
+                        </div>
+                    </div>
+                </div>**End of header
+                <div class="box-body ">
+                    <div class="row">
+                        <div class="row">
+                        @if (Model != null)
+                        {
+                            IEnumerable<GTERP.Controllers.HR.DashboardController.DailyAttendanceSum> listOfAtt = ViewBag.ListOfAtt;
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <td>Section</td>
+                                            <td>Employee</td>
+                                            <td>Present</td>
+                                            <td>Present %</td>
+                                            <td>Late</td>
+                                            <td>Late %</td>
+                                            <td>Absent</td>
+                                            <td>Absent %</td>
+                                            <td>Leave</td>
+                                            <td>Leave %</td>
+                                            <td>Perday Salary</td>
+                                            <td>Over Time</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (GTERP.Controllers.HR.DashboardController.DailyAttendanceSum da in listOfAtt)
+                                        {
+                                            <tr>
+                                                <td>@da.SectionName</td>
+                                                <td>@da.TotalEmployee</td>
+                                                <td>@da.Present</td>
+                                                <td>@da.PresentPercent%</td>
+                                                <td>@da.Late</td>
+                                                <td>@da.LatePercent%</td>
+                                                <td>@da.Absent</td>
+                                                <td>@da.AbsentPercent%</td>
+                                                <td>@da.Leave</td>
+                                                <td>@da.LeavePercent%</td>
+                                                <td>@da.SalaryPerDay</td>
+                                                <td>@da.OTHour</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        }
+                        else
+                        {
+                            <center>
+                                <h3>No data to show</h3>
+                            </center>
+                        }
+
+                    </div>
+                </div>
+                <div id="dailyAttSumChart"></div>
+
+
+                 </div>**End of second info row
+                </div>*End of info body
+                <div class="offset-md-1 col-md-3 col-12">
+                    <div id="donutchart"></div>
+
+                    style="width: 40em; height: 340px;"*
+                </div>*End of chart body
+            </div>*End of box first row tag
+        </div>*End of box body
+    </div>***Box End Here*@
+
+}
+
+
+
+
+

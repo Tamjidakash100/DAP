@@ -1,0 +1,183 @@
+﻿@model GTERP.Models.ReceivedFromBufferBankAmountModel.BanksModel
+
+<link href="~/css/customFormStyle.css" rel="stylesheet" />
+<style>
+    #styletext {
+        color: transparent;
+        background: #666666;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+        font-weight: 100;
+        font-size: 40px;
+    }
+</style>
+
+
+@using (Html.BeginForm("Edit", "Banks", FormMethod.Post))
+{
+    @*@Html.AntiForgeryToken()*@
+
+    <div class="container" style="max-width: 700px;">
+        <input asp-for="BankId" type="hidden" />
+        <div class="py-7 text-center">
+
+            <h1 id="styletext">Banks Entry Delete</h1>
+            <p class="lead"></p>
+        </div>
+        @if (Model != null)
+        {
+            @Html.HiddenFor(x=> x.BankId)
+        }
+        else
+        {
+            <input type="hidden" asp-for="BankId" />
+        }
+
+        <div id="modalbodyfahad" class="row card p-4">
+            <div class="col-md-12 order-md-1">
+                <h4 class="mb-3">Bank @ViewBag.Title</h4>
+
+                <form class="needs-validation card p-4" novalidate>
+                    
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 mb-2">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <label asp-for="BufferId" class="col-sm-2 control-label">Buffer Name</label>
+                                        </span>
+                                    </div>
+                                    <select asp-for="BufferId" id="AccId" class="form-control" asp-items="ViewBag.BufferId">
+                                        <option>Select Buffer Name</option>
+                                    </select>
+                                    <span asp-validation-for="BufferId" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.BankName,"Bank Name")
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.BankName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.BankName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.BankAccountNumber,"A/C Number")
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.BankAccountNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.BankAccountNumber, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.BranchName,"Branch Name")
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.BranchName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.BranchName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row text-center m-2">
+                            <br />
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4 col-xs-12 d-block mx-auto">
+
+                                @if (ViewBag.Title == "Create")
+                                {
+                                    <input type="submit" value="Save" class="btn btn-primary btn-md btn-block rounded-0" />
+
+                                }
+                                else if (ViewBag.Title == "Edit")
+                                {
+
+                                    <input type="submit" value="Update" class="btn btn-warning btn-block rounded-0" />
+                                }
+                                else if (ViewBag.Title == "Delete")
+                                {
+                                    <button class="btn btn-danger btn-md btn-block rounded-0" type="button" onclick="Buffer_delete()">Delete</button>
+                                }
+                            </div>
+                            <div class="col-md-4 col-xs-12 d-block mx-auto">
+                                @Html.ActionLink("Back", "Index", "Banks", null, new { @class = "btn btn-info btn-block rounded-0", @id = "btnBack" })
+
+                            </div>
+                            <div class="col-md-2"></div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+}
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.1/js/bootstrap-multiselect.min.js" integrity="sha512-fp+kGodOXYBIPyIXInWgdH2vTMiOfbLC9YqwEHslkUxc8JLI7eBL2UQ8/HbB5YehvynU3gA3klc84rAQcTQvXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        $().ready(() => {
+            $("rep_dropdown").multiselect();
+            $("dist_dropdown").multiselect();
+        })
+
+        // $("#Sectid").select2();
+
+        function Buffer_delete() {
+
+            var BankId = $("#BankId").val();
+            // alert(DesigId);
+            $.ajax({
+
+                url: '@Url.Action("Delete", "Banks")',
+                //url: '@Url.Action("Delete")',
+                data: JSON.stringify({ id: BankId }), //use id here
+                //data: JSON.stringify(salesmain),
+                type: 'POST',
+                contentType: 'application/json;',
+                dataType: 'json',
+                success: function (result) {
+                    console.log(result)
+                    if (result.Success == "1") {
+                        //customFile('3', result.ex);
+                        window.setTimeout(function () {
+                            // Move to a new location or you can do something else
+                            window.location.href = '@Url.Action("Index", "Banks")';
+                            //return JavaScript("window.location.href = '@Url.Action("Index", "Banks")'");
+                        }, 500);
+                    }
+                    else {
+                        toastr.error(result.ex);
+                    }
+                }
+            });
+        }
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

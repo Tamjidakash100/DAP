@@ -1,0 +1,492 @@
+﻿@model GTERP.Models.HR_Leave_Balance
+
+@{
+    ViewBag.Title = "Leave Balance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<HR_Leave_Balance> LeaveBalance = new List<HR_Leave_Balance>();
+
+    LeaveBalance = ViewBag.LeaveBalanceList;
+}
+<link href="~/css/customFormStyle.css" rel="stylesheet" />
+<style>
+    
+
+    .mCustomScrollbar {
+        height: 575px;
+    }
+</style>
+
+<div class="card">
+    <h4 class="form-header btn-info">
+        <span class="fas fa-tasks"> </span> LEAVE BALANCE
+    </h4>
+    <div class="card-body">
+        <!--Modal-->
+        <div class="myMessage">       
+                <div class="card bg-primary mx-auto">
+                    <div class="card-header">Message</div>
+                    <div class="card-body" id="modalMessage"></div>
+                </div>
+        </div>
+
+        <!--Main field-->
+        <div class="row">
+            <!--Left Option form-->
+            <div class="col-md-4 col-12">
+                <!--First option-->
+                <div class="card p-3">
+                    <fieldset id="firstOpt">
+                        <div id="firstOptForm">
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            @Html.LabelFor(model => model.DtOpeningBalance, new { @class = "control-label" })
+                                        </span>
+                                    </div>
+                                    @Html.HiddenFor(m => m.EmpId, new { id = "EmpId" })
+                                    <select asp-for="DtOpeningBalance" asp-items="ViewBag.OpeningYear" name="DtOpeningBalance" class="form-control selectpicker" data-size="5">
+                                        @*<option value="">Opening Date</option>*@
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h5>Criteria</h5>
+                                <div id="myCriteria">
+                                    <div class="form-check form-check-inline custom-radio">
+                                        <input type="radio" asp-for="Criteria" value="All" checked />All Employee
+                                    </div>
+                                    <div class="form-check form-check-inline custom-radio pl-1">
+                                        <input type="radio" asp-for="Criteria" value="EmpID" />Emp ID
+                                    </div>
+                                    <div class="form-check form-check-inline custom-radio pl-1">
+                                        <input type="radio" asp-for="Criteria" value="Sec" />Section
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                    </fieldset>                
+                    <!--Second Option-->
+                    <fieldset id="secondOpt">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    @Html.LabelFor(model => model.HR_Emp_Info.EmpCode, new { @class = "control-label" })
+                                </span>
+                            </div>
+                            <select asp-for="EmpId" asp-items="ViewBag.EmpId" id="EmpCode" data-val="false" name="EmpCode" class="form-control " disabled="disabled">
+                                <option value="">Employee</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    @Html.LabelFor(model => model.HR_Emp_Info.EmpName, new { @class = "control-label" })
+                                </span>
+                            </div>
+                            @Html.TextBoxFor(model => model.HR_Emp_Info.EmpName, new { @class = "form-control", @readonly = true, id = "EmpName" })
+                            @*@Html.ValidationMessageFor(model => model.ShiftDesc)*@
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    @Html.LabelFor(model => model.SectId, new { @class = "control-label" })
+                                </span>
+                            </div>
+                            <select asp-for="SectId" asp-items="ViewBag.SectId" id="SectId" data-val="false" class="form-control" disabled="disabled">
+                                <option value="">Section</option>
+
+                            </select>
+                        </div>
+                        <hr />
+                    </fieldset>
+                    <!--3rd option(Button)-->
+                    <fieldset class="mx-auto">
+                        <button type="submit" id="refreshBtn" class="btn btn-primary rounded-0"><span class="fas fa-sync"> </span> Refresh List</button>
+                    </fieldset>
+                </div>                
+
+                
+
+              
+                <!--4th option()-->
+                <div class="card p-2 mt-2">
+                    @*<input type="checkbox" id="yearlyLBinput" name="yearlyLBinput"> Yearly Leave Balance input<br>*@
+                    <fieldset id="leaveSetup">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    @Html.LabelFor(model => model.CL, new { @class = "control-label" })
+                                </span>
+                            </div>
+                            @Html.TextBoxFor(model => model.CL, new { @class = "form-control" })
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    @Html.LabelFor(model => model.SL, new { @class = "control-label " })
+                                </span>
+                            </div>
+                            @Html.TextBoxFor(model => model.SL, new { @class = "form-control" })
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    @Html.LabelFor(model => model.EL, new { @class = "control-label" })
+                                </span>
+                            </div>
+                            @Html.TextBoxFor(model => model.EL, new { @class = "form-control" })
+                        </div>
+                            <div class="mx-auto text-center">
+                                <span id="allCheckedDiv">
+                                    <input type="button" class="btn btn-warning rounded-0" value="Select All" id="AllSelect" />
+                                    &nbsp;
+                                    <button type="button" id="FillBtn" class="btn btn-primary rounded-0">
+                                        <i class="fas fa-check"></i> &nbsp;Fill
+                                    </button>
+                                </span>
+                                <span>
+                                    <button type="submit" id="UpdateDataBtn" class="btn btn-success rounded-0">
+                                        <span class="fas fa-check"> </span>&nbsp; Update
+                                    </button>
+                                    @*<button type="submit" id="deleteBtn" class="btn btn-danger" onclick="deleteConfirmation(event)">
+                        <span class="glyphicon glyphicon-trash"> </span>&nbsp; Delete
+                    </button>*@
+                                    @*btn btn-default*@
+                                    <button type="submit" id="cancelBtn" class="btn btn-warning rounded-0">
+                                        <span class="fas fa-retweet"> </span>&nbsp; Reset
+                                    </button>
+                                </span>
+                            </div>
+
+
+                    </fieldset>
+                    <fieldset>
+                        <center>
+                   
+                        </center>
+                    </fieldset>
+                </div>
+            </div> <!--End fo left form-->
+            <!--Datatable-->
+            <fieldset class="col-md-8 col-12" id="datatableDiv">
+                <div class="mCustomScrollbar card p-3 table-responsive" data-mcs-theme="minimal-dark">
+                    <table id="datatable" class="table table-hover table-bordered table-striped trow text-nowrap" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th class="d-none"></th>
+                                <th>Code</th>
+                                <th>Name</th>
+                                <th>Section</th>
+                                <th>Opening</th>
+                                <th>CL</th>
+                                <th>EL</th>
+                                <th>SL</th>
+                                <th>ML</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+
+            @*<!--Right Option form-->
+                <div class="col-sm-12 col-lg-2 col-md-2">
+
+                </div> <!--End of Right form-->*@
+        </div> <!-- End of main field-->
+    </div> <!--End of panel body-->
+</div>  <!--End of panel info-->
+
+@section Scripts{
+    <script>
+
+        var selectedValue = 'All';
+        var IndexArray = [];
+        var leaveData = {};
+        var AllSelect = false;
+        //------------------------------------ FUNCITONS ----------------------//
+        var lBalanceTable = $('#datatable').DataTable({
+            //select: false,
+            //select: 'single',
+            dom: '<"dom_wrapper fh-fixedHeader"fl>tip',
+            'aoColumns': [
+                { 'sClass': 'EmpId', 'visible': false },
+                { 'sClass': 'EmpCode', 'visible': true },
+                { 'sClass': 'EmpName', 'visible': true },
+                { 'sClass': 'SectName', 'visible': true },
+                { 'sClass': 'dtOpeningDate', 'visible': true },
+                { 'sClass': 'CL', 'visible': true },
+                { 'sClass': 'EL', 'visible': true },
+                { 'sClass': 'SL', 'visible': true },
+                { 'sClass': 'ML', 'visible': true },
+                { 'sClass': 'LvBalId', 'visible': false }
+            ],
+            columnDefs: [
+                {
+                    'render': function (data, type, row) {
+                        return '<input class="form-control inputCL" type="text" data-val="true" value=' + data + '>';
+                    },
+                    'targets': 5
+                },
+                {
+                    "render": function (data, type, row) {
+                        return '<input class="form-control inputEL" type="text" data-val="true" value=' + data + '>';
+                    },
+                    "targets": 6
+                },
+                {
+                    'render': function (data, type, row) {
+                        return '<input class="form-control inputSL" type="text" data-val="true" value=' + data + '>';
+                    },
+                    'targets': 7
+                },
+                {
+                    "render": function (data, type, row) {
+
+                        return '<input class="form-control inputML" type="text"  value = ' + data + '  >';
+                    },
+                    "targets": 8
+                },
+            ],
+            'paging': false,
+            'info': false,
+            language: { search: '', searchPlaceholder: "Search..." }
+        });
+
+        $("#EmpCode").select2();
+        $('#FillBtn').click(function () {
+
+            var cl = $("#CL").val();
+            var sl = $("#SL").val();
+            var el = $("#EL").val();
+
+            $('#datatable tbody tr').each(function () {
+                if ($(this).hasClass("selected")) {
+                    $(this).find('.inputCL').val($.trim(cl));
+                    $(this).find('.inputSL').val($.trim(sl));
+                    $(this).find('.inputEL').val($.trim(el));
+                }
+            })
+
+        });
+
+
+        $('#datatable tbody').on('click', 'tr', function () {
+            $(this).toggleClass('selected');
+
+        });
+
+
+        $('#AllSelect').click(function () {
+            var btn = $('#AllSelect').val();
+            if (btn == "Select All") {
+                $('#datatable tbody tr').each(function () {
+                    if ($(this).hasClass('selected')) {
+                        $(this).removeClass('selected');
+                    }
+                    $(this).addClass('selected');
+
+
+                });
+                $('#AllSelect').val('DeSelect All');
+                AllSelect = true;
+            } else {
+                $('#datatable tbody tr').each(function () {
+                    if ($(this).hasClass('selected')) {
+                        $(this).removeClass('selected');
+                    }
+                });
+                $('#AllSelect').val('Select All');
+            };
+        });
+
+        $('#cancelBtn').click(function () {
+            clearAll();
+        })
+
+
+        function clearAll() {
+            $("#CL").val("");
+            $("#SL").val("");
+            $("#EL").val("");
+        };
+
+
+        $('input[type="radio"]').change(function () {
+            selectedValue = this.value;
+            switch (selectedValue) {
+
+                case "All":
+                    $('#EmpCode').prop('disabled', true);
+                    $('#SectId').prop('disabled', true);
+                    break;
+                case "EmpID":
+                    $('#EmpCode').prop('disabled', false);
+                    $('#SectId').prop('disabled', true);
+                    break;
+                case "Sec":
+                    $('#EmpCode').prop('disabled', true);
+                    $('#SectId').prop('disabled', false);
+                    break;
+            };
+        });
+
+        $('#EmpCode').change(function () {
+            var employee = $(this).find(':selected').text();
+            var index = employee.indexOf('-');
+            var length = employee.length;
+            var name = employee.substr(index + 1, length);
+            $('#EmpName').val(employee);
+            //$('#EmpName').val(name);
+        })
+
+
+
+        //-------------------------------- DOC READY ---------------------------------//
+        $(document).ready(function () {
+
+            var antiForgeryToken = $("input[name=GTR_ANTIFORZERY]").val();
+            //------------------------------- REFRESH ---------------------//
+            $("#refreshBtn").click(function () {
+                lBalanceTable.clear().draw();
+                var dtOpening = $("#DtOpeningBalance").val();
+                var empId = 0;
+                var secId = 0;
+                switch (selectedValue) {
+                    case 'EmpID':
+                        empId = $("#EmpCode").val();
+                    case 'Sec':
+                        secId = $("#SectId").val();
+                }
+                if (dtOpening !== "") {
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("GetLeaveBalance", "LeaveBalance")',
+                        dataType: "json",
+                        headers: { "X-CSRF-TOKEN-GTR_ANTIFORZERY": antiForgeryToken },
+                        data: { Criteria: selectedValue, EmpId: empId, SectId: secId, DtOpBal: dtOpening },
+                        success: function (data) {
+                            for (var i = 0; i < data.length; i++) {
+                                $('#datatable').dataTable().fnAddData(
+                                    [
+                                        data[i].EmpId,
+                                        data[i].EmpCode,
+                                        data[i].EmpName,
+                                        data[i].SectName,
+                                        data[i].dtOpeningDate,
+                                        data[i].CL,
+                                        data[i].EL,
+                                        data[i].SL,
+                                        data[i].ML,
+                                        data[i].LvBalId
+                                    ]
+                                );
+                            }
+                        },
+                        error: function () {
+                            alert("error");
+                        }
+                    });
+
+                    //$.post('/LeaveBalance/GetLeaveBalance', { Criteria: selectedValue, EmpId: empId, SectId: secId, DtOpBal: dtOpening }, function (data, status, xhr) {
+                    //    if (status == 'success') {
+                    //        for (var i = 0; i < data.length; i++) {
+                    //            $('#datatable').dataTable().fnAddData(
+                    //                [
+                    //                    data[i].EmpId,
+                    //                    data[i].EmpCode,
+                    //                    data[i].EmpName,
+                    //                    data[i].SectName,
+                    //                    data[i].dtOpeningDate,
+                    //                    data[i].CL,
+                    //                    data[i].EL,
+                    //                    data[i].SL,
+                    //                    data[i].ML,
+                    //                    data[i].LvBalId
+                    //                ]
+                    //            );
+                    //        }
+
+                    //        //manipulateDataTable();
+                    //        //clearAll();
+                    //    }
+                    //});
+
+                } else {
+                    alert("Please select Opening date first!");
+                }
+            });     // End of refresh button scop
+
+            $(document).on("click", "#UpdateDataBtn", function () {
+
+                var LeaveBalance = {
+                    EmpId: "",
+                    CL: "",
+                    EL: "",
+                    SL: "",
+                    ML: "",
+                    LvBalId: "",
+                    DtOpeningBalance: ""
+                };
+
+                var dtOpeningDate = $('#DtOpeningBalance').val();
+                console.log(dtOpeningDate);
+
+
+
+                ///////  In fnGetNodes class not work ///////
+                //var rowleaveList = $('#datatable').DataTable().fnGetNodes();
+                //var oTableleaveList = $('#datatable').DataTable().fnGetData();
+
+                /////// Class work in only nodes & data ///////////
+                var rowleaveList = lBalanceTable.rows('.selected').nodes();
+                var oTableleaveList = lBalanceTable.rows('.selected').data();
+                var LeaveList = [];
+                //console.log(oTableleaveList);
+                for (var i = 0; i < oTableleaveList.length; i++) {
+                    LeaveBalance.EmpId = oTableleaveList[i][0];
+                    LeaveBalance.DtOpeningBalance = $('#DtOpeningBalance option:selected').val();
+                    LeaveBalance.CL = rowleaveList[i].cells[4].children[0].value;
+                    LeaveBalance.EL = rowleaveList[i].cells[5].children[0].value;
+                    LeaveBalance.SL = rowleaveList[i].cells[6].children[0].value;
+                    LeaveBalance.ML = rowleaveList[i].cells[7].children[0].value;
+                    LeaveBalance.LvBalId = oTableleaveList[i][9];
+
+                    LeaveList.push(LeaveBalance);
+
+                    LeaveBalance = {
+                        EmpId: "",
+                        CL: "",
+                        EL: "",
+                        SL: "",
+                        ML: "",
+                        LvBalId: "",
+                        DtOpeningBalance: ""
+                    };
+                }
+
+                console.log(LeaveList);
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("SaveLeaveBalance", "LeaveBalance")',
+                    dataType: "json",
+                    headers: { "X-CSRF-TOKEN-GTR_ANTIFORZERY": antiForgeryToken },
+                    data: { LeaveBalance: LeaveList },
+                    success: function (data) {
+                        location.reload();
+                    },
+                    error: function () {
+                        alert("error");
+                    }
+                });
+                
+            });
+        }); //End of document ready
+    </script>
+}
+

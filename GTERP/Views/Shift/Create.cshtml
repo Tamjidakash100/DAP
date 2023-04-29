@@ -1,0 +1,354 @@
+﻿@model GTERP.Models.Cat_Shift
+
+
+
+<style>
+
+
+    #styletext {
+        color: transparent;
+        background: #666666;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+        font-weight: 100;
+        font-size: 40px;
+    }
+</style>
+
+@using (Html.BeginForm("Create", "Shift", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @*@Html.AntiForgeryToken()*@
+
+    <div class="container" style="max-width: 1000px;">
+        <div class="py-7 text-center">
+
+            <h1 id="styletext">Shift Entry</h1>
+            <p class="lead"></p>
+        </div>
+
+        @if (Model != null)
+        {
+            <input type="hidden" id="ShiftId" name="ShiftId" value="@Model.ShiftId" />
+        }
+        else
+        {
+            <input type="hidden" asp-for="ShiftId" value="0" />
+        }
+        <div id="modalbodyfahad" class="row card p-4">
+            <div class="col-md-12 order-md-1">
+                <h4 class="mb-3"> Shift @ViewBag.Title</h4>
+
+                <form class="needs-validation card p-4" novalidate>
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ShiftName)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.ShiftName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ShiftName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ShiftCode)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.ShiftCode, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ShiftCode, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ShiftDesc)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.ShiftDesc, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ShiftDesc, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ShiftIn)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.ShiftIn, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ShiftIn, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ShiftOut)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.ShiftOut, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ShiftOut, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ShiftLate)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.ShiftLate, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ShiftLate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.LunchTime)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.LunchTime, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.LunchTime, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.LunchIn)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.LunchIn, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.LunchIn, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.LunchOut)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.LunchOut, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.LunchOut, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.RegHour)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.RegHour, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.RegHour, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ShiftType)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.ShiftType, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ShiftType, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.ShiftCat)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.ShiftCat, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ShiftCat, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.TiffinTime)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.TiffinTime, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TiffinTime, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.TiffinIn)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.TiffinIn, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TiffinIn, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.TiffinOut)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.TiffinOut, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TiffinOut, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.TiffinTime1)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.TiffinTime1, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TiffinTime1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.TiffinTimeIn1)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.TiffinTimeIn1, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TiffinTimeIn1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.TiffinTime2)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.TiffinTime2, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TiffinTime2, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text py-0">
+                                            @Html.LabelFor(model => model.TiffinTimeIn2)
+                                        </span>
+                                    </div>
+                                    @Html.EditorFor(model => model.TiffinTimeIn2, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TiffinTimeIn2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-12">
+                                @Html.LabelFor(model => model.IsInactive)
+                                @Html.EditorFor(model => model.IsInactive)
+                                @Html.ValidationMessageFor(model => model.IsInactive, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="row text-center m-2">
+                            <br />
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4 col-xs-12 d-block mx-auto">
+
+                                @if (ViewBag.Title == "Create")
+                                {
+                                    <input type="submit" value="Save" class="btn btn-primary btn-md btn-block rounded-0" />
+
+                                    @*<button class="btn btn-primary btn-lg btn-block" type="button" onclick="Products_save()">Save</button>*@
+                                }
+                                else if (ViewBag.Title == "Edit")
+                                {
+                                    <input type="submit" value="Update" class="btn btn-warning btn-block rounded-0" />
+
+                                    @*<button class="btn btn-warning btn-lg btn-block" type="button" onclick="Products_save()">Update</button>*@
+                                }
+                                else if (ViewBag.Title == "Delete")
+                                {
+                                    <button class="btn btn-danger btn-md btn-block rounded-0" type="button" onclick="Shift_delete()">Delete</button>
+                                }
+
+
+                            </div>
+                            <div class="col-md-4 col-xs-12 d-block mx-auto">
+                                @Html.ActionLink("Back", "Index", "Shift", null, new { @class = "btn btn-info btn-block rounded-0", @id = "btnBack" })
+
+                            </div>
+                            <div class="col-md-2"></div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+}
+
+@section Scripts{
+    <script>
+
+        $('.timepicker').timepicker({
+            timeFormat: 'h:mm p',
+            interval: 60,
+            minTime: '10',
+            maxTime: '6:00pm',
+            defaultTime: '11',
+            startTime: '08:00',
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true
+        });
+
+    $("#ShiftId").select2();
+
+    function Shift_delete() {
+
+        var ShiftId = $("#ShiftId").val();
+            //alert(SalesId);
+            $.ajax({
+
+                url: '@Url.Action("Delete", "Shift")',
+                //url: '@Url.Action("Delete")',
+                data: JSON.stringify({ id: ShiftId }), //use id here
+                //data: JSON.stringify(salesmain),
+                type: 'POST',
+                contentType: 'application/json;',
+                dataType: 'json',
+                success: function (result) {
+                if (result.Success == "1") {
+                    customFile('3', result.ex);
+                    window.setTimeout(function () {
+                        // Move to a new location or you can do something else
+                        window.location.href = '@Url.Action("Index", "Shift")';
+                    }, 500);
+                }
+                else {
+                    toastr.error(result.ex);
+                }
+            }
+            });
+    }
+    </script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

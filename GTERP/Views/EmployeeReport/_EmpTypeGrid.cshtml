@@ -1,0 +1,98 @@
+﻿
+
+
+
+@using GTERP.Models.Common
+
+
+@{
+    List<Cat_Emp_Type> EmpTypes = new List<Cat_Emp_Type>();
+    EmpTypes = ViewBag.EmpType;
+}
+
+<div class="mb-0">
+    <input type="text" class="EmpTypeSearch form-control" placeholder="Search . . ." />
+</div>
+<table id="commonTable" class="commonTable table table-hover mb-0">
+
+    <thead>
+        <tr>
+            <th class="d-none">EmpType Id</th>
+            <th>Employee Type</th>
+        </tr>
+    </thead>
+</table>
+
+<div class="mCustomScrollbar" data-mcs-theme="minimal-dark" style="height: 350px">
+
+    <table id="EmpTypeTable" class="EmpTypeTable table table-hover trow table-light table-striped">
+
+        <thead class="d-none">
+            <tr>
+                <th>EmpType Id</th>
+                <th>Employee Type</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr id="myrow">
+                <td class="d-none">
+                    0
+                </td>
+
+                <td>
+                    =ALL=
+                </td>
+            </tr>
+
+            @if (EmpTypes.Count > 0)
+            {
+
+                foreach (Cat_Emp_Type aLine in EmpTypes)
+                {
+                    <tr id="myrow">
+                        <td class="d-none">
+                            @aLine.EmpTypeId
+                        </td>
+
+                        <td>
+                            @aLine.EmpTypeName
+                        </td>
+
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts{
+    <script>
+
+        $(document).ready(function () {
+
+            $(".EmpTypeSearch").keyup(function () {
+
+                var searchText = $(this).val();
+
+                searchText = searchText.toLowerCase();
+
+                $('#EmpTypeTable tbody tr').each(function () {
+
+                    var EmpTypeId = $.trim($(this).children("td:eq(0)").html());
+                    var EmpTypeName = $.trim($(this).children("td:eq(1)").html());
+
+                    if (EmpTypeId.toLowerCase().indexOf(searchText) === -1 &&
+                        EmpTypeName.toLowerCase().indexOf(searchText) === -1) {
+                        $(this).css("display", "none");
+                    } else {
+                        $(this).css("display", "");
+                    }
+                });
+            });
+
+        });
+
+    </script>
+}

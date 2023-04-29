@@ -1,0 +1,670 @@
+﻿@model GTERP.Models.Buffers.BufferGatePass
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var Total = "";
+}
+@*@section Style
+    {
+       <link rel="stylesheet" href="~/lib/tabulator/css/tabulator.css" />
+    }*@
+@using (Html.BeginForm("Create", "GatePassForBuffer", FormMethod.Post))
+{
+    <div id="divProformaInvoice" class="row" style="max-width:100%">
+
+
+        <div class="col-md-12 ">
+            <div class="text-center">
+                <H2>Gate Pass - <span id="titleName">@ViewBag.Title</span></H2>
+            </div>
+        </div>
+
+
+
+
+
+
+        @if (ViewBag.Title == "Edit")
+        {
+            <div class=" col-md-12 card p-2">
+
+
+                <div class="row mt-3">
+
+
+                    <div class="col-md-5">
+
+                        <input name="BufferGatePassId" id="BufferGatePassId" value="@Model.BufferGatePassId" hidden />
+                        <div id="ChallanNo" class="col-12">
+                            <span class="text-right">
+                                <label>Gate Pass No</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.TextBox("GatePassNo", Model.GatePassNo, new { id = "GatePassNo", @class = "form-control form-control-sm",@readonly = "readonly" })
+                            </span>
+                        </div>
+                        <div class="col-12">
+                            <span class="text-right">
+                                <label>Fiscal Year</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.DropDownList("FiscalYearId", ViewBag.FiscalYearId as List<SelectListItem>, new { id = "FiscalYearId", @class = "form-control form-control-sm",name="FiscalYearId",disabled = "disabled"  })
+                            </span>
+                        </div>
+
+                        <div class="col-12">
+                            <span class="text-right">
+                                <label>Fiscal Month</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.DropDownList("FiscalMonthId", ViewBag.FiscalMonthId as List<SelectListItem>, "--Select Month--",new { id = "FiscalMonthId", @class = "form-control form-control-sm",name="FiscalMonthId",disabled = "disabled" })
+                            </span>
+                        </div>
+
+                        <div id="divDistAllotment" class=" col-12">
+                            <span class="text-right">
+                                <label>Gate Pass From</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.TextBox("GatePassFrom", Model.GatePassFrom, new { id = "GatePassFrom", @class = "form-control form-control-sm" })
+                            </span>
+                        </div>
+                        <div id="divDistAllotment" class=" col-12">
+                            <span class="text-right">
+                                <label class="text-danger">Truck Number</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.TextBox("TruckNumber", Model.TruckNumber, new { id = "TruckNumber", @class = "form-control form-control-sm" })
+                            </span>
+                        </div>
+                        <div id="divDistAllotment" class=" col-12">
+                            <span class="text-right">
+                                <label>Driver Name</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.TextBox("DriverName", Model.DriverName, new { id = "DriverName", @class = "form-control form-control-sm" })
+                            </span>
+                        </div>
+                        <div id="divDistAllotment" class=" col-12">
+                            <span class="text-right">
+                                <label>Driver Mobile</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.TextBox("DriverMobile", Model.DriverMobile, new { id = "DriverMobile", @class = "form-control form-control-sm" })
+                            </span>
+                        </div>
+
+
+
+
+                        <div id="divAllotment" class="col-12">
+                            <span class="text-right">
+                                <label>Chalan Date</label>
+                            </span>
+                            <span class="input-group">
+
+                                @Html.TextBoxFor(model => model.GatePassDate, new { id = "DeliveryDate", @class = "form-control form-control-sm",name="DeliveryDate"})
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div id="divDistAllotment" class=" col-6">
+                                <span class="text-right">
+                                    <label>Total Qty</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("TotalQty", Model.TotalQty, new { id = "TotalQty", @class = "form-control form-control-sm",@readonly = "readonly"  })
+                                </span>
+                            </div>
+                            <div id="divDistAllotment" class=" col-6">
+                                <span class="text-right">
+                                    <label>Chalan No</label>
+                                </span>
+                                <input name="BufferDelChallanId" id="BufferDelChallanId" hidden />
+                                <input name="BufferDelChallanNo" id="BufferDelChallanNo" value="@Model.BufferDelChallanNo" hidden />
+                                <div class="min-h-100 border border-primary" style="min-height:60px; background-color: rgba(50,100,200,.1)">
+
+                                    <ul class="ml-5" id="chalanList"></ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <span class="text-right">
+                                <label>Carrier Org</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.DropDownList("BufferRepresentativeId", ViewBag.BufferRepresentativeId as List<SelectListItem>, "--Select Representative--",new { id = "BufferRepresentativeId", @class = "form-control form-control-sm",name="BufferRepresentativeId" })
+                            </span>
+                        </div>
+
+                        <div class="ml-1" id="Del_chaTable" style="min-height: 250px; background-color: rgba(0,0,255,.1)">
+
+                            <p class="mt-3" id="Del_Cha"></p>
+                        </div>
+                        <div id="GatePass">
+
+                            <p id="Gate_pass"></p>
+                        </div>
+
+
+                        <div class="text-center col-12">
+
+                            <span>
+                                <button type="submit" class="btn btn-success">Update</button>
+                            </span>
+                            <span>
+                                <a asp-action="Index" class="btn btn-info">Back to List</a>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class=" col-md-12 card p-2">
+
+
+                <div class="row mt-3">
+
+
+                    <div class="col-md-4">
+
+
+                        <div id="ChallanNo" class="col-12">
+                            <span class="text-right">
+                                <label>Gate Pass No</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.TextBox("GatePassNo",  ViewBag.lastGatePassNo,"", new { id = "GatePassNo", @class = "form-control form-control-sm", })
+                            </span>
+                        </div>
+                        <div class="col-12">
+                            <span class="text-right">
+                                <label>Year</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.DropDownList("FiscalYearId", ViewBag.FiscalYearId as List<SelectListItem>, "--Select Year--",new { id = "FiscalYearId", @class = "form-control form-control-sm",name="FiscalYearId" })
+                            </span>
+                        </div>
+
+                        <div class="col-12">
+                            <span class="text-right">
+                                <label>Month</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.DropDownList("FiscalMonthId", ViewBag.FiscalMonthId as List<SelectListItem>, "--Select Month--",new { id = "FiscalMonthId", @class = "form-control form-control-sm",name="FiscalMonthId" })
+                            </span>
+                        </div>
+
+                        <div id="divDistAllotment" class=" col-12">
+                            <span class="text-right">
+                                <label>Gate Pass From</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.TextBox("GatePassFrom", "", new { id = "GatePassFrom", @class = "form-control form-control-sm" })
+                            </span>
+                        </div>
+                        <div id="divDistAllotment" class=" col-12">
+                            <span class="text-right">
+                                <label class="text-danger">Truck Number</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.TextBox("TruckNumber", "", new { id = "TruckNumber", @class = "form-control form-control-sm" })
+                            </span>
+                        </div>
+                        <div id="divDistAllotment" class=" col-12">
+                            <span class="text-right">
+                                <label>Driver Name</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.TextBox("DriverName", "", new { id = "DriverName", @class = "form-control form-control-sm" })
+                            </span>
+                        </div>
+                        <div id="divDistAllotment" class=" col-12">
+                            <span class="text-right">
+                                <label>Driver Mobile</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.TextBox("DriverMobile", "", new { id = "DriverMobile", @class = "form-control form-control-sm" })
+                            </span>
+                        </div>
+
+
+
+
+                        <div id="divAllotment" class="col-12">
+                            <span class="text-right">
+                                <label>Chalan Date</label>
+                            </span>
+                            <span class="input-group">
+
+                                @Html.TextBoxFor(model => model.GatePassDate, new { id = "DeliveryDate", @class = "form-control form-control-sm",name="GatePassDate"})
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div id="divDistAllotment" class=" col-6">
+                                <span class="text-right">
+                                    <label>Total Qty</label>
+                                </span>
+                                <span class="input-group">
+                                    @Html.TextBox("TotalQty", "", new { id = "TotalQty", @class = "form-control form-control-sm"  })
+                                </span>
+                            </div>
+                            <div id="divDistAllotment" class=" col-6">
+                                <span class="text-right">
+                                    <label>Chalan No</label>
+                                </span>
+                                <input name="BufferDelChallanId" id="BufferDelChallanId" hidden />
+                                <div class="min-h-100 border border-primary" style="min-height:60px; background-color: rgba(50,100,200,.1)">
+
+                                    <ul class="ml-5" id="chalanList"></ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <span class="text-right">
+                                <label>Carrier Org</label>
+                            </span>
+                            <span class="input-group">
+                                @Html.DropDownList("BufferRepresentativeId", ViewBag.BufferRepresentativeId as List<SelectListItem>, "--Select Representative--",new { id = "BufferRepresentativeId", @class = "form-control form-control-sm",name="BufferRepresentativeId" })
+                            </span>
+                        </div>
+
+                        <div class="ml-1" id="Del_chaTable" style="min-height: 250px; background-color: rgba(0,0,255,.1)">
+
+                            <p class="mt-3" id="Del_Cha"></p>
+                        </div>
+                        <div id="GatePass">
+
+                            <p id="Gate_pass"></p>
+                        </div>
+
+
+                        <div class="text-center col-12">
+
+                            <span>
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </span>
+                            <span>
+                                <a asp-action="Index" class="btn btn-info">Back to Booking List</a>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        }
+
+
+
+
+    </div>
+
+}
+
+    <style>
+        .GatePassQty {
+            color: red;
+        }
+    </style>
+
+
+@section Scripts
+    {
+    <script>
+        //BufferListId
+        $(document).ready(() => {
+            var today = new Date();
+            var date = `${today.getMonth() + 1}-${today.getDate()}-${today.getFullYear()}`;
+            $('#DeliveryDate').datepicker({ dateFormat: 'mm-dd-yy' });
+            $('#DeliveryDate').val(date);
+
+
+            var title = $('#titleName').html()
+            if (title == "Edit") {
+
+
+
+                var del_cha_String = $('#BufferDelChallanNo').val();
+                var chalanNo = del_cha_String.split(',');
+                chalanNo.forEach(function (item) {
+                    $('#chalanList').append(`<li>${item}</li>`);
+                })
+
+
+            }
+
+
+            $('#BufferRepresentativeId').select2();
+            $('#BufferRepresentativeId').on('select2:select', function (e) {
+                if ($('#BufferRepresentativeId').val() != null) {
+
+                    AllotmentInfo();
+
+
+                }
+                else {
+                    alert('Please Select Buffer Information First');
+                    $('#BufferRepresentativeId').val('').change();
+                }
+            })
+
+
+            //$('#DeliveryQty').keyup(function () {
+            //    // alert('ok');
+            //    var buffer = $('#RepresentativeMember option:selected').text();
+            //    var title = $('#title').html()
+
+            //    if (buffer == '--Select Carrier--') {
+            //        alert('Please Select Carrier First');
+            //        $('#AllotmentQty').val('0')
+            //    }
+
+            //    var totalAlot = $('#TotalAllocated').val();
+            //    var AvailavleQty = $('#Available').val();
+            //    var qty = $('#DeliveryQty').val();
+            //    var Alocated = $('#AlocatedQty').val();
+            //    var previousQty = $('#previousQty').val();
+
+
+            //    if (title == "Edit") {
+
+            //        if (parseInt(qty) + (parseInt(AlocatedQty) - parseInt(previousQty)) > parseInt(totalAlot)) {
+            //            alert('Out of Limit');
+            //            $('#AllotmentQty').val('0')
+            //        }
+            //        else {
+            //            var remain = parseInt(totalAlot) - ((parseInt(Alocated) - parseInt(previousQty)) + parseInt(qty))
+            //            $('#RemainQty').val(remain)
+            //        }
+            //    }
+            //    else {
+
+
+            //        if (parseInt(qty) > parseInt(AvailavleQty)) {
+            //            alert('Out of Limit');
+            //            $('#AllotmentQty').val('0')
+
+            //        }
+            //        else {
+            //            if (qty > 0) {
+            //                var remain = parseInt(AvailavleQty) - parseInt(qty)
+            //                $('#RemainQty').val(remain)
+            //            }
+            //            else {
+            //                $('#RemainQty').val(AvailavleQty)
+            //            }
+            //        }
+            //    }
+
+            //});
+
+
+
+
+            let DelChallanId = [];
+            let ChallanNo = [];
+            var Selecteddata;
+            var table;
+            var table1;
+
+            function AllotmentInfo() {
+
+
+                var BufferRepresentativeId = $('#BufferRepresentativeId').val();
+                var title = $('#titleName').html()
+                function myCustomEditor(cell, onRendered, success, cancel, editorParams) {
+                    var title = $('#titleName').html()
+
+                    //if(title=="Edit"){
+                    //    var AlocatedValue = cell.getRow().getCell("TruckLoadQty").getValue()
+                    //    var RemainingValue = cell.getInitialValue();
+
+                    //var input = document.createElement("input");
+                    //    var initialValue = input.value + RemainingValue;
+                    //input.setAttribute("type", "input");
+                    //input.setAttribute("min", "1");
+                    //input.setAttribute("max", initialValue);
+                    //input.setAttribute("step", "1");
+                    //input.value = 0;
+                    //}
+                    //else{ }
+                    var initialValue = cell.getInitialValue();
+                    var input = document.createElement("input");
+                    input.setAttribute("type", "input");
+                    input.setAttribute("min", "1");
+                    input.setAttribute("max", initialValue);
+                    input.setAttribute("step", "1");
+                    input.value = 0;
+
+
+
+                    onRendered(function () {
+                        input.focus();
+                        input.style.width = "100%";
+                    });
+
+                    function onChange() {
+                        if (input.value > initialValue || input.value == null || input.value == '') {
+                            //alert("out of limit")
+                            Swal.fire({
+                                html: '<div class="text-danger">"Out of limit</div>',
+                               
+                            });
+                            success(initialValue);
+                        }
+                        else if (input.value == null) {
+                            success(initialValue);
+                        }
+                        else {
+                            success(input.value);
+                        }
+                    }
+                    input.addEventListener("focusout", onChange);
+                    //input.addEventListener("", onChange);
+                    //input.addEventListener("focusout", function (e) {
+                    //    onChange();
+                    //    //if (e.keyCode == 13) {
+                    //    //    onChange();
+                    //    //}
+
+                    //    //if (e.keyCode == 27) {
+                    //    //    cancel();
+                    //    //}
+                    //});
+
+                    return input;
+                }
+
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("AllotmentInfo", "GatePassForBuffer")',
+                    dataType: 'json',
+                    data: { type: BufferRepresentativeId, page: title },
+                    async: false,
+                    success: function (data) {
+
+                        if (data != 0) {
+
+
+                            var tabledata = data;
+                            table = new Tabulator("#Del_Cha",
+                                {
+
+
+                                    height: "auto",
+
+                                    layout: "fitColumns",
+
+                                    pagination: true,
+                                    paginationSize: 10,
+                                    paginationSizeSelector: [10, 20, 50, 100],
+                                    data: tabledata, //assign data to table
+                                    /////Custom Editor///
+
+
+
+                                    /* autoColumns: true,*/ //create columns from data field names
+                                    columns: [
+                                        {
+                                            formatter: "rowSelection", titleFormatter: "rowSelection", selectable: true, titleFormatterParams: {
+                                                rowRange: "active" // only toggle the values of the active filtered rows
+                                            }, hozAlign: "center", headerSort: false,
+                                            cellClick: function (e, cell) {
+                                                cell.getRow().toggleSelect();
+                                            },width:3
+                                        },
+
+                                        { title: "DelChallanId", field: "BufferDelChallanId", hozAlign: "right", sorter: "number", headerFilter: "input", visible: false },
+                                        { title: "Challan", field: "ChallanNo", hozAlign: "right", sorter: "number", selectable: true, headerFilter: "input", cellClick: function (e, cell) { cell.getRow().toggleSelect() } },
+
+                                        { title: "Order", field: "OrderNo", hozAlign: "right", sorter: "number", selectable: true, headerFilter: "input", cellClick: function (e, cell) { cell.getRow().toggleSelect() } },
+
+                                        { title: "Buffer", field: "Buffer", hozAlign: "center", selectable: true, headerFilter: "input", cellClick: function (e, cell) { cell.getRow().toggleSelect() } },
+
+                                        { title: "Carrier", field: "Carrier", hozAlign: "center", selectable: true, headerFilter: "input", cellClick: function (e, cell) { cell.getRow().toggleSelect() } },
+
+                                        { title: "Chalan Qty", field: "qty", hozAlign: "center", selectable: true, headerFilter: "input", cellClick: function (e, cell) { cell.getRow().toggleSelect() } },
+
+                                        { title: "Balance", field: "BalanceQty", hozAlign: "center", headerFilter: "input", selectable: true, visible: true, cellClick: function (e, cell) { cell.getRow().toggleSelect() } },
+
+                                        {
+                                            title: "Gate-Pass Qty", field: "BalanceQty", hozAlign: "center", headerFilter: "input", /*selectable: false,*/ editor: myCustomEditor, cssClass: "GatePassQty"
+
+                                        },
+
+                                        { title: "Date", field: "DeliveryDate", hozAlign: "center", selectable: true, headerFilter: "input", cellClick: function (e, cell) { cell.getRow().toggleSelect() } },
+
+
+                                    ],
+
+                                });
+                            //dsfds
+
+
+
+                            table.on("rowSelectionChanged", function (data, rows) {
+                                //document.getElementById("select-stats").innerHTML = data.length;
+                                Selecteddata = data;
+                                DelChallanId = [];
+                                var ChalanObj = {};
+                                var sum = 0;
+                                $('#chalanList').empty();
+                                data.forEach(function (item) {
+
+
+
+                                    sum += parseInt(item.BalanceQty);
+
+
+                                    $('#chalanList').append(`<li>${item.ChallanNo}</li>`);
+
+                                    ChalanObj.chalan = item.BufferDelChallanId;
+                                    ChalanObj.Qty = item.BalanceQty;
+
+                                    DelChallanId.push(ChalanObj)
+                                    var del_cha_String = JSON.stringify(DelChallanId)
+                                    $('#BufferDelChallanId').val(del_cha_String);
+                                    ChalanObj = {};
+
+
+                                })
+                                if (sum <= 15) {
+                                    $('#TotalQty').val(sum);
+                                }
+                                else {
+                                    Swal.fire({
+                                        html: '<div class="text-danger">"Total quantity should not more than 15 ton</div>',
+                                        showConfirmButton: true,
+                                        confirmButtonText: "OK",
+                                    });
+                                    //alert("Total quantity should not more than 15 ton")
+                                    $('#TotalQty').val(0);
+
+                                    $('#chalanList').empty();
+                                    table.deselectRow()
+                                    $('#BufferDelChallanId').val('');
+
+                                }
+
+                            })
+
+
+                        }
+                        else {
+                            toastr.error(data.ex);
+                        }
+                    },
+                    error: function (ex) {
+                        alert('Failed.' + ex);
+                    }
+                })
+
+
+            }
+
+            $('#tblbufferlist tbody').on('click', 'tr', function () {
+                // get the data for the clicked row
+                var td = $(this).find('td');
+
+                $("#RepresentativeBookingId").val(td[0].innerHTML);
+                $("#TotalAllocated").val(td[7].innerHTML);
+                $("#Available").val(td[8].innerHTML);
+                $("#Buffer").val(td[2].innerHTML);
+                $("#OrderNo").val(td[1].innerHTML);
+
+
+                // do something with the data
+
+            });
+
+        })
+
+        $('#FiscalYearId').change(function () {
+            let did = $("#FiscalYearId option:selected").val();
+            $.ajax({
+                url: '/ReceivedFromBufferBankAmount/getFiscalMonthName',
+                cache: false,
+                type: 'GET',
+                dataType: 'JSON',
+                data: { id: did },
+                success: function (mdata) {
+                    console.log(mdata);
+                    if (mdata.flag == "1") {
+                        $('#FiscalMonthId').empty();
+                        $('#FiscalMonthId').empty();
+                        $.each(mdata.data, function (i, obj) {
+                            let s = '<option value="' + obj.MonthId + '">' + obj.MonthName + '</option>';
+                            $('#FiscalMonthId').append(s);
+                        });
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        });
+
+
+    </script>
+    <script src="~/lib/tabulator/js/tabulator.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  }
+

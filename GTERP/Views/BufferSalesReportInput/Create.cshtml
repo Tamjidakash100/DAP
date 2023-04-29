@@ -1,0 +1,221 @@
+﻿@model GTERP.Models.Buffers.BufferVm
+
+<style>
+
+
+    #styletext {
+        color: transparent;
+        background: #666666;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+        font-weight: 100;
+        font-size: 40px;
+    }
+</style>
+
+
+@using (Html.BeginForm("Create", "BufferSalesReportInput", FormMethod.Post))
+{
+    @*@Html.AntiForgeryToken()*@
+
+    <div class="container" style="max-width: 700px;">
+        <div class="py-7 text-center">
+
+            <h1 id="styletext">Buffer Sales Statement Entry</h1>
+            <p class="lead"></p>
+        </div>
+
+        @if (Model != null)
+        {
+           @Html.HiddenFor(x=> x.BufferListId)
+        }
+        else
+        {
+            <input type="hidden" asp-for="BufferListId"  />
+        }
+        <div id="modalbodyfahad" class="row card p-4">
+            <div class="col-md-12 order-md-1">
+                <h4 class="mb-3">Sales Report @ViewBag.Title</h4>
+
+                <form class="needs-validation card p-4" novalidate>
+
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="input-group col-md-12 col-12 mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Date</span>
+                                </div>
+                                <input type="date"  id="DtInput" class="form-control" name="DtInput" />
+                            </div>
+
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                <select id="FiscalYearId" class="form-control" asp-items="ViewBag.FiscalYearId" , name="FiscalYearId">
+                                    <option>Please Select Year</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                <select id="FiscalMonthId" class="form-control" asp-items="ViewBag.FiscalMonthId" , name="FiscalMonthId">
+                                    <option>Please Select Month</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-12">
+                                <div class="input-group mb-2">
+                                    <select id="BufferId" class="form-control" asp-items="ViewBag.BufferId" name="BufferID">
+                                        <option>Please Select Buffer </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-12 col-md-12 col-12">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Recive By Buffer</span>
+                                </div>
+                                 <input type="text" id="SalesOfBuffer" class="form-control" name="ReciveByBuffer" />
+                            </div>
+                            <div class="input-group mb-12 col-md-12 col-12 mt-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text " id="basic-addon1">Sales By Buffer</span>
+                                </div>
+                                 <input type="text" id="SalesOfBuffer" class="form-control" name="SalesByBuffer" />
+                            </div>
+                            <div class="input-group mb-12 col-md-12 col-12 mt-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text " id="basic-addon1">Unit Price</span>
+                                </div>
+                                  <input type="text"  value="14000.00" id="SalesOfBuffer" class="form-control" name="UnitPrice" />
+                            </div>
+                            
+       
+
+
+
+
+
+                        </div>
+
+                       
+
+
+
+                        <div class="row text-center m-2">
+                            <br />
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4 col-xs-12 d-block mx-auto">
+
+                                @if (ViewBag.Title == "Create")
+                                {
+                                    <input type="submit" value="Save" class="btn btn-primary btn-md btn-block rounded-0" />
+
+                                    @*<button class="btn btn-primary btn-lg btn-block" type="button" onclick="Products_save()">Save</button>*@
+                                }
+                                else if (ViewBag.Title == "Edit")
+                                {
+                                    
+                                    <input type="submit" value="Update" class="btn btn-warning btn-block rounded-0" />
+
+                                    @*<button class="btn btn-warning btn-lg btn-block" type="button" onclick="Products_save()">Update</button>*@
+                                }
+                                else if (ViewBag.Title == "Delete")
+                                {
+                                    <button class="btn btn-danger btn-md btn-block rounded-0" type="button" onclick="Buffer_delete()">Delete</button>
+                                }
+
+
+                            </div>
+                            <div class="col-md-4 col-xs-12 d-block mx-auto">
+                                @Html.ActionLink("Back", "Index", "BufferSalesReportInput", null, new { @class = "btn btn-info btn-block rounded-0", @id = "btnBack" })
+
+                            </div>
+                            <div class="col-md-2"></div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+}
+
+@*@section Styles{ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.1/css/bootstrap-multiselect.css" integrity="sha512-Lif7u83tKvHWTPxL0amT2QbJoyvma0s9ubOlHpcodxRxpZo4iIGFw/lDWbPwSjNlnas2PsTrVTTcOoaVfb4kwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+}*@
+
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.1/js/bootstrap-multiselect.min.js" integrity="sha512-fp+kGodOXYBIPyIXInWgdH2vTMiOfbLC9YqwEHslkUxc8JLI7eBL2UQ8/HbB5YehvynU3gA3klc84rAQcTQvXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        $().ready(() => {
+            $("rep_dropdown").multiselect();
+            $("dist_dropdown").multiselect();
+        })
+
+   // $("#Sectid").select2();
+
+    function Buffer_delete() {
+
+        var BufferId = $("#BufferId").val();
+           // alert(DesigId);
+            $.ajax({
+
+                url: '@Url.Action("Delete", "BufferList")',
+                //url: '@Url.Action("Delete")',
+                data: JSON.stringify({ id: BufferId }), //use id here
+                //data: JSON.stringify(salesmain),
+                type: 'POST',
+                contentType: 'application/json;',
+                dataType: 'json',
+                success: function (result) {
+                    debugger;
+                if (result.Success == "1") {
+                    customFile('3', result.ex);
+                    window.setTimeout(function () {
+                        // Move to a new location or you can do something else
+                        window.location.href = '@Url.Action("Index", "BufferList")';
+                    }, 500);
+                }
+                else {
+                    toastr.error(result.ex);
+                }
+            }
+            });
+    }
+        $('#FiscalYearId').change(function () {
+            let did = $("#FiscalYearId option:selected").val();
+            $.ajax({
+                url: '/ReceivedFromBufferBankAmount/getFiscalMonthName',
+                cache: false,
+                type: 'GET',
+                dataType: 'JSON',
+                data: { id: did },
+                success: function (mdata) {
+                    console.log(mdata);
+                    if (mdata.flag == "1") {
+                        $('#FiscalMonthId').empty();
+                        $('#FiscalMonthId').empty();
+                        $.each(mdata.data, function (i, obj) {
+                            let s = '<option value="' + obj.MonthId + '">' + obj.MonthName + '</option>';
+                            $('#FiscalMonthId').append(s);
+                        });
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        });
+
+    </script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
